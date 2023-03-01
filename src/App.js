@@ -15,7 +15,7 @@ import { ForgetPwd } from "./pages/ForgetPwd";
 import { ResetPwd } from "./pages/ResetPwd";
 import { Header } from "./components/header/Header";
 ////////// Private Routes //////////
-import { StudentRoutes } from "./roles/staff/StudentRoutes";
+import { StudentRoutes } from "./roles/student/StudentRoutes";
 import { TestingPage } from "./common/TestingPage";
 
 function App() {

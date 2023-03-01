@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { ADMIN_URL } from "../shared/API";
+import { STUDENT_URL } from "../shared/API";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
@@ -69,7 +69,7 @@ export const ResetPwd = () => {
     e.preventDefault();
     setUserUX((prev) => ({ ...prev, loading: true, error: false }));
     axios
-      .post(ADMIN_URL + "api/reset_password/" + token, {
+      .post(STUDENT_URL + "api/reset_password/" + token, {
         password: input.password,
         confpassword: input.confirmPassword,
       })
