@@ -42,11 +42,12 @@ export const TestingPage = () => {
       ...prev,
       form: { delete: true, loading: false, error: true, errorMsg: "asdas" },
     }));
-
+  }
     return (
       <div>
-        <ForgotPwd icon={""} header={""} />
+        <h1>hello</h1>
+        testing page
+        {/* <ForgotPwd icon={""} header={""} /> */}
       </div>
     );
   };
-};
