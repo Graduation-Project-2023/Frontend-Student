@@ -23,7 +23,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (authContext.isLoggedIn) {
-      navigate("/admin");
+      navigate("/student");
     }
     //eslint-disable-next-line
   }, [authContext.isLoggedIn]);
@@ -36,12 +36,12 @@ export const Login = () => {
       password: pwdRef.current.value,
     };
     axios
-      .post(BASE_URL + "/auth/admin_login", userCredentials)
+      .post(BASE_URL + "/auth/student_login", userCredentials)
       .then((res) => {
         console.log(res);
         setUserUX((prev) => ({ ...prev, submitLoading: false }));
         authContext.login(res.data.email, res.data.role);
-        navigate("/admin");
+        navigate("/login");
       })
       .catch((error) => {
         setUserUX({
