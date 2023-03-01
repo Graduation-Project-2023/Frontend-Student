@@ -8,19 +8,24 @@
   &-loginCard {
     display: grid;
     grid-template-columns: 40% 60%;
+
     &-logo {
       background-color: rgba(170, 220, 211, 0.83);
+      padding-top: 2rem;
       & h1 {
         @include font(2.5rem, 3rem);
         color: white;
       }
       & img {
         width: 60%;
-        height: 60%;
+        height: 80%;
         margin: auto;
       }
     }
     &-content {
+      background-color: white;
+      @include font(2.5rem, 3rem);
+      padding-top: 2rem;
       &-form {
         &-button {
         }
