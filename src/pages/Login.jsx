@@ -8,6 +8,7 @@ import { useAuth } from "../hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
+import cactus from "./cactus.png";
 
 export const Login = () => {
   const { t } = useTranslation();
@@ -57,51 +58,60 @@ export const Login = () => {
   };
 
   return (
-    <div className="container">
-      <div className="common_cont">
-        <div className="login_title">
-          <h2>{t(`common.login`)}</h2>
+    <div className="loginCont">
+      <div className="loginCont-loginCard">
+        <div className="loginCont-loginCard-logo">
+          <h1>titlllllllllllllllle</h1>
+          <img src={cactus} alt="logo" />
         </div>
-        <form className="login_form" onSubmit={handleLogin}>
-          <div action="">
-            <input
-              type="email"
-              placeholder={t(`login.email`)}
-              ref={emailRef}
-              minLength={3}
-              name="email"
-              id="email"
-              required
-            />
+        <div className="loginCont-loginCard-content">
+          <div className="loginCont-loginCard-content-title">
+            <h2>{t(`common.login`)}</h2>
           </div>
-          <div action="">
-            <input
-              type="password"
-              placeholder={t(`login.password`)}
-              ref={pwdRef}
-              minLength={8}
-              name="password"
-              id="password"
-              required
-            />
-          </div>
-          <div className="login_form_button">
-            {userUX.submitLoading ? (
-              <FormButton type="loading" />
-            ) : (
-              <button>{t(`common.login`)}</button>
-            )}
-          </div>
-          <Link to="/forgetpwd">{t(`login.forget`)}</Link>
-          {userUX.error && (
-            <div>
-              <span className="wrong" role="alert">
-                <BiError />
-                {userUX.errorMsg}
-              </span>
+          <form
+            className="loginCont-loginCard-content-form"
+            onSubmit={handleLogin}
+          >
+            <div action="">
+              <input
+                type="email"
+                placeholder={t(`login.email`)}
+                ref={emailRef}
+                minLength={3}
+                name="email"
+                id="email"
+                required
+              />
             </div>
-          )}
-        </form>
+            <div action="">
+              <input
+                type="password"
+                placeholder={t(`login.password`)}
+                ref={pwdRef}
+                minLength={8}
+                name="password"
+                id="password"
+                required
+              />
+            </div>
+            <div className="loginCont-loginCard-content-form-button">
+              {userUX.submitLoading ? (
+                <FormButton type="loading" />
+              ) : (
+                <button>{t(`common.login`)}</button>
+              )}
+            </div>
+            <Link to="/forgetpwd">{t(`login.forget`)}</Link>
+            {userUX.error && (
+              <div>
+                <span className="wrong" role="alert">
+                  <BiError />
+                  {userUX.errorMsg}
+                </span>
+              </div>
+            )}
+          </form>
+        </div>
       </div>
     </div>
   );
