@@ -1,5 +1,17 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const Portal = () => {
-  return <div>STUDENT PORTAL</div>;
+  const navigate = useNavigate();
+  return (
+    <div>
+      STUDENT PORTAL
+      <button
+        onClick={() => {
+          navigate("/student/registeration");
+        }}
+      >
+        go to registeration
+      </button>
+    </div>
+  );
 };
