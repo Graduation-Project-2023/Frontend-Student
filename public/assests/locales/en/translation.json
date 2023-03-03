@@ -41,6 +41,8 @@
     "time": "Time",
     "search": "Search..",
     "continue": "Continue",
+    "drag": "Drag and drop the new students CSV file",
+    "click": "or Click here to select the file",
     "gender": "Gender",
     "gender_male": "Male",
     "gender_female": "Female",
@@ -81,14 +83,11 @@
     "enterValue": "Enter a Value..",
     "invalidCred": "Invalid Credentials"
   },
- 
-  "week": {
-    "saturday": "Saturday",
-    "sunday": "Sunday",
-    "monday": "Monday",
-    "tuesday": "Tuesday",
-    "wednesday": "Wednesday",
-    "thursday": "Thursday",
-    "friday": "Friday"
+
+  "login": {
+    "email": "E-mail",
+    "password": "Password",
+    "forget": "Forgot Your Password?",
+    "title": "Welcome To Suez Canal University"
   }
 }
