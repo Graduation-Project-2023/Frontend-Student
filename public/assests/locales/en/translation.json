@@ -83,4 +83,11 @@
     "enterValue": "Enter a Value..",
     "invalidCred": "Invalid Credentials"
   }
+
+  ,"login":{
+    "email": "E-mail",
+    "password":"Password",
+    "forget":"Forgot Your Password?",
+    "title":"Welcome To Suez Canal University"
+  }
 }

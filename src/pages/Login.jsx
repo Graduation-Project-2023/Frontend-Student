@@ -9,6 +9,8 @@ import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
 import cactus from "./cactus.png";
+import bck from "./bck.png";
+
 
 export const Login = () => {
   const { t } = useTranslation();
@@ -58,12 +60,9 @@ export const Login = () => {
   };
 
   return (
-    <div className="loginCont">
+    <div className="loginCont" style={{ backgroundImage: `url(${bck})`}}>
       <div className="loginCont-loginCard">
-        <div className="loginCont-loginCard-logo">
-          <h1>titlllllllllllllllle</h1>
-          <img src={cactus} alt="logo" />
-        </div>
+   
         <div className="loginCont-loginCard-content">
           <div className="loginCont-loginCard-content-title">
             <h2>{t(`common.login`)}</h2>
@@ -72,10 +71,10 @@ export const Login = () => {
             className="loginCont-loginCard-content-form"
             onSubmit={handleLogin}
           >
-            <div action="">
+            <div className="loginCont-loginCard-content-form-input" action="">
+              <h6>{t(`login.email`)}</h6>
               <input
                 type="email"
-                placeholder={t(`login.email`)}
                 ref={emailRef}
                 minLength={3}
                 name="email"
@@ -83,10 +82,10 @@ export const Login = () => {
                 required
               />
             </div>
-            <div action="">
+            <div className="loginCont-loginCard-content-form-input" action="">
+              <h6>{t(`login.password`)}</h6>
               <input
                 type="password"
-                placeholder={t(`login.password`)}
                 ref={pwdRef}
                 minLength={8}
                 name="password"
@@ -94,6 +93,7 @@ export const Login = () => {
                 required
               />
             </div>
+            <Link to="/forgetpwd">{t(`login.forget`)}</Link>
             <div className="loginCont-loginCard-content-form-button">
               {userUX.submitLoading ? (
                 <FormButton type="loading" />
@@ -101,7 +101,6 @@ export const Login = () => {
                 <button>{t(`common.login`)}</button>
               )}
             </div>
-            <Link to="/forgetpwd">{t(`login.forget`)}</Link>
             {userUX.error && (
               <div>
                 <span className="wrong" role="alert">
@@ -112,6 +111,12 @@ export const Login = () => {
             )}
           </form>
         </div>
+
+        <div className="loginCont-loginCard-logo">
+          <h1>{t(`login.title`)}</h1>
+          <img src={cactus} alt="logo" />
+        </div>
+        
       </div>
     </div>
   );
