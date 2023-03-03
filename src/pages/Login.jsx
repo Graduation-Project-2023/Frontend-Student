@@ -9,8 +9,7 @@ import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
 import cactus from "./cactus.png";
-import bck from "./bck.png";
-
+import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const Login = () => {
   const { t } = useTranslation();
@@ -60,64 +59,35 @@ export const Login = () => {
   };
 
   return (
-    <div className="loginCont" style={{ backgroundImage: `url(${bck})`}}>
-      <div className="loginCont-loginCard">
-   
-        <div className="loginCont-loginCard-content">
-          <div className="loginCont-loginCard-content-title">
-            <h2>{t(`common.login`)}</h2>
-          </div>
-          <form
-            className="loginCont-loginCard-content-form"
-            onSubmit={handleLogin}
-          >
-            <div className="loginCont-loginCard-content-form-input" action="">
-              <h6>{t(`login.email`)}</h6>
-              <input
-                type="email"
-                ref={emailRef}
-                minLength={3}
-                name="email"
-                id="email"
-                required
-              />
-            </div>
-            <div className="loginCont-loginCard-content-form-input" action="">
-              <h6>{t(`login.password`)}</h6>
-              <input
-                type="password"
-                ref={pwdRef}
-                minLength={8}
-                name="password"
-                id="password"
-                required
-              />
-            </div>
-            <Link to="/forgetpwd">{t(`login.forget`)}</Link>
-            <div className="loginCont-loginCard-content-form-button">
-              {userUX.submitLoading ? (
-                <FormButton type="loading" />
-              ) : (
-                <button>{t(`common.login`)}</button>
-              )}
-            </div>
-            {userUX.error && (
-              <div>
-                <span className="wrong" role="alert">
-                  <BiError />
-                  {userUX.errorMsg}
-                </span>
-              </div>
-            )}
-          </form>
-        </div>
-
-        <div className="loginCont-loginCard-logo">
-          <h1>{t(`login.title`)}</h1>
-          <img src={cactus} alt="logo" />
-        </div>
-        
-      </div>
-    </div>
+    <LoginTemplate
+      handle={handleLogin}
+      input1="email"
+      input2="password"
+      userUX={userUX}
+      inputone={
+        <input
+          type="email"
+          ref={emailRef}
+          minLength={3}
+          name="email"
+          id="email"
+          required
+        />
+      }
+      inputtwo={
+        <input
+          type="password"
+          ref={pwdRef}
+          minLength={8}
+          name="password"
+          id="password"
+          required
+        />
+      }
+      logo={cactus}
+      forget={true}
+      title="login"
+      button="login"
+    />
   );
 };
