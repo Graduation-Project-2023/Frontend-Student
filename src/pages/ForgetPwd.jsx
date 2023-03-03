@@ -5,6 +5,8 @@ import { STUDENT_URL } from "../shared/API";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
+import lock from "./lock.png";
+import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const ForgetPwd = () => {
   const { t } = useTranslation();
@@ -37,44 +39,25 @@ export const ForgetPwd = () => {
   };
 
   return (
-    <div className="container">
-      <div className="common_cont">
-        <div className="login_title">
-          <h2>{t(`forgetpwd.title`)}</h2>
-        </div>
-        <form className="login_form" onSubmit={handlePwdFrgt}>
-          <div>{t(`forgetpwd.instruction`)}</div>
-          <div action="">
-            <input
-              type="email"
-              placeholder={t(`forgetpwd.email`)}
-              ref={emailRef}
-              minLength={3}
-              name="email"
-              id="email"
-              required
-            ></input>
-          </div>
-          <div className="login_form_button">
-            {userUX.loading ? (
-              <FormButton type="loading" />
-            ) : (
-              <button>{t(`common.continue`)}</button>
-            )}
-          </div>
-          <div>
-            <Link to="/login">{t(`forgetpwd.back`)}</Link>
-            {userUX.error && (
-              <div>
-                <span className="wrong" role="alert">
-                  <BiError />
-                  {userUX.errorMsg}
-                </span>
-              </div>
-            )}
-          </div>
-        </form>
-      </div>
-    </div>
+    <LoginTemplate
+      handle={handlePwdFrgt}
+      input1={t(`forget.email`)}
+      userUX={userUX}
+      inputone={
+        <input
+          type="email"
+          ref={emailRef}
+          minLength={3}
+          name="email"
+          id="email"
+          required
+        />
+      }
+
+      logo={lock}
+      forget={false}
+      title={t(`forget.subtitle`)}
+      button={t(`forget.button`)}
+    />
   );
 };

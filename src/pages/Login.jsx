@@ -61,8 +61,8 @@ export const Login = () => {
   return (
     <LoginTemplate
       handle={handleLogin}
-      input1="email"
-      input2="password"
+      input1={t(`login.email`)}
+      input2={t(`login.password`)}
       userUX={userUX}
       inputone={
         <input
@@ -86,8 +86,8 @@ export const Login = () => {
       }
       logo={cactus}
       forget={true}
-      title="login"
-      button="login"
+      title={t(`login.subtitle`)}
+      button={t(`login.button`)}
     />
   );
 };
