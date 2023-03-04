@@ -86,19 +86,19 @@
     "password": "Password",
     "forget": "Forgot Your Password?",
     "title": "Welcome To Suez Canal University",
-    "button":"login",
-    "subtitle":"LOGIN"
+    "button": "login",
+    "subtitle": "LOGIN"
   },
   "reset": {
     "new-pswrd": "New Password",
     "conf-pswrd": "Confirm Password",
-    "button":"Reset",
-    "subtitle":"Reset Password"
+    "button": "Reset",
+    "subtitle": "Reset Password"
   },
   "forget": {
     "email": "E-mail",
-    "button":"Send",
-    "subtitle":"Forgot Your Password?"
+    "button": "Send",
+    "subtitle": "Forgot Your Password?"
   },
   "week": {
     "saturday": "Saturday",
@@ -108,5 +108,12 @@
     "wednesday": "Wednesday",
     "thursday": "Thursday",
     "friday": "Friday"
+  },
+  "levels": {
+    "0": "Level 1",
+    "1": "Level 2",
+    "2": "Level 3",
+    "3": "Level 4",
+    "4": "Level 5"
   }
 }

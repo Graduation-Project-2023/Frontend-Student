@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
+import { LEVELS } from "../../../shared/Levels";
+import axios from "axios";
 
 export const Registeration = () => {
   const [tableData, setTableData] = useState([]);
@@ -14,6 +16,7 @@ export const Registeration = () => {
     table: { error: false, errorMsg: "" },
     courses: { loading: false, error: false, errorMsg: "" },
   });
+  const { t } = useTranslation();
 
   // useEffect(() => {
   //   setUserUX((prev) => ({
@@ -188,29 +191,43 @@ export const Registeration = () => {
             <h1>{userUX.table.errorMsg}</h1>
           </h1>
         )}
-        {availableClasses.map((item) => {
-          if (item.classes.length === 0) return null;
-          else {
-            return (
-              <li key={item.classes[0].id}>
-                <div>
-                  <p>{item.classes[0].englishName}</p>
-                  <p>{item.classes[0].arabicName}</p>
-                </div>
-                {courseInstancesIds.includes(
-                  item.classes[0].courseInstanceId
-                ) ? (
-                  <button onClick={() => removeCourseFromTable(item.classes)}>
-                    remove
-                  </button>
-                ) : (
-                  <button onClick={() => addCourseToTable(item.classes)}>
-                    add
-                  </button>
-                )}
-              </li>
-            );
-          }
+        {LEVELS.map((level) => {
+          return (
+            <div key={level.id}>
+              <h2>{t(`levels.${level.id}`)}</h2>
+              {availableClasses
+                .filter((item) => item.level.level === level.id)
+                .map((item) => {
+                  console.log(item);
+                  if (item.classes.length === 0) return null;
+                  else {
+                    return (
+                      <li key={item.classes[0].id}>
+                        <div>
+                          <p>{item.classes[0].englishName}</p>
+                          <p>{item.classes[0].arabicName}</p>
+                        </div>
+                        {courseInstancesIds.includes(
+                          item.classes[0].courseInstanceId
+                        ) ? (
+                          <button
+                            onClick={() => removeCourseFromTable(item.classes)}
+                          >
+                            remove
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => addCourseToTable(item.classes)}
+                          >
+                            add
+                          </button>
+                        )}
+                      </li>
+                    );
+                  }
+                })}
+            </div>
+          );
         })}
       </ul>
       <DayPeriodTable
