@@ -7,11 +7,8 @@ import i18next from "i18next";
 import classNames from "classnames";
 import axios from "axios";
 import { BASE_URL } from "../../shared/API";
-import { BiWorld } from "react-icons/bi";
-import { CgProfile } from "react-icons/cg";
 // Reusable Components
-import { Dropdown } from "react-bootstrap";
-import DropdownItem from "react-bootstrap/esm/DropdownItem";
+
 
 const languages = [
   {
@@ -61,56 +58,13 @@ export const Header = () => {
       });
   };
 
-  return (
-    <nav className="main-header">
-      <div className="main-header-item">
-        {authContext.isLoggedIn && (
-          <Dropdown>
-            <Dropdown.Toggle>
-              <CgProfile size={30} />
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <DropdownItem onClick={handleLogout}>
-                {t("common.logout")}
-              </DropdownItem>
-            </Dropdown.Menu>
-          </Dropdown>
-        )}
-      </div>
-      <div className="main-header-item">
-        {t("header.uni")}
-        {authContext.college?.id && ` - `}
-        {i18next.language === "en"
-          ? authContext.college?.englishName
-          : authContext.college?.arabicName}
-      </div>
-      <div className="main-header-item">
-        {authContext.isLoggedIn && (
-          <Dropdown>
-            <Dropdown.Toggle>
-              <BiWorld size={30} />
-            </Dropdown.Toggle>
-
-            <Dropdown.Menu>
-              <Dropdown.Item>{t("common.language")}</Dropdown.Item>
-              {languages.map(({ code, name }) => (
-                <Dropdown.Item key={code}>
-                  <span
-                    className={classNames("dropdown-item", {
-                      disabled: i18next.language === code,
-                    })}
-                    onClick={() => {
-                      i18next.changeLanguage(code);
-                    }}
-                  >
-                    {name}
-                  </span>
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
-        )}
-      </div>
-    </nav>
-  );
-};
+  
+    return (
+      <header>
+        
+      </header>
+    );
+  }
+  
+  export default Header;
+  

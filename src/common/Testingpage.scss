@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hbody{
+    background: linear-gradient(160deg, #39A692 50%,#559e91 20%, #C4DEDAD4 60%);
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    direction: ltr;
+    justify-content: space-between;
+    align-items: center;
+  
+   &-options{
+    padding: 30px;
+    justify-content: space-between;
+   }
+   &-text{
+    color: #22277A;
+    font-size: 30px;
+    font-weight:bold;
+    text-shadow: 2px 2px rgb(128, 128, 151);
+                                                                                                                                                                                    
+   }
+
+   &-logo{
+   width: 110px;
+   padding: 30px;
+
+   }
+}
+.langbtn{
+    background-color: white;
+    width: 25px;
+    font-size: 15px;
+    color:#39A692 ;
+    border-color: transparent;
+    
+}
+.fblogo{
+    list-style: none;
+    color: white; 
+    padding: 5px;
+    font-size: 25px;
+}
+
+.ytlogo{
+    color: white;
+    list-style: none;
+    padding: 5px;
+    font-size: 25px;
+}
+
+.search-field {
+    font-size: 15px;
+	background-color: transparent;
+	background-image: url(https://images.app.goo.gl/rtenKmVv6ZWZ6hme6);
+	background-position: 5px  center;
+	background-repeat: no-repeat;
+	background-size: 24px 24px;
+	border: none;
+	cursor: pointer;
+	height: 30px;
+    border-radius: 15px;
+
+	margin: 3px 0;
+	padding: 0 0 0 34px;
+	position: relative;
+	-webkit-transition: width 400ms ease, background 400ms ease;
+	transition:         width 400ms ease, background 400ms ease;
+	width:0px;
+   cursor: pointer;
+}
+
+.search-field:focus {
+	background-color:#C4DEDAD4;
+	border: 2px solid #fffffe;
+	cursor: text;
+	outline: 0;
+	width: 250px;
+  color:#fff;
+}
+
+.search-icon{
+    font-size: 20px;
+    color: white;
+}
