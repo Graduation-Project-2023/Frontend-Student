@@ -5,6 +5,8 @@ import { STUDENT_URL } from "../shared/API";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
+import lock from "./lock.png";
+import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const ResetPwd = () => {
   const { t } = useTranslation();
@@ -92,59 +94,42 @@ export const ResetPwd = () => {
   };
 
   return (
-    <div className="container">
-      <div className="common_cont">
-        <div className="login_title">
-          <h2>{t(`resetpwd.reset_btn`)}</h2>
-        </div>
-        <form className="login_form" onSubmit={handlePwdReset}>
-          <div action="">
-            <input
-              type="password"
-              placeholder={t(`resetpwd.new_password`)}
-              name="password"
-              id="password"
-              value={input.password}
-              onChange={onInputChange}
-              onBlur={validateInput}
-            ></input>
-            {error.password && <div className="err">{error.password}</div>}
-          </div>
-          <div action="">
-            <input
-              type="password"
-              placeholder={t(`resetpwd.confirm_password`)}
-              name="confirmPassword"
-              id="confirmPassword"
-              value={input.confirmPassword}
-              onChange={onInputChange}
-              onBlur={validateInput}
-              required
-            ></input>
-            {error.confirmPassword && (
-              <div>
-                <span className="wrong" role="alert">
-                  <BiError />
-                  {error.confirmPassword}
-                </span>
-              </div>
-            )}
-          </div>
-          <div className="login_form_button">
-            {userUX.loading ? (
-              <FormButton type="loading" />
-            ) : (
-              <button>{t(`resetpwd.reset_btn`)}</button>
-            )}
-          </div>
-          {pwd && (
-            <div>
-              Password changed successfuly you will be redirected to the login
-              page...
-            </div>
-          )}
-        </form>
-      </div>
-    </div>
+    <LoginTemplate
+      handle={handlePwdReset}
+      input1={t(`reset.new-pswrd`)}
+      input2={t(`reset.conf-pswrd`)}
+      inputone={
+        <input
+        type="password"
+        name="password"
+        id="password"
+        value={input.password}
+        onChange={onInputChange}
+        onBlur={validateInput}
+        required
+        />    
+      }
+
+      inputtwo={
+        <input
+        type="password"
+        name="confirmPassword"
+        id="confirmPassword"
+        value={input.confirmPassword}
+        onChange={onInputChange}
+        onBlur={validateInput}
+        required
+        />
+      }
+
+
+
+
+      logo={lock}
+      forget={false}
+      title=" "
+      button={t(`reset.button`)}
+    />
   );
 };
+
