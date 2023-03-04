@@ -21,7 +21,7 @@ function App() {
   axios.defaults.withCredentials = true;
   return (
     <div className="App">
-      {/* <Header /> */}
+      <Header />
       <Routes>
         {/* Public Routes */}
         <Route path="" element={<Home />} exact />
