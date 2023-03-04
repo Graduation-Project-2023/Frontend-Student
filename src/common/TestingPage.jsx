@@ -1,53 +1,43 @@
-import { useState } from "react";
-import axios from "axios";
-import { BASE_URL } from "../shared/API";
-import { ForgotPwd } from "../components/popups/ForgotPwd";
+import { AiFillFacebook, AiFillYoutube, AiOutlineSearch } from "react-icons/ai";
+import logo from "./logo.png";
 
 export const TestingPage = () => {
-  const [userUX, setUserUX] = useState({
-    form: {
-      delete: false,
-      loading: false,
-      error: false,
-      errorMsg: "",
-    },
-    formData: {
-      loading: false,
-      error: false,
-      errorMsg: "",
-    },
-  });
+  return (
+    <div>
+      <header className="hbody">
+        <div className="hbody-options">
+          <button className="langbtn">EN</button>
 
-  const handleDelete = () => {
-    setUserUX((prev) => ({
-      ...prev,
-      form: { ...prev.form, loading: true },
-    }));
-    axios
-      .put(BASE_URL + "/auth/student_login", {
-        email: "asdasd",
-        password: "asdasd",
-      })
-      .then((res) => {
-        console.log("hello");
-      })
-      .catch((err) => {
-        console.log("hello");
-      });
-  };
+          <a href="/#" className="fblogo">
+            <AiFillFacebook />
+          </a>
+          <a href="/#" className="ytlogo">
+            <AiFillYoutube />
+          </a>
+          <label className="search-icon">
+             < AiOutlineSearch/>
+            <input
+            
+              type="search"
+              class="search-field"
+              placeholder="Search …"
+              value=""
+              name="s"
+              title="Search for:"
+            />
+          </label>
+          
+        </div>
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setUserUX((prev) => ({
-      ...prev,
-      form: { delete: true, loading: false, error: true, errorMsg: "asdas" },
-    }));
-  }
-    return (
-      <div>
-        <h1>hello</h1>
-        testing page
-        {/* <ForgotPwd icon={""} header={""} /> */}
-      </div>
-    );
-  };
+        <div className="hbody-text"> suez canal university</div>
+
+        <div>
+          {" "}
+          <img className="hbody-logo" src={logo} alt="/" />
+        </div>
+      </header>
+
+      {/* <ForgotPwd icon={""} header={""} /> */}
+    </div>
+  );
+};
