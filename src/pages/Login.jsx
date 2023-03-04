@@ -8,6 +8,8 @@ import { useAuth } from "../hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
+import cactus from "./cactus.png";
+import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const Login = () => {
   const { t } = useTranslation();
@@ -57,52 +59,35 @@ export const Login = () => {
   };
 
   return (
-    <div className="container">
-      <div className="common_cont">
-        <div className="login_title">
-          <h2>{t(`common.login`)}</h2>
-        </div>
-        <form className="login_form" onSubmit={handleLogin}>
-          <div action="">
-            <input
-              type="email"
-              placeholder={t(`login.email`)}
-              ref={emailRef}
-              minLength={3}
-              name="email"
-              id="email"
-              required
-            />
-          </div>
-          <div action="">
-            <input
-              type="password"
-              placeholder={t(`login.password`)}
-              ref={pwdRef}
-              minLength={8}
-              name="password"
-              id="password"
-              required
-            />
-          </div>
-          <div className="login_form_button">
-            {userUX.submitLoading ? (
-              <FormButton type="loading" />
-            ) : (
-              <button>{t(`common.login`)}</button>
-            )}
-          </div>
-          <Link to="/forgetpwd">{t(`login.forget`)}</Link>
-          {userUX.error && (
-            <div>
-              <span className="wrong" role="alert">
-                <BiError />
-                {userUX.errorMsg}
-              </span>
-            </div>
-          )}
-        </form>
-      </div>
-    </div>
+    <LoginTemplate
+      handle={handleLogin}
+      input1={t(`login.email`)}
+      input2={t(`login.password`)}
+      userUX={userUX}
+      inputone={
+        <input
+          type="email"
+          ref={emailRef}
+          minLength={3}
+          name="email"
+          id="email"
+          required
+        />
+      }
+      inputtwo={
+        <input
+          type="password"
+          ref={pwdRef}
+          minLength={8}
+          name="password"
+          id="password"
+          required
+        />
+      }
+      logo={cactus}
+      forget={true}
+      title={t(`login.subtitle`)}
+      button={t(`login.button`)}
+    />
   );
 };

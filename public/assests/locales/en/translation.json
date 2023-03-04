@@ -41,8 +41,6 @@
     "time": "Time",
     "search": "Search..",
     "continue": "Continue",
-    "drag": "Drag and drop the new students CSV file",
-    "click": "or Click here to select the file",
     "gender": "Gender",
     "gender_male": "Male",
     "gender_female": "Female",
@@ -82,5 +80,40 @@
     "coursesNotReg": "Courses Not Registered",
     "enterValue": "Enter a Value..",
     "invalidCred": "Invalid Credentials"
+  },
+  "login": {
+    "email": "E-mail",
+    "password": "Password",
+    "forget": "Forgot Your Password?",
+    "title": "Welcome To Suez Canal University",
+    "button": "login",
+    "subtitle": "LOGIN"
+  },
+  "reset": {
+    "new-pswrd": "New Password",
+    "conf-pswrd": "Confirm Password",
+    "button": "Reset",
+    "subtitle": "Reset Password"
+  },
+  "forget": {
+    "email": "E-mail",
+    "button": "Send",
+    "subtitle": "Forgot Your Password?"
+  },
+  "week": {
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday"
+  },
+  "levels": {
+    "0": "Level 1",
+    "1": "Level 2",
+    "2": "Level 3",
+    "3": "Level 4",
+    "4": "Level 5"
   }
 }
