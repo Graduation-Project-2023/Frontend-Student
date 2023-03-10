@@ -11,10 +11,10 @@
   -o-#{$prop}: #{$value};
   #{$prop}: #{$value};
 }
-@mixin font($fontSize, $lineHeight) {
+@mixin font($fontSize, $lineHeight, $fontWeight) {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
+  font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
 }
