@@ -1,6 +1,6 @@
 .sidebarContainer {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 400px auto;
 }
 .sidebar {
   position: absolute;
@@ -14,7 +14,7 @@
     padding: 2rem;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: flex-start;
     gap: 2rem;
     & h1 {
       @include font(2rem, 2.3rem, 500);

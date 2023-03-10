@@ -6,6 +6,7 @@ import { STUDENT_URL } from "../../../shared/API";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
 import { LEVELS } from "../../../shared/Levels";
 import axios from "axios";
+import { SidebarCont } from "../../../components/header/SidebarCont";
 
 export const Registeration = () => {
   const [tableData, setTableData] = useState([]);
@@ -203,7 +204,7 @@ export const Registeration = () => {
   };
 
   return (
-    <>
+    <SidebarCont>
       <ul>
         <h1>choose your fighter</h1>
         {userUX.table.error && (
@@ -271,6 +272,6 @@ export const Registeration = () => {
       >
         click for cells data
       </button>
-    </>
+    </SidebarCont>
   );
 };

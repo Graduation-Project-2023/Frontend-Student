@@ -1,8 +1,10 @@
 export const SidebarCont = (props) => {
   return (
     <div className="sidebarContainer">
-      <div></div>
-      <div>{props.children}</div>
+      <div className="d-flex justify-content-center"></div>
+      <div className="d-flex flex-column justify-content-center">
+        {props.children}
+      </div>
     </div>
   );
 };

@@ -10,14 +10,14 @@ export const Sidebar = (props) => {
   return (
     <nav className="sidebar">
       <div className="sidebar-title">
-        <div>
-          <h1>name</h1>
-          <h2>dataaaaa</h2>
-        </div>
         <img
           src="https://www.pngmart.com/files/10/User-Account-Person-PNG-File.png"
           alt="logo"
         />
+        <div>
+          <h1>name</h1>
+          <h2>dataaaaa</h2>
+        </div>
       </div>
 
       <ul className="sidebar-list">

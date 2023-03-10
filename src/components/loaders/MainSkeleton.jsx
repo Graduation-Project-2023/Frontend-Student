@@ -1,51 +1,51 @@
 export const MainSkeleton = () => {
   return (
-    <div class="sklCont">
-      <div class="sklCont-nav"></div>
+    <div className="sklCont">
+      <div className="sklCont-nav"></div>
 
-      <div class="sklCont-content">
-        <div class="sklCont-content-card">
-          <div class="sklCont-content-card-img">
-            <div class="sklCont-spinner"></div>
+      <div className="sklCont-content">
+        <div className="sklCont-content-card">
+          <div className="sklCont-content-card-img">
+            <div className="sklCont-spinner"></div>
           </div>
-          <div class="sklCont-content-card-text">
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-          </div>
-        </div>
-        <div class="sklCont-content-card">
-          <div class="sklCont-content-card-img">
-            <div class="sklCont-spinner"></div>
-          </div>
-          <div class="sklCont-content-card-text">
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
+          <div className="sklCont-content-card-text">
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
           </div>
         </div>
-        <div class="sklCont-content-card">
-          <div class="sklCont-content-card-img">
-            <div class="sklCont-spinner"></div>
+        <div className="sklCont-content-card">
+          <div className="sklCont-content-card-img">
+            <div className="sklCont-spinner"></div>
           </div>
-          <div class="sklCont-content-card-text">
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
+          <div className="sklCont-content-card-text">
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
           </div>
         </div>
-        <div class="sklCont-content-card">
-          <div class="sklCont-content-card-img">
-            <div class="sklCont-spinner"></div>
+        <div className="sklCont-content-card">
+          <div className="sklCont-content-card-img">
+            <div className="sklCont-spinner"></div>
           </div>
-          <div class="sklCont-content-card-text">
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
-            <div class="sklCont-line"></div>
+          <div className="sklCont-content-card-text">
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+          </div>
+        </div>
+        <div className="sklCont-content-card">
+          <div className="sklCont-content-card-img">
+            <div className="sklCont-spinner"></div>
+          </div>
+          <div className="sklCont-content-card-text">
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
+            <div className="sklCont-line"></div>
           </div>
         </div>
       </div>
