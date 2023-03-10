@@ -173,6 +173,27 @@ export const Registeration = () => {
 
   const saveTableData = (event) => {
     event.preventDefault();
+    const finalTableData = tableData.reduce((acc, current) => {
+      const courseInstanceIndex = acc.findIndex(
+        (courseInstance) =>
+          courseInstance.courseInstanceId === current.courseInstanceId
+      );
+      if (courseInstanceIndex === -1) {
+        // add new courseInstance
+        acc.push({
+          courseInstanceId: current.courseInstanceId,
+          classes: [current.id],
+        });
+      } else {
+        // add class to existing courseInstance
+        acc[courseInstanceIndex].classes.push(current.id);
+      }
+      return acc;
+    }, []);
+
+    const backendData = { courseInstances: [...finalTableData] };
+    console.log(backendData);
+
     console.log(userUX);
     setUserUX((prev) => ({
       ...prev,
@@ -200,7 +221,6 @@ export const Registeration = () => {
               {availableClasses
                 .filter((item) => item.level.level === level.id)
                 .map((item) => {
-                  console.log(item);
                   if (item.classes.length === 0) return null;
                   else {
                     return (

@@ -35,19 +35,6 @@
   color: #39a692;
   border-color: transparent;
 }
-.fblogo {
-  list-style: none;
-  color: white;
-  padding: 5px;
-  font-size: 25px;
-}
-
-.ytlogo {
-  color: white;
-  list-style: none;
-  padding: 5px;
-  font-size: 25px;
-}
 
 .search-field {
   font-size: 15px;
@@ -60,7 +47,6 @@
   cursor: pointer;
   height: 30px;
   border-radius: 15px;
-
   margin: 3px 0;
   padding: 0 0 0 34px;
   position: relative;
@@ -82,4 +68,5 @@
 .search-icon {
   font-size: 20px;
   color: white;
+  margin-left: 10px;
 }
