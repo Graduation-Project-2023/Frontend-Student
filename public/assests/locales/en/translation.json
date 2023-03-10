@@ -56,15 +56,22 @@
     "marital_widowed": "Widowed",
     "marital_separated": "Separated",
     "address": "Address",
-    "phone": "Phone Number",
+    "phone": "mobile Number",
+    "mail": "E-mail",
+    "box": "Mail Box",
+    "system": "System Mail",
     "homeNumber": "Home Number",
+    "city": "City",
     "directorate": "Directorate",
     "guardianName": "Guardian Name",
+    "guardianMail": "Guardian E-mail",
+    "guardianJob": "Guardian Job",
     "guardianPhone": "Guardian Phone Number",
     "guardianAddress": "Guardian Address",
     "guardianNationality": "Guardian Nationality",
     "prevQualification": "Previous Qualification",
     "prevQualificationInstitute": "Previous Qualification Institute",
+    "precentage": "Precentage",
     "enrollmentYear": "Enrollment Year",
     "enrollmentEndDate": "Enrollment End Date",
     "totalPrevQualification": "Total Previous Qualification",
@@ -115,5 +122,20 @@
     "2": "Level 3",
     "3": "Level 4",
     "4": "Level 5"
+  },
+  "student": {
+    "info": "Student info",
+    "courses": "Available courses",
+    "Registration": "Registration",
+    "progress": "Student progress",
+    "desire": "Program desires",
+    "grades": "Courses grades",
+    "fees": "Fees payment"
+  },
+  "info": {
+    "personal": "Personal info",
+    "family": "Family info",
+    "contact": "Contact info",
+    "pre": "Pre-Qualification info"
   }
 }

@@ -11,7 +11,7 @@
     justify-content: space-between;
     padding: 2rem;
     & h6 {
-      @include font(1.7rem, 2rem);
+      @include font(1.7rem, 2rem, 500);
       padding: 1rem;
       border: 1px solid#D9D9D9;
       @include colorandback(#3d7dca, #bbbdc01a);

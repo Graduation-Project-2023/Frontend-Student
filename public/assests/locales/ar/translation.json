@@ -58,18 +58,25 @@
     "marital_widowed": "ارمل",
     "marital_separated": "منفصل",
     "address": "العنوان",
-    "phone": "رقم الهاتف",
+    "phone": "رقم الموبايل",
     "homeNumber": "رقم المنزل",
+    "mail": "البريد الالكتروني",
+    "box": "صندوق البريد",
+    "system": "بريد النظام",
+    "city": "المدينة",
     "directorate": "المديرية",
     "guardianName": "اسم ولي الامر",
     "guardianPhone": "رقم هاتف ولي الامر",
+    "guardianJob": "وظيفة ولي الامر",
     "guardianAddress": "عنوان ولي الامر",
+    "guardianMail": "البريد الالكتروني لولي الامر",
     "guardianNationality": "جنسية ولي الامر",
     "prevQualification": "المؤهل السابق",
     "prevQualificationInstitute": "معهد المؤهل السابق",
     "enrollmentYear": "تاريخ التسجيل",
     "enrollmentEndDate": "تاريخ انتهاء التسجيل",
     "totalPrevQualification": "مجموع المؤهل السابق",
+    "precentage": "النسبة المئوية",
     "recruitmentState": "حالة التجنيد",
     "recruitmentNumber": "رقم التجنيد",
     "recruitmentDate": "تاريخ التجنيد",
@@ -117,5 +124,20 @@
     "2": "المستوى الثالث",
     "3": "المستوى الرابع",
     "4": "المستوى الخامس"
+  },
+  "student": {
+    "info": "بيانات الطالب",
+    "courses": "المقررات",
+    "Registration": "تسجيل المقررات",
+    "progress": "التقدم الدراسي",
+    "desire": "الرغبات ",
+    "grades": "الدرجات",
+    "fees": "الرسوم"
+  },
+  "info": {
+    "personal": "البيانات الشخصية",
+    "family": "البيانات العائلية",
+    "contact": "بيانات الاتصال",
+    "pre": "بيانات المؤهل السابق"
   }
 }
