@@ -1,12 +1,13 @@
-// BASSANT (DESIGN) @bassantahmed115
-
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
 import { LEVELS } from "../../../shared/Levels";
 import axios from "axios";
+
+// Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
+import { VerticalTable } from "../../../components/table/vertical/VerticalTable";
 
 export const Registeration = () => {
   const [tableData, setTableData] = useState([]);
@@ -205,6 +206,7 @@ export const Registeration = () => {
 
   return (
     <SidebarCont>
+      <VerticalTable />
       <ul>
         <h1>choose your fighter</h1>
         {userUX.table.error && (

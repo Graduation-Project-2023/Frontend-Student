@@ -130,12 +130,31 @@
     "progress": "Student progress",
     "desire": "Program desires",
     "grades": "Courses grades",
-    "fees": "Fees payment"
+    "fees": "Fees payment",
+    "name": "Student Name",
+    "id": "Student ID",
+    "department": "Department",
+    "project_hrs": "Project Hours",
+    "elective_hrs": "Passed Elective Hours",
+    "mandatory_hrs": "Passed Mandatory Hours",
+    "req_hrs": "Total Required Hours",
+    "passed_hrs": "Total Passed Hours"
   },
   "info": {
     "personal": "Personal info",
     "family": "Family info",
     "contact": "Contact info",
     "pre": "Pre-Qualification info"
+  },
+  "courses": {
+    "code": "Code",
+    "name": "Course Name",
+    "en_name": "English Name",
+    "ar_name": "Arabic Name",
+    "hours": "Hours",
+    "type": "Type",
+    "pre": "Prerequisite Code",
+    "passed": "Passed",
+    "registeration": "Registeration"
   }
 }

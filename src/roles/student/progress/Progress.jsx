@@ -1,21 +1,19 @@
 import { useState, useEffect } from "react";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
+import {
+  TableHeadings,
+  StudentTableHeadings,
+  testingCourses,
+  testingStudent,
+} from "./ProgressData";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { CommonTable } from "../../../components/table/common/CommonTable";
+import { VerticalTable } from "../../../components/table/vertical/VerticalTable";
 
-// to delete
-import { testingCourses } from "./testing";
-
-const TableHeadings = [
-  { id: 0, label: "courses.code", name: "code" },
-  { id: 1, label: "courses.ar_name", name: "arabicName" },
-  { id: 2, label: "courses.en_name", name: "englishName" },
-];
-
-export const AvailableCourses = () => {
+export const Progress = () => {
   const [courses, setCourses] = useState([]);
   const [userUX, setUserUX] = useState({
     loading: true,
@@ -109,6 +107,10 @@ export const AvailableCourses = () => {
 
   return (
     <SidebarCont>
+      <div className="m-5">
+        <VerticalTable headings={StudentTableHeadings} data={testingStudent} />
+      </div>
+
       {courses.map((item) => {
         return (
           <div key={item.level} className="mb-5">
