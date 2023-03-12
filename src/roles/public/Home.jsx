@@ -1,5 +1,6 @@
-//import { BsBook } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
+// Reusable Components and Images
 import managInfo from "../../shared/images/managmentInfo.jpeg";
 import HR from "../../shared/images/humanResource.jpg";
 import eLearning from "../../shared/images/eLearning.jpeg";
@@ -7,15 +8,17 @@ import digital from "../../shared/images/digitalTrans.png";
 import graduate from "../../shared/images/graduating.jpeg";
 import { HiArrowNarrowRight, HiOutlineAcademicCap } from "react-icons/hi";
 import { FaChalkboardTeacher, FaChild } from "react-icons/fa";
+
 export const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className="home">
         <div className="home-bg">
           <div className="home-btns">
-            <button className="home-btn">
+            <button className="home-btn" onClick={() => navigate("")}>
               <h1 className="home-btn-icon">
-                <FaChalkboardTeacher />{" "}
+                <FaChalkboardTeacher />
               </h1>
               Staff & Employees
             </button>

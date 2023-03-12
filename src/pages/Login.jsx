@@ -42,7 +42,7 @@ export const Login = () => {
       .then((res) => {
         console.log(res);
         setUserUX((prev) => ({ ...prev, submitLoading: false }));
-        authContext.login(res.data.email, res.data.role);
+        authContext.login(res.data.id, res.data.role);
         navigate("/login");
       })
       .catch((error) => {

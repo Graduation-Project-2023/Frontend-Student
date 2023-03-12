@@ -26,7 +26,7 @@
     color: #39a692;
     font-weight: bold;
     filter: drop-shadow(5px 5px 5px rgb(169, 166, 166));
-    &-icon{
+    &-icon {
       font-size: 90px;
     }
   }
@@ -128,9 +128,8 @@
   );
   display: grid;
   grid-template-columns: 30% 35% 35%;
- 
 
-  &-title{
+  &-title {
     text-align: center;
     font-size: 28px;
     color: #1c7a69;
@@ -139,19 +138,19 @@
     margin-right: 10px;
     margin-left: 10px;
   }
-  
-  &-container{
-    box-shadow: 5px 5px 5px  rgb(198, 198, 198);
+
+  &-container {
+    box-shadow: 5px 5px 5px rgb(198, 198, 198);
     background-color: white;
     width: 400px;
     height: 400px;
     place-self: center;
 
-    &-pic{
-      width:400px;
+    &-pic {
+      width: 400px;
       height: 200px;
     }
-    &-date{
+    &-date {
       margin: 15px;
       background-color: #1c7a69;
       color: white;
@@ -161,12 +160,12 @@
       text-align: center;
     }
 
-    &-news{
+    &-news {
       margin: 15px;
       color: rgb(74, 72, 72);
       font-style: bolder;
     }
-    &-btn{
+    &-btn {
       background-color: transparent;
       border-color: transparent;
       color: grey;
@@ -174,6 +173,5 @@
       text-align: right;
       margin: 20px;
     }
-    
   }
 }

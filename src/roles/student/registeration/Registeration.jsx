@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
-import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
-import { LEVELS } from "../../../shared/Levels";
+import { useAuth } from "../../../hooks/useAuth";
 import axios from "axios";
-import { StudentTableHeadings, testingStudent } from "./RegisterationData";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { VerticalTable } from "../../../components/table/vertical/VerticalTable";
+import { StudentTableHeadings, testingStudent } from "./RegisterationData";
+import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
+import { LEVELS } from "../../../shared/Levels";
 
 export const Registeration = () => {
   const [tableData, setTableData] = useState([]);
@@ -21,36 +22,42 @@ export const Registeration = () => {
     table: { error: false, errorMsg: "" },
     courses: { loading: false, error: false, errorMsg: "" },
   });
+  const authContext = useAuth();
   const { t } = useTranslation();
 
-  // useEffect(() => {
-  //   setUserUX((prev) => ({
-  //     ...prev,
-  //     tableData: { loading: true, error: false, errorMsg: "" },
-  //   }));
-  //   // GET request to get student schedule
-  //   axios
-  //     .get(STUDENT_URL + "whatever is the api")
-  //     .then((res) => {
-  //       console.log(res.data);
-  //       setTableData(res.data);
-  //       setUserUX((prev) => ({
-  //         ...prev,
-  //         tableData: { loading: false, error: false, errorMsg: "" },
-  //       }));
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //       setUserUX((prev) => ({
-  //         ...prev,
-  //         tableData: {
-  //           loading: false,
-  //           error: true,
-  //           errorMsg: "error in student table data",
-  //         },
-  //       }));
-  //     });
-  // }, []);
+  useEffect(() => {
+    console.log(authContext.token);
+    setUserUX((prev) => ({
+      ...prev,
+      tableData: { loading: true, error: false, errorMsg: "" },
+    }));
+    // GET request to get student schedule
+    axios
+      .get(
+        STUDENT_URL +
+          `/table/${authContext.token}/decc46ba-7d4b-11ed-a1eb-0242ac120002`
+      )
+      .then((res) => {
+        console.log("ressssssssss");
+        console.log(res.data);
+        setTableData(res.data);
+        setUserUX((prev) => ({
+          ...prev,
+          tableData: { loading: false, error: false, errorMsg: "" },
+        }));
+      })
+      .catch((err) => {
+        console.log(err);
+        setUserUX((prev) => ({
+          ...prev,
+          tableData: {
+            loading: false,
+            error: true,
+            errorMsg: "error in student table data",
+          },
+        }));
+      });
+  }, [authContext.token]);
 
   useEffect(() => {
     setUserUX((prev) => ({
@@ -61,7 +68,7 @@ export const Registeration = () => {
     axios
       .get(
         STUDENT_URL +
-          "/available_classes/decc46ba-7d4b-11ed-a1eb-0242ac120002/698b2eed-b652-4246-bdbc-610da8b67cb5"
+          `/available_classes/decc46ba-7d4b-11ed-a1eb-0242ac120002/${authContext.token}`
       )
       .then((res) => {
         console.log(res.data);
@@ -82,7 +89,7 @@ export const Registeration = () => {
           },
         }));
       });
-  }, []);
+  }, [authContext.token]);
 
   useEffect(() => {
     if (tableData.length === 0) {

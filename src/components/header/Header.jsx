@@ -81,9 +81,18 @@ export const Header = () => {
             />
           </label>
         </div>
-        <div className="hbody-text">suez canal university</div>
+        <div className="hbody-text">Suez Canal University</div>
         <div>
           <img className="hbody-logo" src={logo} alt="/" />
+        </div>{" "}
+        <div>
+          <button
+            onClick={() => {
+              authContext.logout();
+            }}
+          >
+            log out
+          </button>
         </div>
       </header>
 

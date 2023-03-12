@@ -1,3 +1,4 @@
+// Reusable Components and Images
 import img1 from "../../shared/images/images.jpeg";
 
 export const AdmissionInfo = () => {
@@ -67,18 +68,17 @@ export const AdmissionInfo = () => {
           </h5>
 
           <h5 className="admission-container-text">
-            5. An Excellence certificate valid for one one year (for medicine
+            5. An Excellence certificate valid for one one year for medicine
             students
           </h5>
 
           <h5 className="admission-container-text">
-            6. Filling the application forms at the desired faculty.{" "}
+            6. Filling the application forms at the desired faculty.
           </h5>
 
           <h5 className="admission-container-text">7. Four personal photos.</h5>
 
           <h5 className="admission-container-text">
-            {" "}
             8.The grades of the four-year bachelor (for master's degree)
           </h5>
 
