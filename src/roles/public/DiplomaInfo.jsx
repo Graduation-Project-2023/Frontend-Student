@@ -1,4 +1,4 @@
-// DONIA W RADWAN @DoniaAboelyazed @MOoradwan1
+// DONIA W RADWAN @DoniaAboelyaze
 
 export const DiplomaInfo = () => {
   return (
