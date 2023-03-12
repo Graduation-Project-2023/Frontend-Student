@@ -4,6 +4,7 @@ import { STUDENT_URL } from "../../../shared/API";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
 import { LEVELS } from "../../../shared/Levels";
 import axios from "axios";
+import { StudentTableHeadings, testingStudent } from "./RegisterationData";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
@@ -206,7 +207,7 @@ export const Registeration = () => {
 
   return (
     <SidebarCont>
-      <VerticalTable />
+      <VerticalTable headings={StudentTableHeadings} data={testingStudent} />
       <ul>
         <h1>choose your fighter</h1>
         {userUX.table.error && (

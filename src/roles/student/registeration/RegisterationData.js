@@ -7,7 +7,7 @@ export const StudentTableHeadings = [
         label: "student.name",
         name: "name",
       },
-      { id: 1, label: "student.req_hrs", name: "reqHours" },
+      { id: 1, label: "student.gpa", name: "gpa" },
     ],
   },
   {
@@ -32,3 +32,15 @@ export const StudentTableHeadings = [
     ],
   },
 ];
+
+export const testingStudent = {
+  id: "6ba865ee-6b20-41a8-ad31-4348263da4b3",
+  name: "Mohamed",
+  student_id: "201700000",
+  department: "Computer Science",
+  reqHours: 120,
+  mandatory_hrs: 60,
+  elective_hrs: 30,
+  project_hrs: 30,
+  passed_hrs: 0,
+};
