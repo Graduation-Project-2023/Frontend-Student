@@ -1,32 +1,32 @@
 import { useEffect, useState } from "react";
+import { useAuth } from "../../../hooks/useAuth";
 import { STUDENT_URL } from "../../../shared/API";
-import { useParams } from "react-router-dom";
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { useTranslation } from "react-i18next";
 import { StudentInfoData } from "./StudentInfoData";
 import axios from "axios";
 
 export const Portal = () => {
-  const { t } = useTranslation();
-  const { studentId } = useParams();
+  const [studentData, setStudentData] = useState({});
   const [userUX, setUserUX] = useState({
     loading: false,
     error: false,
     errorMsg: "",
   });
-  const [studentData, setStudentData] = useState({});
+  const authContext = useAuth();
+  const { t } = useTranslation();
 
-  // GET request to get student data by it's id
+  // POST request to get student data by it's id
   useEffect(() => {
     setUserUX((prev) => ({
       ...prev,
       loading: true,
     }));
     axios
-      .get(STUDENT_URL + "/info")
+      .post(STUDENT_URL + "/info", { id: authContext.token })
       .then((res) => {
         console.log(res.data);
-        setStudentData(res.data);
+        setStudentData(res.data.student);
         setUserUX((prev) => ({
           ...prev,
           loading: false,
@@ -36,10 +36,11 @@ export const Portal = () => {
         console.log(error);
         setUserUX((prev) => ({
           ...prev,
+          error: true,
           errorMsg: "student data error",
         }));
       });
-  }, [studentId]);
+  }, [authContext.token]);
 
   return (
     <SidebarCont>
@@ -52,16 +53,20 @@ export const Portal = () => {
                 return (
                   <div className="infoCard-item" key={items.id}>
                     <span className="infoCard-item-title">
-                      {" "}
                       {`${t(items.title)}`}
                     </span>
                     {userUX.error ? (
                       userUX.errorMsg
                     ) : userUX.loading ? (
                       <span>loading....</span>
+                    ) : items.enum === true ? (
+                      <span>{t(`enums.${studentData[items.name]}`)}</span>
                     ) : (
-                      <></>
-                      // <span>{studentData}</span>
+                      <span>
+                        {studentData[items.name] === null
+                          ? t("enums.null")
+                          : studentData[items.name]}
+                      </span>
                     )}
                   </div>
                 );

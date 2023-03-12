@@ -9,8 +9,6 @@
     "notfound_button": "Back To Home",
     "language": "Language",
     "religion": "Religion",
-    "religion_christian": "Christian",
-    "religion_muslim": "Muslim",
     "login": "Sign In",
     "logout": "Sign Out",
     "edit": "Edit",
@@ -42,19 +40,12 @@
     "search": "Search..",
     "continue": "Continue",
     "gender": "Gender",
-    "gender_male": "Male",
-    "gender_female": "Female",
     "birthplace": "Birthplace",
     "birthdate": "Birthdate",
     "nationality": "Nationality",
     "otherNationality": "Other Nationality",
     "nationalId": "National ID",
     "marital": "Marital Status",
-    "marital_single": "Single",
-    "marital_married": "Married",
-    "marital_divorced": "Divorced",
-    "marital_widowed": "Widowed",
-    "marital_separated": "Separated",
     "address": "Address",
     "phone": "mobile Number",
     "mail": "E-mail",
@@ -138,7 +129,12 @@
     "elective_hrs": "Passed Elective Hours",
     "mandatory_hrs": "Passed Mandatory Hours",
     "req_hrs": "Total Required Hours",
-    "passed_hrs": "Total Passed Hours"
+    "passed_hrs": "Total Passed Hours",
+    "registered_hrs": "Total Registered Hours",
+    "gpa": "Accumulated GPA",
+    "allowed_hrs": "Allowed Hours",
+    "advisor": "Academic Advisor",
+    "allowed_courses": "Allowed Courses"
   },
   "info": {
     "personal": "Personal info",
@@ -156,5 +152,17 @@
     "pre": "Prerequisite Code",
     "passed": "Passed",
     "registeration": "Registeration"
+  },
+  "enums": {
+    "MALE": "Male",
+    "FEMALE": "Female",
+    "SINGLE": "Single",
+    "MARRIED": "Married",
+    "DIVORCED": "Divorced",
+    "WIDOWED": "Widowed",
+    "SEPARATED": "Separated",
+    "CHRISTIAN": "Christian",
+    "MUSLIM": "Muslim",
+    "null": "Undefined"
   }
 }

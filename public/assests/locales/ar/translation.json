@@ -9,8 +9,6 @@
     "notfound_button": "العودة إلى الصفحة الرئيسية",
     "language": "اللغة",
     "religion": "الديانة",
-    "religion_christian": "مسيحي",
-    "religion_muslim": "مسلم",
     "login": "تسجيل دخول",
     "logout": "تسجيل خروج",
     "edit": "تعديل",
@@ -44,19 +42,12 @@
     "drag": "قم بسحب وافلات ملف الCSV الخاص ببيانات الطلاب الجدد",
     "click": "او اضغط هنا لرفع الملف",
     "gender": "النوع",
-    "gender_male": "ذكر",
-    "gender_female": "انثى",
     "birthplace": "محل الميلاد",
     "birthdate": "تاريخ الميلاد",
     "nationality": "الجنسية",
     "otherNationality": "جنسية اخرى",
     "nationalId": "الرقم القومي",
     "marital": "الحالة الاجتماعية",
-    "marital_single": "اعزب",
-    "marital_married": "متزوج",
-    "marital_divorced": "مطلق",
-    "marital_widowed": "ارمل",
-    "marital_separated": "منفصل",
     "address": "العنوان",
     "phone": "رقم الموبايل",
     "homeNumber": "رقم المنزل",
@@ -141,8 +132,11 @@
     "mandatory_hrs": "عدد الساعات الاجباري المجتازة",
     "req_hrs": "عدد الساعات المطلوبة",
     "passed_hrs": "اجمالي ساعات النجاح",
-    "registered_hrs": "اجمالي ساعات التسجيل",
-    "gpa": "معدل الطالب"
+    "registered_hrs": "اجمالي الساعات المسجلة",
+    "gpa": "معدل الطالب التراكمي",
+    "allowed_hrs": "عدد الساعات المسموحة",
+    "advisor": "المرشد الاكاديمي",
+    "allowed_courses": "عدد المقررات المسموح بها"
   },
   "info": {
     "personal": "البيانات الشخصية",
@@ -160,6 +154,17 @@
     "pre": "كود الطلب المسبق",
     "passed": "passed",
     "registeration": "مسجل"
+  },
+  "enums": {
+    "MALE": "ذكر",
+    "FEMALE": "انثى",
+    "SINGLE": "اعذب",
+    "MARRIED": "متزوج",
+    "DIVORCED": "مطلق",
+    "WIDOWED": "ارمل",
+    "SEPARATED": "منفصل",
+    "CHRISTIAN": "مسيحي",
+    "MUSLIM": "مسلم",
+    "null": "غير محدد"
   }
 }
-

@@ -14,33 +14,32 @@ export const StudentTableHeadings = [
     id: 1,
     cols: [
       { id: 0, label: "student.department", name: "department" },
-      { id: 1, label: "student.mandatory_hrs", name: "mandatory_hrs" },
+      { id: 1, label: "student.registered_hrs", name: "registered_hrs" },
     ],
   },
   {
     id: 2,
     cols: [
       { id: 0, label: "student.id", name: "student_id" },
-      { id: 1, label: "student.elective_hrs", name: "elective_hrs" },
+      { id: 1, label: "student.allowed_hrs", name: "allowed_hrs" },
     ],
   },
   {
     id: 3,
     cols: [
-      { id: 0, label: "student.project_hrs", name: "project_hrs" },
-      { id: 1, label: "student.passed_hrs", name: "passed_hrs" },
+      { id: 0, label: "student.advisor", name: "advisor" },
+      { id: 1, label: "student.allowed_courses", name: "allowed_courses" },
     ],
   },
 ];
 
 export const testingStudent = {
-  id: "6ba865ee-6b20-41a8-ad31-4348263da4b3",
-  name: "Mohamed",
-  student_id: "201700000",
-  department: "Computer Science",
-  reqHours: 120,
-  mandatory_hrs: 60,
-  elective_hrs: 30,
-  project_hrs: 30,
-  passed_hrs: 0,
+  name: "Ahmed",
+  gpa: 3.5,
+  department: "CS",
+  registered_hrs: 12,
+  student_id: 123456,
+  allowed_hrs: 18,
+  advisor: "Dr. Ahmed",
+  allowed_courses: 3,
 };
