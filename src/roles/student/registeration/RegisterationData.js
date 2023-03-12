@@ -33,6 +33,17 @@ export const StudentTableHeadings = [
   },
 ];
 
+export const CoursesTableHeadings = [
+  {
+    id: 0,
+    label: "courses.name",
+    name: "name",
+  },
+  { id: 1, label: "common.lecturer", name: "lecturer" },
+  { id: 2, label: "common.place", name: "place" },
+];
+
+// testing only will delete later
 export const testingStudent = {
   name: "Ahmed",
   gpa: 3.5,

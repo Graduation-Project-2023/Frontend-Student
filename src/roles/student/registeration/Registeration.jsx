@@ -3,16 +3,25 @@ import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import { useAuth } from "../../../hooks/useAuth";
 import axios from "axios";
+import i18next from "i18next";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { VerticalTable } from "../../../components/table/vertical/VerticalTable";
-import { StudentTableHeadings, testingStudent } from "./RegisterationData";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
 import { LEVELS } from "../../../shared/Levels";
+import {
+  StudentTableHeadings,
+  CoursesTableHeadings,
+  testingStudent,
+} from "./RegisterationData";
 
 export const Registeration = () => {
   const [tableData, setTableData] = useState([]);
+  const [tableRegistered, setTableRegistered] = useState({
+    state: false,
+    tableId: "",
+  });
   const [availableClasses, setAvailableClasses] = useState([]);
   const [courseInstancesIds, setCourseInstancesIds] = useState([]);
   const [cells, setCells] = useState({ occupied: [], available: [] });
@@ -26,21 +35,25 @@ export const Registeration = () => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    console.log(authContext.token);
     setUserUX((prev) => ({
       ...prev,
       tableData: { loading: true, error: false, errorMsg: "" },
     }));
-    // GET request to get student schedule
+    // GET request to get student schedule by student id
     axios
       .get(
         STUDENT_URL +
-          `/table/${authContext.token}/decc46ba-7d4b-11ed-a1eb-0242ac120002`
+          `/table/${authContext.id}/decc46ba-7d4b-11ed-a1eb-0242ac120002`
       )
       .then((res) => {
-        console.log("ressssssssss");
         console.log(res.data);
-        setTableData(res.data);
+        if (res.data === null) {
+          setTableData([]);
+          setTableRegistered({ state: false, tableId: "" });
+        } else {
+          setTableData(res.data.classes);
+          setTableRegistered({ state: true, tableId: res.data.id });
+        }
         setUserUX((prev) => ({
           ...prev,
           tableData: { loading: false, error: false, errorMsg: "" },
@@ -57,7 +70,7 @@ export const Registeration = () => {
           },
         }));
       });
-  }, [authContext.token]);
+  }, [authContext.id]);
 
   useEffect(() => {
     setUserUX((prev) => ({
@@ -68,7 +81,7 @@ export const Registeration = () => {
     axios
       .get(
         STUDENT_URL +
-          `/available_classes/decc46ba-7d4b-11ed-a1eb-0242ac120002/${authContext.token}`
+          `/available_classes/decc46ba-7d4b-11ed-a1eb-0242ac120002/${authContext.id}`
       )
       .then((res) => {
         console.log(res.data);
@@ -89,7 +102,7 @@ export const Registeration = () => {
           },
         }));
       });
-  }, [authContext.token]);
+  }, [authContext.id]);
 
   useEffect(() => {
     if (tableData.length === 0) {
@@ -202,9 +215,61 @@ export const Registeration = () => {
     }, []);
 
     const backendData = { courseInstances: [...finalTableData] };
-    console.log(backendData);
-
-    console.log(userUX);
+    if (tableRegistered.state) {
+      axios
+        .post(STUDENT_URL + `/register/${tableRegistered.tableId}`, backendData)
+        .then((res) => {
+          console.log(res.data);
+          setUserUX((prev) => ({
+            ...prev,
+            tableSubmit: {
+              loading: false,
+              error: false,
+              errorMsg: "",
+            },
+          }));
+        })
+        .catch((err) => {
+          console.log(err);
+          setUserUX((prev) => ({
+            ...prev,
+            tableSubmit: {
+              loading: false,
+              error: true,
+              errorMsg: "error in table submit",
+            },
+          }));
+        });
+    } else {
+      axios
+        .post(
+          STUDENT_URL +
+            `/register/${authContext.id}/decc46ba-7d4b-11ed-a1eb-0242ac120002`,
+          backendData
+        )
+        .then((res) => {
+          console.log(res.data);
+          setUserUX((prev) => ({
+            ...prev,
+            tableSubmit: {
+              loading: false,
+              error: false,
+              errorMsg: "",
+            },
+          }));
+        })
+        .catch((err) => {
+          console.log(err);
+          setUserUX((prev) => ({
+            ...prev,
+            tableSubmit: {
+              loading: false,
+              error: true,
+              errorMsg: "error in table submit",
+            },
+          }));
+        });
+    }
     setUserUX((prev) => ({
       ...prev,
       tableSubmit: { loading: true, error: false, errorMsg: "" },
@@ -215,73 +280,85 @@ export const Registeration = () => {
   return (
     <SidebarCont>
       <VerticalTable headings={StudentTableHeadings} data={testingStudent} />
-      <ul>
-        <h1>choose your fighter</h1>
-        {userUX.table.error && (
-          <h1>
-            <h1>{userUX.table.errorMsg}</h1>
-            <h1>{userUX.table.errorMsg}</h1>
-            <h1>{userUX.table.errorMsg}</h1>
-            <h1>{userUX.table.errorMsg}</h1>
-          </h1>
-        )}
-        {LEVELS.map((level) => {
-          return (
-            <div key={level.id}>
-              <h2>{t(`levels.${level.id}`)}</h2>
-              {availableClasses
-                .filter((item) => item.level.level === level.id)
-                .map((item) => {
-                  if (item.classes.length === 0) return null;
-                  else {
-                    return (
-                      <li key={item.classes[0].id}>
-                        <div>
-                          <p>{item.classes[0].englishName}</p>
-                          <p>{item.classes[0].arabicName}</p>
-                        </div>
-                        {courseInstancesIds.includes(
-                          item.classes[0].courseInstanceId
-                        ) ? (
-                          <button
-                            onClick={() => removeCourseFromTable(item.classes)}
-                          >
-                            remove
-                          </button>
-                        ) : (
-                          <button
-                            onClick={() => addCourseToTable(item.classes)}
-                          >
-                            add
-                          </button>
-                        )}
-                      </li>
-                    );
-                  }
-                })}
+      {userUX.table.error && (
+        <h1>
+          <h1>{userUX.table.errorMsg}</h1>
+          <h1>{userUX.table.errorMsg}</h1>
+          <h1>{userUX.table.errorMsg}</h1>
+          <h1>{userUX.table.errorMsg}</h1>
+        </h1>
+      )}
+      {LEVELS.map((level) => {
+        return (
+          <div key={level.id} className="mb-5">
+            <div className="commonTable">
+              <h2>{level.level}</h2>
+              <table>
+                <tbody>
+                  <tr>
+                    {CoursesTableHeadings.map((heading) => (
+                      <th key={heading.id}>{t(heading.label).toUpperCase()}</th>
+                    ))}
+                    <th>save/delete</th>
+                  </tr>
+                  {availableClasses
+                    .filter((item) => item.level.level === level.id)
+                    .map((item) => {
+                      if (item.classes.length === 0) return null;
+                      else {
+                        return (
+                          <tr key={item.classes[0].id}>
+                            {CoursesTableHeadings.map((heading) => {
+                              if (heading.name === "name") {
+                                return (
+                                  <td key={heading.id}>
+                                    {i18next.language === "en"
+                                      ? item.classes[0]["englishName"]
+                                      : item.classes[0]["arabicName"]}
+                                  </td>
+                                );
+                              } else {
+                                return (
+                                  <td key={heading.id}>
+                                    {item.classes[0][heading.name]}
+                                  </td>
+                                );
+                              }
+                            })}
+                            <td>
+                              {courseInstancesIds.includes(
+                                item.classes[0].courseInstanceId
+                              ) ? (
+                                <button
+                                  onClick={() =>
+                                    removeCourseFromTable(item.classes)
+                                  }
+                                >
+                                  remove
+                                </button>
+                              ) : (
+                                <button
+                                  onClick={() => addCourseToTable(item.classes)}
+                                >
+                                  add
+                                </button>
+                              )}
+                            </td>
+                          </tr>
+                        );
+                      }
+                    })}
+                </tbody>
+              </table>
             </div>
-          );
-        })}
-      </ul>
+          </div>
+        );
+      })}
       <DayPeriodTable
         cellsSetter={handleCellsSetter}
         tableData={tableData}
         saveTableData={saveTableData}
       />
-      <button
-        onClick={() => {
-          console.log(tableData);
-        }}
-      >
-        click for table data
-      </button>
-      <button
-        onClick={() => {
-          console.log(cells);
-        }}
-      >
-        click for cells data
-      </button>
     </SidebarCont>
   );
 };

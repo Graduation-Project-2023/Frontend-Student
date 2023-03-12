@@ -27,6 +27,7 @@ export const Portal = () => {
       .then((res) => {
         console.log(res.data);
         setStudentData(res.data.student);
+        authContext.setId(res.data.student.id);
         setUserUX((prev) => ({
           ...prev,
           loading: false,
@@ -40,6 +41,7 @@ export const Portal = () => {
           errorMsg: "student data error",
         }));
       });
+    // eslint-disable-next-line
   }, [authContext.token]);
 
   return (

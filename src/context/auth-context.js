@@ -4,7 +4,9 @@ import cookies from "js-cookie";
 const AuthContext = createContext({
   token: "",
   role: "",
+  id: "",
   isLoggedIn: false,
+  setId: (id) => {},
   login: (token, role) => {},
   logout: () => {},
 });
@@ -12,8 +14,11 @@ const AuthContext = createContext({
 export const AuthContextProvider = (props) => {
   const storageToken = cookies.get("token");
   const storageRole = cookies.get("role");
+  const storageStudId = cookies.get("stud_id");
+
   const [token, setToken] = useState(storageToken);
   const [role, setRole] = useState(storageRole);
+  const [studId, setStudId] = useState(storageStudId);
 
   const userIsLoggedIn = !!token;
 
@@ -27,14 +32,23 @@ export const AuthContextProvider = (props) => {
   const logoutHandler = () => {
     cookies.remove("token");
     cookies.remove("role");
+    cookies.remove("stud_id");
+    setStudId(null);
     setToken(null);
     setRole(null);
+  };
+
+  const studentIdSetter = (id) => {
+    cookies.set("stud_id", id);
+    setStudId(id);
   };
 
   const contextValue = {
     token: token,
     role: role,
+    id: studId,
     isLoggedIn: userIsLoggedIn,
+    setId: studentIdSetter,
     login: loginHandler,
     logout: logoutHandler,
   };
