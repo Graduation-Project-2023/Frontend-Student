@@ -1,0 +1,62 @@
+.sidebarContainer {
+  display: grid;
+  grid-template-columns: 400px auto;
+}
+.sidebar {
+  position: absolute;
+  background-color: #2070ba;
+  margin: 32px 20px;
+  width: 350px;
+  height: auto;
+  border-radius: 5px;
+
+  &-title {
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 2rem;
+    & h1 {
+      @include font(2rem, 2.3rem, 500);
+      color: #ffffff;
+    }
+    & h2 {
+      @include font(1.5rem, 1.8rem, 300);
+      color: #444444;
+      text-align: center;
+    }
+    & img {
+      width: 4rem;
+      height: 4rem;
+    }
+  }
+
+  &-list {
+    padding: 0 !important;
+    list-style: none;
+    overflow-y: scroll;
+    max-height: calc(100vh - 290px);
+    text-align: center;
+
+    &-active {
+      background-color: rgba(223, 227, 238, 0.6);
+      color: white !important;
+    }
+
+    & li {
+      border-bottom: solid $White5 1px;
+
+      & a {
+        text-decoration: none;
+        @include font(1rem, 1.3rem, 700);
+        color: #ffffff;
+        padding: 1.5rem;
+        display: block;
+        &:hover {
+          @include hover($Blue2, white, pointer);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

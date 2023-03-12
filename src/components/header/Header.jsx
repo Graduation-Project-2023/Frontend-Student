@@ -4,7 +4,7 @@ import { useAuth } from "../../hooks/useAuth";
 import i18next from "i18next";
 import axios from "axios";
 import { BASE_URL } from "../../shared/API";
-import { AiFillFacebook, AiFillYoutube, AiOutlineSearch } from "react-icons/ai";
+import { AiOutlineSearch } from "react-icons/ai";
 import logo from "./logo.png";
 
 const languages = [
@@ -55,17 +55,20 @@ export const Header = () => {
       });
   };
 
+  const toggleLang = () => {
+    const nextLanguage = languages.find(
+      (lang) => lang.code !== i18next.language
+    );
+    i18next.changeLanguage(nextLanguage.code);
+  };
+
   return (
     <div>
       <header className="hbody">
         <div className="hbody-options">
-          <button className="langbtn">EN</button>
-          <a href="/#" className="fblogo">
-            <AiFillFacebook />
-          </a>
-          <a href="/#" className="ytlogo">
-            <AiFillYoutube />
-          </a>
+          <button className="langbtn" onClick={toggleLang}>
+            {i18next.language === "en" ? "AR" : "EN"}
+          </button>
           <label className="search-icon">
             <AiOutlineSearch />
             <input

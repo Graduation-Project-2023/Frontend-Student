@@ -1,11 +1,13 @@
-// BASSANT (DESIGN) @bassantahmed115
-
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
 import { LEVELS } from "../../../shared/Levels";
 import axios from "axios";
+
+// Reusable Components
+import { SidebarCont } from "../../../components/header/SidebarCont";
+import { VerticalTable } from "../../../components/table/vertical/VerticalTable";
 
 export const Registeration = () => {
   const [tableData, setTableData] = useState([]);
@@ -173,6 +175,27 @@ export const Registeration = () => {
 
   const saveTableData = (event) => {
     event.preventDefault();
+    const finalTableData = tableData.reduce((acc, current) => {
+      const courseInstanceIndex = acc.findIndex(
+        (courseInstance) =>
+          courseInstance.courseInstanceId === current.courseInstanceId
+      );
+      if (courseInstanceIndex === -1) {
+        // add new courseInstance
+        acc.push({
+          courseInstanceId: current.courseInstanceId,
+          classes: [current.id],
+        });
+      } else {
+        // add class to existing courseInstance
+        acc[courseInstanceIndex].classes.push(current.id);
+      }
+      return acc;
+    }, []);
+
+    const backendData = { courseInstances: [...finalTableData] };
+    console.log(backendData);
+
     console.log(userUX);
     setUserUX((prev) => ({
       ...prev,
@@ -182,7 +205,8 @@ export const Registeration = () => {
   };
 
   return (
-    <>
+    <SidebarCont>
+      <VerticalTable />
       <ul>
         <h1>choose your fighter</h1>
         {userUX.table.error && (
@@ -200,7 +224,6 @@ export const Registeration = () => {
               {availableClasses
                 .filter((item) => item.level.level === level.id)
                 .map((item) => {
-                  console.log(item);
                   if (item.classes.length === 0) return null;
                   else {
                     return (
@@ -251,6 +274,6 @@ export const Registeration = () => {
       >
         click for cells data
       </button>
-    </>
+    </SidebarCont>
   );
 };
