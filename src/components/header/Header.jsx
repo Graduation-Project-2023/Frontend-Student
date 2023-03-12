@@ -5,7 +5,7 @@ import i18next from "i18next";
 import axios from "axios";
 import { BASE_URL } from "../../shared/API";
 import { AiOutlineSearch } from "react-icons/ai";
-import logo from "./logo.png";
+import logo from "../../shared/images/logo2.png";
 
 const languages = [
   {

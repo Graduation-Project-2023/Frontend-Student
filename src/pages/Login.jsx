@@ -1,5 +1,3 @@
-// ---STYLE CHANGES ONLY---
-
 import { useRef, useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -8,7 +6,7 @@ import { useAuth } from "../hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
-import cactus from "./cactus.png";
+import cactus from "../shared/images/cactus.png";
 import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const Login = () => {

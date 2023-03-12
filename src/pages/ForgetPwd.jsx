@@ -5,7 +5,7 @@ import { STUDENT_URL } from "../shared/API";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
-import lock from "./lock.png";
+import lock from "../shared/images/lock.png";
 import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const ForgetPwd = () => {
@@ -53,7 +53,6 @@ export const ForgetPwd = () => {
           required
         />
       }
-
       logo={lock}
       forget={false}
       title={t(`forget.subtitle`)}

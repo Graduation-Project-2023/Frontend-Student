@@ -1,5 +1,3 @@
-// ---STYLE CHANGES ONLY---
-
 import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 

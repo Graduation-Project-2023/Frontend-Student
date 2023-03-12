@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { FormButton } from "../../components/buttons/Buttons";
 import { Link } from "react-router-dom";
 import { BiError } from "react-icons/bi";
-import bck from "./bck.png";
+import bck from "../../shared/images/bck.png";
 
 export const LoginTemplate = (props) => {
   const { t } = useTranslation();
