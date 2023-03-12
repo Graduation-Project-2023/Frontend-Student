@@ -1,5 +1,4 @@
-// DONIA W RADWAN @DoniaAboelyazed @MOoradwan1
-import img1 from "./images.jpeg";
+import img1 from "../../shared/images/images.jpeg";
 
 export const AdmissionInfo = () => {
   return (
@@ -51,7 +50,6 @@ export const AdmissionInfo = () => {
             awarded by the supreme council of universities in Egypt.
           </h5>
           <h5 className="admission-container-text">
-          
             2. A letter of candidacy from the country the student comes from to
             the faculty the student wishes to study at, clarifying the providing
             body, the university year in which the student wishes to study, and
@@ -59,30 +57,34 @@ export const AdmissionInfo = () => {
           </h5>
 
           <h5 className="admission-container-text">
-           
             3. A copy of the student's passport that is valid for one whole
             year.
           </h5>
 
           <h5 className="admission-container-text">
-           
             4. A document which proves that the student does not have AIDS.
             before seeking admission or registration.
           </h5>
 
           <h5 className="admission-container-text">
-          
             5. An Excellence certificate valid for one one year (for medicine
             students
           </h5>
 
-          <h5 className="admission-container-text">6. Filling the application forms at the desired faculty. </h5>
+          <h5 className="admission-container-text">
+            6. Filling the application forms at the desired faculty.{" "}
+          </h5>
 
           <h5 className="admission-container-text">7. Four personal photos.</h5>
 
-          <h5 className="admission-container-text"> 8.The grades of the four-year bachelor (for master's degree)</h5>
+          <h5 className="admission-container-text">
+            {" "}
+            8.The grades of the four-year bachelor (for master's degree)
+          </h5>
 
-          <h5 className="admission-container-text">9. A diploma or pre-master certificate (for Ph.D.) </h5>
+          <h5 className="admission-container-text">
+            9. A diploma or pre-master certificate (for Ph.D.){" "}
+          </h5>
 
           <div>
             After fulfilling all previous requirements, an original copy of an

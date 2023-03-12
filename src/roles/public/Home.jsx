@@ -1,13 +1,12 @@
-// DONIA W RADWAN @DoniaAboelyazed @MOoradwan1
 //import { BsBook } from "react-icons/bs";
 
-import managInfo from "./managmentInfo.jpeg";
-import HR from "./humanResource.jpg";
-import eLearning from "./eLearning.jpeg";
-import digital from "./digitalTrans.png";
-import graduate from "./graduating.jpeg";
-import {HiArrowNarrowRight , HiOutlineAcademicCap} from "react-icons/hi";
-import {FaChalkboardTeacher , FaChild} from "react-icons/fa"
+import managInfo from "../../shared/images/managmentInfo.jpeg";
+import HR from "../../shared/images/humanResource.jpg";
+import eLearning from "../../shared/images/eLearning.jpeg";
+import digital from "../../shared/images/digitalTrans.png";
+import graduate from "../../shared/images/graduating.jpeg";
+import { HiArrowNarrowRight, HiOutlineAcademicCap } from "react-icons/hi";
+import { FaChalkboardTeacher, FaChild } from "react-icons/fa";
 export const Home = () => {
   return (
     <>
@@ -15,14 +14,24 @@ export const Home = () => {
         <div className="home-bg">
           <div className="home-btns">
             <button className="home-btn">
-             <h1 className="home-btn-icon"><FaChalkboardTeacher/> </h1> 
-              Staff & Employees</button>
-            
-            <button className="home-btn"> 
-            <h1 className="home-btn-icon"><FaChild/> </h1> 
-           Undergraduate students</button>
+              <h1 className="home-btn-icon">
+                <FaChalkboardTeacher />{" "}
+              </h1>
+              Staff & Employees
+            </button>
+
             <button className="home-btn">
-            <h1 className="home-btn-icon"><HiOutlineAcademicCap/> </h1> Postgraduate students</button>
+              <h1 className="home-btn-icon">
+                <FaChild />{" "}
+              </h1>
+              Undergraduate students
+            </button>
+            <button className="home-btn">
+              <h1 className="home-btn-icon">
+                <HiOutlineAcademicCap />{" "}
+              </h1>{" "}
+              Postgraduate students
+            </button>
           </div>
         </div>
       </div>
@@ -125,7 +134,10 @@ export const Home = () => {
             The fourth conference for educational and applied research for
             postgraduate studies will start tomorrow .
           </h6>
-          <div className="latestNews-container-btn"> <HiArrowNarrowRight/></div>
+          <div className="latestNews-container-btn">
+            {" "}
+            <HiArrowNarrowRight />
+          </div>
         </div>
 
         <div className="latestNews-container">
@@ -136,7 +148,10 @@ export const Home = () => {
             The fourth conference for educational and applied research for
             postgraduate studies will start tomorrow .
           </h6>
-          <div className="latestNews-container-btn"> <HiArrowNarrowRight/></div>
+          <div className="latestNews-container-btn">
+            {" "}
+            <HiArrowNarrowRight />
+          </div>
         </div>
       </div>
     </>

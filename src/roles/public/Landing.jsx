@@ -1,5 +1,4 @@
-// DONIA W RADWAN @DoniaAboelyazed @MOoradwan1
-import img1 from "./images.jpeg";
+import img1 from "../../shared/images/images.jpeg";
 
 export const Landing = () => {
   return (
@@ -62,7 +61,7 @@ export const Landing = () => {
           rather ensures entry to the selection process. There is a minimum
           level of academic achievement for each faculty that is decided by the
           supreme council of universities each year.
-          <br/>
+          <br />
           SCU offers outstanding undergraduate curricula to its students. Those
           programs are instructed by exceptional professors, PhD holders and
           scholars of internationally recognized research and academic
