@@ -154,12 +154,6 @@ export const DayPeriodTable = (props) => {
                         return (
                           <td
                             key={cell.period}
-                            // onClick={(event) => {
-                            //   props.emptyCellClick({
-                            //     cellNo: cell.period,
-                            //     day: item.day,
-                            //   });
-                            // }}
                             className={styles.empty_cell}
                           ></td>
                         );
@@ -172,12 +166,22 @@ export const DayPeriodTable = (props) => {
           </table>
         </div>
       </div>
-      <button type="submit" className="form-card-button form-card-button-save">
-        {t(`common.save`)}
-      </button>
-      <button type="reset" className="form-card-button form-card-button-cancel">
-        {t(`common.cancel`)}
-      </button>
+      {!props.view && (
+        <>
+          <button
+            type="submit"
+            className="form-card-button form-card-button-save"
+          >
+            {t(`common.save`)}
+          </button>
+          <button
+            type="reset"
+            className="form-card-button form-card-button-cancel"
+          >
+            {t(`common.cancel`)}
+          </button>
+        </>
+      )}
     </form>
   );
 };

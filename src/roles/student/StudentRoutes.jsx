@@ -5,6 +5,7 @@ import { Payment } from "./payment/Payment";
 import { AvailableCourses } from "./courses/AvailableCourses";
 import { StudentSidebar } from "./sidebar/StudentSidebar";
 import { Progress } from "./progress/Progress";
+import { Schedule } from "./schedule/Schedule";
 
 export const StudentRoutes = () => {
   return (
@@ -17,6 +18,7 @@ export const StudentRoutes = () => {
         <Route path="registeration" element={<Registeration />} />
         <Route path="progress" element={<Progress />} />
         <Route path="payment" element={<Payment />} />
+        <Route path="schedule" element={<Schedule />} />
         <Route path="*" element={<Portal />} />
       </Routes>
     </>

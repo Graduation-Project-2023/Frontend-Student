@@ -1,4 +1,5 @@
 import { useTranslation } from "react-i18next";
+import i18next from "i18next";
 
 // Component Props:
 // header: string
@@ -19,9 +20,14 @@ export const CommonTable = (props) => {
           </tr>
           {props.data.map((item) => (
             <tr key={item.id}>
-              {props.headings.map((heading) => (
-                <td key={heading.id}>{item[heading.name]}</td>
-              ))}
+              {props.headings.map((heading) => {
+                if (heading.name === "name") {
+                  i18next.language === "en"
+                    ? (item[heading.name] = item.englishName)
+                    : (item[heading.name] = item.arabicName);
+                }
+                return <td key={heading.id}>{item[heading.name]}</td>;
+              })}
             </tr>
           ))}
         </tbody>

@@ -138,7 +138,8 @@
     "gpa": "Accumulated GPA",
     "allowed_hrs": "Allowed Hours",
     "advisor": "Academic Advisor",
-    "allowed_courses": "Allowed Courses"
+    "allowed_courses": "Allowed Courses",
+    "schedule": "Schedule"
   },
   "info": {
     "personal": "Personal info",
