@@ -215,17 +215,19 @@ export const Registeration = () => {
     }, []);
 
     const backendData = { courseInstances: [...finalTableData] };
+
     if (tableRegistered.state) {
-      // POST request to update student's schedule
+      // PUT request to update student's schedule
       axios
-        .post(
+        .put(
           STUDENT_URL +
-            `/register/update?studentId=${authContext.id}&tableId=${tableRegistered.tableId}
-            `,
+            `/register/update?studentId=${authContext.id}&tableId=${tableRegistered.tableId}`,
           backendData
         )
         .then((res) => {
           console.log(res.data);
+          setTableData(res.data.classes);
+          setTableRegistered({ state: true, tableId: res.data.id });
           setUserUX((prev) => ({
             ...prev,
             tableSubmit: {
@@ -256,6 +258,7 @@ export const Registeration = () => {
         )
         .then((res) => {
           console.log(res.data);
+          setTableData(res.data.classes);
           setTableRegistered({ state: true, tableId: res.data.id });
           setUserUX((prev) => ({
             ...prev,
