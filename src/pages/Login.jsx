@@ -40,8 +40,8 @@ export const Login = () => {
       .then((res) => {
         console.log(res);
         setUserUX((prev) => ({ ...prev, submitLoading: false }));
-        authContext.login(res.data.id, res.data.role);
-        navigate("/login");
+        authContext.login(res.data.token, res.data.role, res.data.studentId);
+        navigate("/student");
       })
       .catch((error) => {
         setUserUX({

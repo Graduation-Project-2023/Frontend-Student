@@ -1,0 +1,97 @@
+.common_cont {
+  box-shadow: 0 0 0 0 grey inset;
+  border: 0px solid green;
+  padding: 20px 20px;
+  background: white;
+  width: 500px;
+  height: 400px;
+  @include flex(center, center, "");
+  text-align: center;
+  flex-direction: column;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &_icon {
+    border: 0px solid green;
+    @include flex(center, center, "");
+    border-radius: 5px;
+    @include colorandback(white, $Blue4);
+    width: 70px;
+    height: 70px;
+    font-size: 60px;
+  }
+
+  &_bar {
+    border: 0px solid black;
+    padding: 2%;
+    @include flex(center, center, "");
+    width: 100%;
+    height: auto;
+
+    &_box {
+      @include flex("", center, "");
+      border: 0px solid greenyellow;
+      background: linear-gradient($White4, $White4);
+      border-radius: 20px;
+      padding: 0%;
+      width: 80%;
+      height: auto;
+
+      &_line {
+        border: 0px solid red;
+        min-height: 15px;
+        border-radius: 20px;
+        background: $Blue4;
+        animation: loading 2s forwards cubic-bezier(0, 0, 0, 0);
+      }
+    }
+  }
+
+  &_btn {
+    padding: 40px 0 0 0;
+
+    & button {
+      background: $Blue4;
+      width: 400px;
+      height: 40px;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        background: $Blue3;
+      }
+    }
+  }
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@media (max-width: 700px) {
+  .common_cont {
+    &_text {
+      padding: 80px 0px;
+
+      & h1 {
+        font-size: 20px;
+        border: 0px solid black;
+      }
+
+      & h3 {
+        font-size: 12px;
+        border: 0px solid black;
+      }
+    }
+  }
+}

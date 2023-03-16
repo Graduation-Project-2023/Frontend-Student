@@ -15,19 +15,21 @@ export const Portal = () => {
   });
   const authContext = useAuth();
   const { t } = useTranslation();
+  // const config = {
+  //   headers: { Authorization: `Bearer ${authContext.token}` },
+  // };
 
-  // POST request to get student data by it's id
   useEffect(() => {
     setUserUX((prev) => ({
       ...prev,
       loading: true,
     }));
+    // GET request to get student data by it's id
     axios
-      .post(STUDENT_URL + "/info", { id: authContext.token })
+      .get(STUDENT_URL + `/info?studentId=${authContext.id}`)
       .then((res) => {
         console.log(res.data);
-        setStudentData(res.data.student);
-        authContext.setId(res.data.student.id);
+        setStudentData(res.data);
         setUserUX((prev) => ({
           ...prev,
           loading: false,

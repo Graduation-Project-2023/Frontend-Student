@@ -6,8 +6,7 @@ const AuthContext = createContext({
   role: "",
   id: "",
   isLoggedIn: false,
-  setId: (id) => {},
-  login: (token, role) => {},
+  login: (token, role, id) => {},
   logout: () => {},
 });
 
@@ -22,11 +21,13 @@ export const AuthContextProvider = (props) => {
 
   const userIsLoggedIn = !!token;
 
-  const loginHandler = (token, role) => {
+  const loginHandler = (token, role, id) => {
     cookies.set("token", token);
     cookies.set("role", role);
+    cookies.set("stud_id", id);
     setRole(role);
     setToken(token);
+    setStudId(id);
   };
 
   const logoutHandler = () => {
@@ -38,17 +39,11 @@ export const AuthContextProvider = (props) => {
     setRole(null);
   };
 
-  const studentIdSetter = (id) => {
-    cookies.set("stud_id", id);
-    setStudId(id);
-  };
-
   const contextValue = {
     token: token,
     role: role,
     id: studId,
     isLoggedIn: userIsLoggedIn,
-    setId: studentIdSetter,
     login: loginHandler,
     logout: logoutHandler,
   };

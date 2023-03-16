@@ -43,7 +43,7 @@ export const Registeration = () => {
     axios
       .get(
         STUDENT_URL +
-          `/table/${authContext.id}/decc46ba-7d4b-11ed-a1eb-0242ac120002`
+          `/table?studentId=${authContext.id}&semesterId=decc46ba-7d4b-11ed-a1eb-0242ac120002`
       )
       .then((res) => {
         console.log(res.data);
@@ -81,7 +81,7 @@ export const Registeration = () => {
     axios
       .get(
         STUDENT_URL +
-          `/available_classes/decc46ba-7d4b-11ed-a1eb-0242ac120002/${authContext.id}`
+          `/available_classes?studentId=${authContext.id}&semesterId=decc46ba-7d4b-11ed-a1eb-0242ac120002`
       )
       .then((res) => {
         console.log(res.data);
@@ -216,8 +216,14 @@ export const Registeration = () => {
 
     const backendData = { courseInstances: [...finalTableData] };
     if (tableRegistered.state) {
+      // POST request to update student's schedule
       axios
-        .post(STUDENT_URL + `/register/${tableRegistered.tableId}`, backendData)
+        .post(
+          STUDENT_URL +
+            `/register/update?studentId=${authContext.id}&tableId=${tableRegistered.tableId}
+            `,
+          backendData
+        )
         .then((res) => {
           console.log(res.data);
           setUserUX((prev) => ({
@@ -241,14 +247,16 @@ export const Registeration = () => {
           }));
         });
     } else {
+      // POST request to create a new student schedule
       axios
         .post(
           STUDENT_URL +
-            `/register/${authContext.id}/decc46ba-7d4b-11ed-a1eb-0242ac120002`,
+            `/register?studentId=${authContext.id}&semesterId=decc46ba-7d4b-11ed-a1eb-0242ac120002`,
           backendData
         )
         .then((res) => {
           console.log(res.data);
+          setTableRegistered({ state: true, tableId: res.data.id });
           setUserUX((prev) => ({
             ...prev,
             tableSubmit: {
