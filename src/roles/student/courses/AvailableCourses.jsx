@@ -108,19 +108,23 @@ export const AvailableCourses = () => {
   }, []);
 
   return (
-    <SidebarCont>
-      {courses.map((item) => {
-        return (
-          <div key={item.level} className="mb-5">
-            <CommonTable
-              header={`${item.level}`}
-              headings={TableHeadings}
-              data={item.courses}
-              userUX={userUX}
-            />
-          </div>
-        );
-      })}
-    </SidebarCont>
+    <div className="container">
+      <SidebarCont>
+        {courses.map((item) => {
+          return (
+            <div className="cont">
+              <div key={item.level} className="mb-5">
+                <CommonTable
+                  header={`${item.level}`}
+                  headings={TableHeadings}
+                  data={item.courses}
+                  userUX={userUX}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </SidebarCont>
+    </div>
   );
 };
