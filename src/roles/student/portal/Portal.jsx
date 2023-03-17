@@ -47,38 +47,42 @@ export const Portal = () => {
   }, [authContext.token]);
 
   return (
-    <SidebarCont>
-      {StudentInfoData.map((item) => {
-        return (
-          <div key={item.id} className="info">
-            <h1 className="info-title">{`${t(item.title)}`}</h1>
-            <div className="infoCard">
-              {item.data.map((items) => {
-                return (
-                  <div className="infoCard-item" key={items.id}>
-                    <span className="infoCard-item-title">
-                      {`${t(items.title)}`}
-                    </span>
-                    {userUX.error ? (
-                      userUX.errorMsg
-                    ) : userUX.loading ? (
-                      <span>loading....</span>
-                    ) : items.enum === true ? (
-                      <span>{t(`enums.${studentData[items.name]}`)}</span>
-                    ) : (
-                      <span>
-                        {studentData[items.name] === null
-                          ? t("enums.null")
-                          : studentData[items.name]}
-                      </span>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        );
-      })}
-    </SidebarCont>
+    <div className="container">
+      <SidebarCont>
+        <div className="cont">
+          {StudentInfoData.map((item) => {
+            return (
+              <div key={item.id} className="info">
+                <h1 className="info-title">{`${t(item.title)}`}</h1>
+                <div className="infoCard">
+                  {item.data.map((items) => {
+                    return (
+                      <div className="infoCard-item" key={items.id}>
+                        <span className="infoCard-item-title">
+                          {`${t(items.title)}`}
+                        </span>
+                        {userUX.error ? (
+                          userUX.errorMsg
+                        ) : userUX.loading ? (
+                          <span>loading....</span>
+                        ) : items.enum === true ? (
+                          <span>{t(`enums.${studentData[items.name]}`)}</span>
+                        ) : (
+                          <span>
+                            {studentData[items.name] === null
+                              ? t("enums.null")
+                              : studentData[items.name]}
+                          </span>
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </SidebarCont>
+    </div>
   );
 };

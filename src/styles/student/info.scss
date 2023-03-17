@@ -1,10 +1,11 @@
+.cont {
+  margin: 2rem 0;
+}
 .info {
-  margin: 2rem;
   &-title {
     color: #7f8187;
     @include font(2rem, 2.5rem, 700);
     text-align: center;
-    margin: 0.3rem;
   }
   .infoCard {
     background-color: #f5f5f5;

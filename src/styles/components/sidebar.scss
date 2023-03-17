@@ -1,11 +1,12 @@
 .sidebarContainer {
   display: grid;
-  grid-template-columns: 400px auto;
+  grid-template-columns: 20% 70%;
+  gap: 10%;
 }
 .sidebar {
   position: absolute;
   background-color: #2070ba;
-  margin: 32px 20px;
+  margin: 2rem;
   width: 350px;
   height: auto;
   border-radius: 5px;
@@ -34,8 +35,7 @@
   &-list {
     padding: 0 !important;
     list-style: none;
-    overflow-y: scroll;
-    max-height: calc(100vh - 290px);
+
     text-align: center;
 
     &-active {
