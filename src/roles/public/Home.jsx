@@ -8,9 +8,14 @@ import digital from "../../shared/images/digitalTrans.png";
 import graduate from "../../shared/images/graduating.jpeg";
 import { HiArrowNarrowRight, HiOutlineAcademicCap } from "react-icons/hi";
 import { FaChalkboardTeacher, FaChild } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
+
 
 export const Home = () => {
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
+  
   return (
     <>
       <div className="home">
@@ -20,43 +25,38 @@ export const Home = () => {
               <h1 className="home-btn-icon">
                 <FaChalkboardTeacher />
               </h1>
-              Staff & Employees
+              {t('home.staff')}
             </button>
 
             <button className="home-btn">
               <h1 className="home-btn-icon">
                 <FaChild />{" "}
               </h1>
-              Undergraduate students
+              {t('home.undergraduate')}
             </button>
             <button className="home-btn">
               <h1 className="home-btn-icon">
                 <HiOutlineAcademicCap />{" "}
               </h1>{" "}
-              Postgraduate students
+              {t('home.postgraduate')}
             </button>
           </div>
         </div>
       </div>
 
       <div className="aboutUs">
-        <h4 className="aboutUs-title">About Us</h4>
+        <h4 className="aboutUs-title">  {t('home.aboutUs')}</h4>
         <p className="aboutUs-text">
-          SCU is a community of talented students, teachers, and researchers. In
-          addition to, a wide range of professional, administrative support and
-          service staff; all of whom are committed to help change this world for
-          the better. Also, we encourage each other to work hard, not only to
-          earn degrees or public recognition, but also to be leaders in this
-          changing world.
+        {t('home.aboutUsDescription')}
         </p>
 
-        <h5 className="aboutUs-end">contact us</h5>
+        <h5 className="aboutUs-end">{t('home.contactUs')}</h5>
       </div>
 
       <div className="home-container">
         <div className="home-container-title">
-          Training courses and e-learning <br />
-          University services
+         <h3 className="home-container-title-name"> {t('home.training')}</h3>
+          <h3 className="home-container-title-name"> {t('home.services')}</h3>
         </div>
         <div className="home-container-grid">
           <div className="home-container-grid-news">
@@ -65,29 +65,27 @@ export const Home = () => {
               src={managInfo}
               alt="/"
             />
+            
             <h4 className="home-container-grid-news-title">
               {" "}
-              Managment information systems unit services
+              {t('home.managementUnit')}
             </h4>
             <h6 className="home-container-grid-news-content">
-              Book training for the basics of digital transformation certificate
-              for postgraduate studies abroad at Suez Canal University
+            {t('home.managementUnitNews')}
             </h6>
-            <button className="home-container-grid-news-btn">visit</button>
+            <button className="home-container-grid-news-btn">{t('home.more')}</button>
           </div>
 
           <div className="home-container-grid-news">
             <img className="home-container-grid-news-pic" src={HR} alt="/" />
             <h4 className="home-container-grid-news-title">
               {" "}
-              Human Resourse Develpoment
+              {t('home.HR')}
             </h4>
             <h6 className="home-container-grid-news-content">
-              Developing the skills of faculty members and students in order to
-              develop the educational and research process at Suez Canal
-              University.
+            {t('home.HRNews')}
             </h6>
-            <button className="home-container-grid-news-btn">visit</button>
+            <button className="home-container-grid-news-btn">{t('home.more')}</button>
           </div>
 
           <div className="home-container-grid-news">
@@ -96,13 +94,11 @@ export const Home = () => {
               src={eLearning}
               alt="/"
             />
-            <h4 className="home-container-grid-news-title"> e-Learning unit</h4>
+            <h4 className="home-container-grid-news-title"> {t('home.eLearning')}</h4>
             <h6 className="home-container-grid-news-content">
-              Supporting e-learning by converting university courses into
-              electronic courses and broadcasting them on the university’s
-              website, and spreading the culture of e-learning.
+            {t('home.eLearningNews')}
             </h6>
-            <button className="home-container-grid-news-btn">visit</button>
+            <button className="home-container-grid-news-btn">{t('home.more')}</button>
           </div>
           <div className="home-container-grid-news">
             <img
@@ -112,30 +108,27 @@ export const Home = () => {
             />
             <h4 className="home-container-grid-news-title">
               {" "}
-              Certificate in Fundamentals of Digital Transformation
+              {t('home.digitalTrans')}
             </h4>
             <h6 className="home-container-grid-news-content">
-              Book training for the basics of digital transformation certificate
-              for postgraduate studies abroad at Suez Canal University.
+            {t('home.managementUnitNews')}
             </h6>
 
-            <button className="home-container-grid-news-btn">visit</button>
+            <button className="home-container-grid-news-btn">{t('home.more')}</button>
           </div>
         </div>
       </div>
       <div className="latestNews">
         <div className="latestNews-title">
           {" "}
-          Latest news & Upcoming <br /> events
+          {t('home.latestNews')} <br /> {t('home.events')}
         </div>
 
         <div className="latestNews-container">
           <img className="latestNews-container-pic" src={graduate} alt="/" />
-          <h6 className="latestNews-container-date"> March,2023</h6>
+          <h6 className="latestNews-container-date"> {t('home.newsDates')}</h6>
           <h6 className="latestNews-container-news">
-            Towards future education in the light of sustainable development…
-            The fourth conference for educational and applied research for
-            postgraduate studies will start tomorrow .
+          {t('home.news')}
           </h6>
           <div className="latestNews-container-btn">
             {" "}
@@ -145,11 +138,9 @@ export const Home = () => {
 
         <div className="latestNews-container">
           <img className="latestNews-container-pic" src={graduate} alt="/" />
-          <h6 className="latestNews-container-date"> March,2023</h6>
+          <h6 className="latestNews-container-date">{t('home.newsDates')}</h6>
           <h6 className="latestNews-container-news">
-            Towards future education in the light of sustainable development…
-            The fourth conference for educational and applied research for
-            postgraduate studies will start tomorrow .
+          {t('home.news')}
           </h6>
           <div className="latestNews-container-btn">
             {" "}

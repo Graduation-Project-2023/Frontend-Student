@@ -81,7 +81,7 @@ export const Header = () => {
             />
           </label>
         </div>
-        <div className="hbody-text">Suez Canal University</div>
+        <div className="hbody-text">{t('common.universityName')}</div>
         <div>
           <img className="hbody-logo" src={logo} alt="/" />
         </div>{" "}

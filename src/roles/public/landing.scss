@@ -1,6 +1,6 @@
 .landing-nav {
-  direction: ltr;
-  background-color: #d9f5f0;
+  
+  background-color: rgba(247, 248, 252, 1) ;
   height: 50px;
   text-align: center;
   padding-top: 10px;
@@ -14,19 +14,28 @@
   }
 }
 
+.landing-nav-title:hover {
+  background-color:$Blue4 ;
+  color: black;
+  border-left: 12px solid $Blue4;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-right: 12px solid $Blue4;
+  border-radius: 20px;
+}
+
 .first-container {
   display: grid;
   grid-template-columns: 60% 40%;
   background-color: white;
   justify-content: center;
-  direction: ltr;
+  padding-bottom: 40px;
   margin-top: 50px;
-  height: 400px;
   align-items: center;
-  padding-left: 40px;
-  padding-right: 40px;
   color: grey;
   font-size: 18px;
+  padding-left: 60px;
+  padding-right: 60px;
 
   &-title {
     text-align: center;
@@ -36,7 +45,7 @@
     margin-bottom: 20px;
     margin-top: 20px;
   }
-
+  
   &-image {
     border-radius: 10px;
     height: 250px;
@@ -47,50 +56,55 @@
 }
 
 .second-container {
-  direction: ltr;
   display: grid;
   grid-template-columns: 70% 30%;
-  background-color: #d9f5f0;
-
-  height: 240px;
+  background-color: $Blue2 ;
   padding-left: 40px;
-  padding-left: 40px;
+  padding-right: 40px;
 
   &-text {
     margin-top: 20px;
-    color: grey;
+    color: $White;
     font-size: 18px;
+    padding: 20px;
   }
 
   &-title {
-    color: #003087;
+
+    color: $Black;
     font-weight: bold;
     text-align: center;
     margin-top: 20%;
+    padding: 20px;
   }
 }
 
 .third-container {
-  direction: ltr;
   display: grid;
   grid-template-columns: 30% 70%;
-  background-color: #ffffff;
-  height: 320px;
+  background-color: $Blue2;
   padding-left: 40px;
   padding-left: 40px;
 
   &-text {
     margin-top: 20px;
-    color: grey;
+    color: $White;
     font-size: 18px;
+    padding: 20px;
   }
 
   &-title {
-    color: #003087;
+    color: $Black;
     font-weight: bold;
     text-align: center;
     margin-top: 30%;
+    padding:20px;
   }
+}
+
+.seperatingColor{
+  height: 40px;
+  background-color: $Blue4 ;
 }
 
 /*.trapeziod1{
