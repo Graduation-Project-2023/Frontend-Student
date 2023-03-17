@@ -1,102 +1,92 @@
 // Reusable Components and Images
 import img1 from "../../shared/images/images.jpeg";
+import { useTranslation } from "react-i18next";
 
 export const AdmissionInfo = () => {
+  const { t } = useTranslation();
   return (
     <div>
       <nav className="landing-nav">
         <a href="/#" className="landing-nav-title">
-          Home
+          {t('landingNav.home')}
         </a>
         <a href="/#" className="landing-nav-title">
-          Colleges & Departments
+        {t('landingNav.colleges')}
         </a>
         <a href="/#" className="landing-nav-title">
-          Faculties & Institutes
+        {t('landingNav.faculties')}
         </a>
         <a href="/#" className="landing-nav-title">
-          Research
+        {t('landingNav.research')}
         </a>
         <a href="/#" className="landing-nav-title">
-          Centers & Units
+        {t('landingNav.center')}
         </a>
         <a href="/#" className="landing-nav-title">
-          News
+        {t('landingNav.new')}
         </a>
         <a href="/#" className="landing-nav-title">
-          Contact Us
+        {t('landingNav.contact')}
         </a>
       </nav>
 
       <div className="admission-first-container">
         <p>
-          We aim to offer our academic knowledge not only to our Egyptian
-          students, but also to whoever feels the need to learn, develop, and
-          succeed. At SCU, we aspire to supply our students with the knowledge
-          to help change the world. We have twenty faculties actively operating
-          on SCU old and new campuses, simultaneously, all to guarantee an
-          organized process of continuous learning and innovation.
+          {t("admission.firstcontainer1")}
           <br />
-          At SCU, you are free to explore the major you would like to know in
-          depth.
+          {t("admission.firstcontainer2")}
         </p>
         <img className="admission-first-container-image" src={img1} alt="/" />
       </div>
 
       <div className="admission-container">
-        <h4 className="admission-container-title">Admission Requierments</h4>
-        <p className="admission-container-text">
-          <h5 className="admission-container-text">
-            1. An equivalent certificate of the latest academic qualification
-            awarded by the supreme council of universities in Egypt.
-          </h5>
-          <h5 className="admission-container-text">
-            2. A letter of candidacy from the country the student comes from to
-            the faculty the student wishes to study at, clarifying the providing
-            body, the university year in which the student wishes to study, and
-            the degree abstained by the student.
-          </h5>
+        <div>
+          <h4 className="admission-container-title">
+            {t("admission.admissionTitle")}
+          </h4>
+          <p className="admission-container-text">
+            <h5 className="admission-container-text">
+              {t("admission.admission1")}
+            </h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission2")}
+            </h5>
 
-          <h5 className="admission-container-text">
-            3. A copy of the student's passport that is valid for one whole
-            year.
-          </h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission3")}
+            </h5>
 
-          <h5 className="admission-container-text">
-            4. A document which proves that the student does not have AIDS.
-            before seeking admission or registration.
-          </h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission4")}
+            </h5>
 
-          <h5 className="admission-container-text">
-            5. An Excellence certificate valid for one one year for medicine
-            students
-          </h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission5")}
+            </h5>
 
-          <h5 className="admission-container-text">
-            6. Filling the application forms at the desired faculty.
-          </h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission6")}
+            </h5>
 
-          <h5 className="admission-container-text">7. Four personal photos.</h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission7")}
+            </h5>
 
-          <h5 className="admission-container-text">
-            8.The grades of the four-year bachelor (for master's degree)
-          </h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission8")}
+            </h5>
 
-          <h5 className="admission-container-text">
-            9. A diploma or pre-master certificate (for Ph.D.){" "}
-          </h5>
+            <h5 className="admission-container-text">
+              {t("admission.admission9")}
+            </h5>
 
-          <div>
-            After fulfilling all previous requirements, an original copy of an
-            Information form and three photocopies of it have to be submitted
-            with the student's signature on them. Enclosing a photocopy of the
-            approval embassy's approval of the student's study at the desired
-            faculty, clarifying the providing body, the university year in which
-            the student wishes to study and the degree the student wishes to
-            take.
-          </div>
-        </p>
+            <div>
+            {t('admission.admissionFinalText')}
+            </div>
+          </p>
+        </div>
       </div>
+      <div></div>
     </div>
   );
 };

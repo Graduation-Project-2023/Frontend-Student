@@ -81,7 +81,8 @@
     "from": "From",
     "to": "To",
     "lecturer": "Lecturer",
-    "place": "Place"
+    "place": "Place",
+    "universityName":"Suez Canal University"
   },
   "login": {
     "email": "E-mail",
@@ -169,5 +170,70 @@
     "CHRISTIAN": "Christian",
     "MUSLIM": "Muslim",
     "null": "Undefined"
-  }
+  },
+  "home":{
+    "staff":"Staff and employees",
+    "postgraduate":"postgraduate students",
+    "undergraduate":"undergraduate students",
+    "aboutUs":"About Us",
+    "aboutUsDescription":"SCU is a community of talented students, teachers, and researchers. In addition to, a wide range of professional, administrative support and service staff; all of whom are committed to help change this world for the better. Also, we encourage each other to work hard, not only to earn degrees or public recognition, but also to be leaders in this changing world",
+    "contactUs":"contact us",
+    "training":"Training courses and e-learning",
+    "services":"University services",
+    "more":"More",
+    "managementUnit":"Managment information systems unit services",
+    "managementUnitNews":"Book training for the basics of digital transformation certificate for postgraduate studies abroad at Suez Canal University",
+    "HR":"Human Resourse Development",
+    "HRNews":"Developing the skills of faculty members and students in order to develop the educational and research process at Suez Canal University",
+    "eLearning":"E-Learning Unit",
+    "eLearningNews":"Supporting e-learning by converting university courses into electronic courses and broadcasting them on the university’s website, and spreading the culture of e-learning",
+    "digitalTrans":"Certificate in Fundamentals of Digital Transformation",
+    "latestNews":"Latest news & Upcoming",
+    "events":"events",
+    "newsDates":"March,2023",
+    "news":"Towards future education in the light of sustainable development… The fourth conference for educational and applied research for postgraduate studies will start tomorrow"
+
+  },
+  "landing":{
+    "welcome":"Welcome to Suez Canal University",
+    "welcomeTextOne":"From your professors to your friends and teammates, Suez Canal University is a vibrant community where you can always feel supported and encouraged. No matter where you come from, this university is home and is designed to help you learn about life and work. Suez Canal University has 16 faculties and 4 Institutes which allow students choose freely between multiple varieties.",
+    "welcomeTextTwo":"SCU is a community of talented students, teachers, and researchers. In addition to a wide range of professional, administrative support and service staff; all of whom are committed to help change this world for the better. Also, we encourage each other to work hard, not only to earn degrees or public recognition, but also to be leaders in this changing world. SCU seeks to prepare students for our diverse and connected world by creating an inclusive educational experience and a culture that respects the dignity of each individual on our campus. We are looking forward be an inclusive university that addresses",
+    "secondContainer1":"Applicants must complete all secondary school graduation requirements, maintain a high level of academic performance and submit all required documents before the set deadlines. Having the minimum academic requirements does not guarantee admission to the University, but rather ensures entry to the selection process. There is a minimum level of academic achievement for each faculty that is decided by the supreme council of universities each year.",
+    "secondContainer2":"SCU offers outstanding undergraduate curricula to its students. Those programs are instructed by exceptional professors, PhD holders and scholars of internationally recognized research and academic institutes. We are proud to have a unique and well qualified staff that brings perfection to our students and to our institute.",
+    "secondContainerTitle1":"How to qualify",
+    "secondContainerTitle2":"for admission",
+    "thirdcontainerText":"To qualify for admission, applicants must complete secondary school graduation requirements and submit all required documents before the deadline to Join SCU for the academic year. Here are the documents needed to join us at SCU: ",
+    "thirdcontainerStep1":"1. Original Secondary-year school Certificate",
+    "thirdcontainerStep2":"2. Original Birth Certificate ",
+    "thirdcontainerStep3":"3. 10 recent personal photos ",
+    "thirdcontainerStep4":"4. The original military ID for male students who are above 19 years (Namouzag 6 Gond)",
+    "thirdcontainerStep5":"5. Military Service Form (Namouzag 2 Gond), for Egyptian male students only ",
+    "thirdcontainerStep6":"6. A copy of the students' national ID card. ",
+    "thirdcontainerStep7":"7. A Medical report stamped by the Medical sector of the Egyptian Ministry of Higher Education The student must fill this application form and submit it before the due date",
+    "thirdcontainerTitle":"How to apply"
+  },
+  "admission":{
+    "firstcontainer1":"We aim to offer our academic knowledge not only to our Egyptian students, but also to whoever feels the need to learn, develop, and succeed. At SCU, we aspire to supply our students with the knowledge to help change the world. We have twenty faculties actively operating on SCU old and new campuses, simultaneously, all to guarantee an organized process of continuous learning and innovation.",
+    "firstcontainer2":"At SCU, you are free to explore the major you would like to know in depth.",
+    "admissionTitle":"Admission Requirements",
+    "admission1":"1. An equivalent certificate of the latest academic qualification awarded by the supreme council of universities in Egypt.",
+    "admission2":"2. A letter of candidacy from the country the student comes from to the faculty the student wishes to study at, clarifying the providing body, the university year in which the student wishes to study, and the degree abstained by the student.",
+    "admission3":"3. A copy of the student's passport that is valid for one whole year.",
+    "admission4":"4. A document which proves that the student does not have AIDS. before seeking admission or registration.",
+    "admission5":"5. An Excellence certificate valid for one one year for medicine students",
+    "admission6":"6. Filling the application forms at the desired faculty.",
+    "admission7":"7. Four personal photos.",
+    "admission8":"8.The grades of the four-year bachelor (for master's degree)",
+    "admission9":"9. A diploma or pre-master certificate (for Ph.D.)",
+    "admissionFinalText":"After fulfilling all previous requirements, an original copy of an Information form and three photocopies of it have to be submitted with the student's signature on them. Enclosing a photocopy of the approval embassy's approval of the student's study at the desired faculty, clarifying the providing body, the university year in which the student wishes to study and the degree the student wishes to take."
+  },
+  "landingNav":{
+    "home":"Home",
+    "colleges":"Colleges & Departments",
+    "faculties":"Faculties & Institutes",
+    "research":"Research",
+    "center":"Centers & Units",
+    "new":"News",
+    "contact":"Contact Us"
+}
 }
