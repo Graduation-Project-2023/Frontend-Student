@@ -4,7 +4,11 @@
   box-sizing: border-box;
 }
 .hbody {
-  background: linear-gradient(160deg, $Blue2 50%, rgb(178, 178, 254) 10%, $Blue4 60%);
+  background: linear-gradient(
+    160deg,
+    $Blue2 50%,
+    $Blue4 50%
+  );
   height: 60px;
   display: flex;
   flex-direction: row;
