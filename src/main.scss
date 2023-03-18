@@ -1,8 +1,10 @@
 @import "./styles/abstract/mixins";
 @import "./styles/base/reset";
-@import "../src/roles/public/home";
-@import "../src/roles/public/landing";
-@import "../src/roles/public/admissionInfo";
+@import "../src/roles/public/home/home";
+@import "../src/roles/public/landing/landing";
+@import "../src/roles/public/admission/admissionInfo";
+@import "../src/roles/public/undergraduate/undergraduate";
+@import "../src/roles/public/staff/staff";
 @import "./styles/layout/header";
 @import "./styles/student/info";
 @import "./styles/components/loginTemplate";

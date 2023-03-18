@@ -1,14 +1,14 @@
 import { useTranslation } from "react-i18next";
 
 // Reusable Components and Images
-import managInfo from "../../shared/images/managmentInfo.jpeg";
-import HR from "../../shared/images/humanResource.jpg";
-import eLearning from "../../shared/images/eLearning.jpeg";
-import digital from "../../shared/images/digitalTrans.png";
-import graduate from "../../shared/images/graduating.jpeg";
+import managInfo from "../../../shared/images/managmentInfo.jpeg";
+import HR from "../../../shared/images/humanResource.jpg";
+import eLearning from "../../../shared/images/eLearning.jpeg";
+import digital from "../../../shared/images/digitalTrans.png";
+import graduate from "../../../shared/images/graduating.jpeg";
 import { HiArrowNarrowRight, HiOutlineAcademicCap } from "react-icons/hi";
 import { FaChalkboardTeacher, FaChild } from "react-icons/fa";
-import { LandingNavbar } from "../../components/header/LandingNavbar";
+import { LandingNavbar } from "../../../components/header/LandingNavbar";
 
 export const Home = () => {
   const { t } = useTranslation();

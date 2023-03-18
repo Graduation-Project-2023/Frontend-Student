@@ -1,6 +1,8 @@
-import img1 from "../../shared/images/images.jpeg";
 import { useTranslation } from "react-i18next";
-import { LandingNavbar } from "../../components/header/LandingNavbar";
+
+// Reusable Components and Images
+import { LandingNavbar } from "../../../components/header/LandingNavbar";
+import img1 from "../../../shared/images/images.jpeg";
 
 export const Landing = () => {
   const { t } = useTranslation();

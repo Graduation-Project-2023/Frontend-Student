@@ -1,7 +1,7 @@
 // Reusable Components and Images
-import img1 from "../../shared/images/images.jpeg";
+import img1 from "../../../shared/images/images.jpeg";
 import { useTranslation } from "react-i18next";
-import { LandingNavbar } from "../../components/header/LandingNavbar";
+import { LandingNavbar } from "../../../components/header/LandingNavbar";
 
 export const AdmissionInfo = () => {
   const { t } = useTranslation();

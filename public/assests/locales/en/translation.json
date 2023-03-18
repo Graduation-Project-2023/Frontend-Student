@@ -235,5 +235,9 @@
     "center": "Centers & Units",
     "new": "News",
     "admission_info": "Admission Info"
+  },
+  "diplomaConditions": {
+    "1": "The student must hold a bachelor's degree from one of the universities recognized by the supreme council of universities.",
+    "2": "The student must meet the conditions of admission as well as the department's approval."
   }
 }
