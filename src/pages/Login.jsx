@@ -6,7 +6,7 @@ import { useAuth } from "../hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
-import cactus from "../shared/images/cactus.png";
+import logo from "../shared/images/logo.png";
 import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const Login = () => {
@@ -82,7 +82,7 @@ export const Login = () => {
           required
         />
       }
-      logo={cactus}
+      logo={logo }
       forget={true}
       title={t(`login.subtitle`)}
       button={t(`login.button`)}

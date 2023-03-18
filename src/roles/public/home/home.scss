@@ -12,11 +12,15 @@
   }
 
   &-btns {
-    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
   }
 
   &-btn {
-    margin-top: 320px;
+    z-index: 10;
+    margin-bottom: -50px;
     height: 260px;
     width: 250px;
     justify-content: center;
@@ -26,16 +30,26 @@
     color: $Blue2;
     font-weight: bold;
     filter: drop-shadow(3px 3px 3px rgb(216, 213, 213));
+
+    &-side {
+      z-index: 0;
+      margin: 0px -20px -20px -20px;
+    }
+
     &-icon {
       font-size: 100px;
+    }
+
+    &:hover {
+      background-color: $Blue2;
+      color: white;
     }
   }
 }
 .aboutUs {
   background-color: $White;
-  
+
   &-title {
-   
     padding: 20px 40px 20px 40px;
     color: $Blue2;
   }
@@ -44,7 +58,7 @@
     color: $Grey;
     padding-left: 40px;
     padding-right: 40px;
-    
+
     font-size: 20px;
   }
 
@@ -54,41 +68,39 @@
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 40px;
-    
   }
 }
-.aboutUs-end:hover{
-  
-    text-decoration: underline;
-    color: $Black;
-  
+.aboutUs-end:hover {
+  text-decoration: underline;
+  color: $Black;
 }
 .home-container {
-  background-color: $Blue2 ;
+  background-color: $Blue2;
 
   &-title {
     padding-top: 25px;
-    &-name{
-    color: $Blue1 ;
-    text-align: center;
-    
-    font-size: 25px;
-    font-weight: bold;
-  }
+    &-name {
+      color: $Blue1;
+      text-align: center;
+
+      font-size: 25px;
+      font-weight: bold;
+    }
   }
 
   &-grid {
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-    
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
     padding: 40px;
-    height: 500px;
+    width: 100%;
+
     &-news {
-      
-      background-color: $Blue5 ;
+      background-color: $Blue5;
       width: 300px;
       height: 400px;
-      place-self: center;
 
       &-pic {
         width: 300px;
@@ -96,29 +108,28 @@
 
       &-title {
         padding: 6px;
-        color: $Blue2 ;
+        color: $Blue2;
         text-decoration: underline;
-        
       }
+
       &-content {
-        padding:6px;
-        color: $Grey ;
+        padding: 6px;
+        color: $Grey;
       }
 
       &-btn {
         width: 90px;
         border-radius: 15px;
         background-color: $Grey3;
-        color: $White ;
+        color: $White;
         border-color: transparent;
         display: none;
         position: absolute;
         margin: 20px;
-        left:45%;
+        left: 45%;
         top: 95%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
-        
       }
     }
   }
@@ -130,16 +141,14 @@
 
 .home-container-grid-news:hover .home-container-grid-news-btn {
   display: block;
-  
 }
 
-.home-container-grid-news-btn:hover{
+.home-container-grid-news-btn:hover {
   color: white;
-  background-color: $Blue1 ;
+  background-color: $Blue1;
 }
 
 .latestNews {
-
   height: 500px;
   background: -webkit-linear-gradient(
     100deg,
@@ -173,7 +182,7 @@
     }
     &-date {
       margin: 15px;
-      background-color: $Blue2 ;
+      background-color: $Blue2;
       color: white;
       width: 25%;
       height: 25px;

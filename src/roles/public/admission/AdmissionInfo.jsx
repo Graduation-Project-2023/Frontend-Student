@@ -1,35 +1,13 @@
 // Reusable Components and Images
-import img1 from "../../shared/images/images.jpeg";
+import img1 from "../../../shared/images/images.jpeg";
 import { useTranslation } from "react-i18next";
+import { LandingNavbar } from "../../../components/header/LandingNavbar";
 
 export const AdmissionInfo = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <nav className="landing-nav">
-        <a href="/#" className="landing-nav-title">
-          {t('landingNav.home')}
-        </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.colleges')}
-        </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.faculties')}
-        </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.research')}
-        </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.center')}
-        </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.new')}
-        </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.contact')}
-        </a>
-      </nav>
-
+      <LandingNavbar />
       <div className="admission-first-container">
         <p>
           {t("admission.firstcontainer1")}
@@ -80,9 +58,7 @@ export const AdmissionInfo = () => {
               {t("admission.admission9")}
             </h5>
 
-            <div>
-            {t('admission.admissionFinalText')}
-            </div>
+            <div>{t("admission.admissionFinalText")}</div>
           </p>
         </div>
       </div>
