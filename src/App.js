@@ -11,14 +11,17 @@ import { Footer } from "./common/Footer";
 import { ForgetPwd } from "./pages/ForgetPwd";
 import { ResetPwd } from "./pages/ResetPwd";
 import { Header } from "./components/header/Header";
-////////// Public Routes //////////
-import { Home } from "./roles/public/Home.jsx";
 ////////// Private Routes //////////
 import { StudentRoutes } from "./roles/student/StudentRoutes";
-import { TestingPage } from "./common/TestingPage";
+////////// Public Routes //////////
+import { Home } from "./roles/public/Home.jsx";
+import { Unauthorized } from "./pages/Unauthorized";
+import { Redirecting } from "./pages/Redirecting";
 import { Landing } from "./roles/public/Landing";
 import { AdmissionInfo } from "./roles/public/AdmissionInfo";
 import { DiplomaInfo } from "./roles/public/DiplomaInfo";
+import { NotFound } from "./pages/NotFound";
+import { TestingPage } from "./common/TestingPage";
 import { Undergraduate } from "./roles/public/Undergraduate";
 import { Staff } from "./roles/public/Staff";
 import { Arrow } from "./roles/public/Arrow";
@@ -41,6 +44,8 @@ function App() {
         <Route path="arrow" element={<Arrow />} />
         <Route path="admission_info" element={<AdmissionInfo />} />
         <Route path="diploma_info" element={<DiplomaInfo />} />
+        <Route path="unauthorized" element={<Unauthorized />} />
+        <Route path="redirecting" element={<Redirecting />} />
         <Route path="testing" element={<TestingPage />} />
 
         {/* Student Routes (Private) */}
@@ -48,7 +53,7 @@ function App() {
           <Route path="student/*" element={<StudentRoutes />} />
         </Route>
 
-        <Route path="*" element={<TestingPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </div>

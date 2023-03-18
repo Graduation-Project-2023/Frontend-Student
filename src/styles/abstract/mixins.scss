@@ -11,10 +11,10 @@
   -o-#{$prop}: #{$value};
   #{$prop}: #{$value};
 }
-@mixin font($fontSize, $lineHeight) {
+@mixin font($fontSize, $lineHeight, $fontWeight) {
   font-family: "Inter";
   font-style: normal;
-  font-weight: 400;
+  font-weight: $fontWeight;
   font-size: $fontSize;
   line-height: $lineHeight;
 }
@@ -33,29 +33,17 @@
   background-color: $backColor;
 }
 
-//Variables
-$Brown2: rgb(130, 117, 117);
-$Black2: #444444;
+$Blue1: #003087;
+$Blue2: #2070ba;
+$Blue3: #3d7dca;
+$Blue4: #dfe3ee;
+$Blue5:rgba(247, 248, 252, 1);
 
-//scale from 1 to 4, 1 is close to white and 4 dark blue
-$Blue1: #76a6e0;
-$Blue2: #6892c5;
-$Blue3: #5c8bc5;
-$Blue4: #3d7dca;
+$White: #ffffff;
+$Grey: #7f8187;
+$Black: #444444;
 
-//scale from 1 to 4, 1 is close to white and 4 black
-$Grey1: #bbbdc080;
-$Grey1: #bbbdc080;
-$Grey2: #a2aab4;
-$Grey3: #858d97;
-$Grey4: #686d72;
-
-//scale from 1 to 8, 1 is close to white and 8 black
-$White1: #f8f8f9;
-$White2: #f7f8fc;
-$White3: #ede7e7;
-$White4: #dfe3ee;
-$White5: #d9d9d9;
-$White6: #c8cacd;
-$White7: #bdc0c9;
-$White8: #bbbdc0;
+$Grey3: #7f8187;
+$White2: #ffffff;
+$White4: #ffffff;
+$White5: #ffffff;

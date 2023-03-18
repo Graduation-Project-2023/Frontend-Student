@@ -1,5 +1,12 @@
 @import "./styles/abstract/mixins";
 @import "./styles/base/reset";
 @import "../src/roles/public/home";
+@import "../src/roles/public/landing";
+@import "../src/roles/public/admissionInfo";
 @import "./styles/layout/header";
+@import "./styles/student/info";
 @import "./styles/components/loginTemplate";
+@import "./styles/components/sidebar";
+@import "./styles/components/commonPage";
+@import "./components/table/common/commonTable";
+@import "./components/table/vertical/verticalTable";

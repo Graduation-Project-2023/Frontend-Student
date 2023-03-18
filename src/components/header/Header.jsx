@@ -4,8 +4,8 @@ import { useAuth } from "../../hooks/useAuth";
 import i18next from "i18next";
 import axios from "axios";
 import { BASE_URL } from "../../shared/API";
-import { AiFillFacebook, AiFillYoutube, AiOutlineSearch } from "react-icons/ai";
-import logo from "./logo.png";
+import { AiOutlineSearch } from "react-icons/ai";
+import logo from "../../shared/images/logo2.png";
 
 const languages = [
   {
@@ -55,17 +55,20 @@ export const Header = () => {
       });
   };
 
+  const toggleLang = () => {
+    const nextLanguage = languages.find(
+      (lang) => lang.code !== i18next.language
+    );
+    i18next.changeLanguage(nextLanguage.code);
+  };
+
   return (
     <div>
       <header className="hbody">
         <div className="hbody-options">
-          <button className="langbtn">EN</button>
-          <a href="/#" className="fblogo">
-            <AiFillFacebook />
-          </a>
-          <a href="/#" className="ytlogo">
-            <AiFillYoutube />
-          </a>
+          <button className="langbtn" onClick={toggleLang}>
+            {i18next.language === "en" ? "AR" : "EN"}
+          </button>
           <label className="search-icon">
             <AiOutlineSearch />
             <input
@@ -78,9 +81,18 @@ export const Header = () => {
             />
           </label>
         </div>
-        <div className="hbody-text">suez canal university</div>
+        <div className="hbody-text">{t('common.universityName')}</div>
         <div>
           <img className="hbody-logo" src={logo} alt="/" />
+        </div>{" "}
+        <div>
+          <button
+            onClick={() => {
+              authContext.logout();
+            }}
+          >
+            log out
+          </button>
         </div>
       </header>
 
@@ -88,5 +100,3 @@ export const Header = () => {
     </div>
   );
 };
-
-export default Header;

@@ -1,0 +1,99 @@
+.sklCont {
+  background: #aadcd3;
+  height: 100vh;
+  width: 100vw;
+
+  &-nav {
+    background-image: url(nav.png);
+    height: 9%;
+  }
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 91%;
+
+    &-card {
+      margin: 0.5rem;
+      padding: 0.5rem 0.5rem;
+      background: whitesmoke;
+      border-radius: 5px;
+      height: 60%;
+      width: 22%;
+
+      &-img {
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30%;
+      }
+    }
+  }
+
+  &-spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: conic-gradient(white, #e6e6e6);
+    animation: rotate 1s linear infinite;
+  }
+}
+
+.sklCont-spinner:before,
+.sklCont-spinner:after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.sklCont-spinner:before {
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  left: 10px;
+  background: whitesmoke;
+  border-radius: 50%;
+}
+
+.sklCont-spinner:after {
+  height: 10px;
+  width: 10px;
+  background-color: #e6e6e6;
+  top: 0;
+  left: 17px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes load {
+  to {
+    background-position-x: -30%;
+  }
+}
+
+.sklCont-line {
+  background: #e6e6e6;
+  border-radius: 5px;
+  height: 10px;
+  width: 100%;
+  margin: 5% 0%;
+  background: linear-gradient(
+    100deg,
+    #e6e6e6 40%,
+    rgb(240, 240, 240) 50%,
+    #e6e6e6 60%
+  );
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1s load ease-in-out infinite;
+}

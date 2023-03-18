@@ -3,9 +3,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 .hbody {
-  background: linear-gradient(160deg, #2070BA 50%, #70a1d9 20%, #ebf0f3d4 60%);
+  background: linear-gradient(160deg, $Blue2 50%, rgb(178, 178, 254) 10%, $Blue4 60%);
   height: 60px;
   display: flex;
   flex-direction: row;
@@ -18,10 +17,10 @@
     justify-content: space-between;
   }
   &-text {
-    color: #22277a;
+    color: $Blue1;
     font-size: 30px;
     font-weight: bold;
-    text-shadow: 2px 2px rgb(128, 128, 151);
+    text-shadow: 1px 1px rgb(219, 219, 233);
   }
 
   &-logo {
@@ -33,27 +32,14 @@
   background-color: white;
   width: 25px;
   font-size: 15px;
-  color: #39a692;
+  color: $Blue2;
   border-color: transparent;
-}
-.fblogo {
-  list-style: none;
-  color: white;
-  padding: 5px;
-  font-size: 25px;
-}
-
-.ytlogo {
-  color: white;
-  list-style: none;
-  padding: 5px;
-  font-size: 25px;
 }
 
 .search-field {
   font-size: 15px;
   background-color: transparent;
-  background-image: url("https://images.app.goo.gl/rtenKmVv6ZWZ6hme6");
+  // background-image: url("https://images.app.goo.gl/rtenKmVv6ZWZ6hme6");
   background-position: 5px center;
   background-repeat: no-repeat;
   background-size: 24px 24px;
@@ -61,7 +47,6 @@
   cursor: pointer;
   height: 30px;
   border-radius: 15px;
-
   margin: 3px 0;
   padding: 0 0 0 34px;
   position: relative;
@@ -72,7 +57,7 @@
 }
 
 .search-field:focus {
-  background-color: #c4dedad4;
+  background-color: $Blue4;
   border: 2px solid #fffffe;
   cursor: text;
   outline: 0;
@@ -83,4 +68,5 @@
 .search-icon {
   font-size: 20px;
   color: white;
+  margin-left: 10px;
 }

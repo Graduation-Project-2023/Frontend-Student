@@ -5,7 +5,7 @@ import { STUDENT_URL } from "../shared/API";
 import { useTranslation } from "react-i18next";
 import { BiError } from "react-icons/bi";
 import { FormButton } from "../components/buttons/Buttons";
-import lock from "./lock.png";
+import lock from "../shared/images/lock.png";
 import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const ResetPwd = () => {
@@ -100,31 +100,26 @@ export const ResetPwd = () => {
       input2={t(`reset.conf-pswrd`)}
       inputone={
         <input
-        type="password"
-        name="password"
-        id="password"
-        value={input.password}
-        onChange={onInputChange}
-        onBlur={validateInput}
-        required
-        />    
-      }
-
-      inputtwo={
-        <input
-        type="password"
-        name="confirmPassword"
-        id="confirmPassword"
-        value={input.confirmPassword}
-        onChange={onInputChange}
-        onBlur={validateInput}
-        required
+          type="password"
+          name="password"
+          id="password"
+          value={input.password}
+          onChange={onInputChange}
+          onBlur={validateInput}
+          required
         />
       }
-
-
-
-
+      inputtwo={
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          value={input.confirmPassword}
+          onChange={onInputChange}
+          onBlur={validateInput}
+          required
+        />
+      }
       logo={lock}
       forget={false}
       title=" "
@@ -132,4 +127,3 @@ export const ResetPwd = () => {
     />
   );
 };
-
