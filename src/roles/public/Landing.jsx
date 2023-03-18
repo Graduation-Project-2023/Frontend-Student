@@ -1,43 +1,21 @@
 import img1 from "../../shared/images/images.jpeg";
 import { useTranslation } from "react-i18next";
+import { LandingNavbar } from "../../components/header/LandingNavbar";
 
 export const Landing = () => {
   const { t } = useTranslation();
 
   return (
     <div>
-      <nav className="landing-nav">
-        <a href="#" className="landing-nav-title">
-          {t("landingNav.home")}
-        </a>
-        <a href="#" className="landing-nav-title">
-          {t("landingNav.colleges")}
-        </a>
-        <a href="#" className="landing-nav-title">
-          {t("landingNav.faculties")}
-        </a>
-        <a href="#" className="landing-nav-title">
-          {t("landingNav.research")}
-        </a>
-        <a href="#" className="landing-nav-title">
-          {t("landingNav.center")}
-        </a>
-        <a href="#" className="landing-nav-title">
-          {t("landingNav.new")}
-        </a>
-        <a href="#" className="landing-nav-title">
-          {t("landingNav.contact")}
-        </a>
-      </nav>
-
+      <LandingNavbar />
       <div className="first-container">
-        <p>
+        <span>
           <h3 className="first-container-title">{t("landing.welcome")}</h3>
 
           {t("landing.welcomeTextOne")}
           <br />
           {t("landing.welcomeTextTwo")}
-        </p>
+        </span>
         <img className="first-container-image" src={img1} alt="/" />
       </div>
 

@@ -8,12 +8,14 @@ import digital from "../../shared/images/digitalTrans.png";
 import graduate from "../../shared/images/graduating.jpeg";
 import { HiArrowNarrowRight, HiOutlineAcademicCap } from "react-icons/hi";
 import { FaChalkboardTeacher, FaChild } from "react-icons/fa";
+import { LandingNavbar } from "../../components/header/LandingNavbar";
 
 export const Home = () => {
   const { t } = useTranslation();
 
   return (
     <>
+      <LandingNavbar />
       <div className="home">
         <div className="home-bg">
           <div className="home-btns">
