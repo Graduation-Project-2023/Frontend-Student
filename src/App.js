@@ -9,6 +9,7 @@ import "./main.scss";
 import { Login } from "./pages/Login";
 import { Footer } from "./common/Footer";
 import { ForgetPwd } from "./pages/ForgetPwd";
+import { GetEmail } from "./pages/GetEmail";
 import { ResetPwd } from "./pages/ResetPwd";
 import { Header } from "./components/header/Header";
 ////////// Private Routes //////////
@@ -35,6 +36,7 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="forgetpwd" element={<ForgetPwd />} />
         <Route path="resetpwd/:token" element={<ResetPwd />} />
+        <Route path="getEmail" element={<GetEmail />} />
         <Route path="landing" element={<Landing />} />
         <Route path="admission_info" element={<AdmissionInfo />} />
         <Route path="undergraduate" element={<Undergraduate />} />
