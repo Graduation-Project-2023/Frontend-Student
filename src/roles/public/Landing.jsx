@@ -6,27 +6,27 @@ export const Landing = () => {
 
   return (
     <div>
-       <nav className="landing-nav">
-        <a href="/#" className="landing-nav-title">
-          {t('landingNav.home')}
+      <nav className="landing-nav">
+        <a href="#" className="landing-nav-title">
+          {t("landingNav.home")}
         </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.colleges')}
+        <a href="#" className="landing-nav-title">
+          {t("landingNav.colleges")}
         </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.faculties')}
+        <a href="#" className="landing-nav-title">
+          {t("landingNav.faculties")}
         </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.research')}
+        <a href="#" className="landing-nav-title">
+          {t("landingNav.research")}
         </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.center')}
+        <a href="#" className="landing-nav-title">
+          {t("landingNav.center")}
         </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.new')}
+        <a href="#" className="landing-nav-title">
+          {t("landingNav.new")}
         </a>
-        <a href="/#" className="landing-nav-title">
-        {t('landingNav.contact')}
+        <a href="#" className="landing-nav-title">
+          {t("landingNav.contact")}
         </a>
       </nav>
 
@@ -48,7 +48,6 @@ export const Landing = () => {
           {t("landing.secondContainer2")}
         </p>
         <h5 className="second-container-title">
-      
           {t("landing.secondContainerTitle1")} <br />{" "}
           {t("landing.secondContainerTitle2")}
         </h5>
