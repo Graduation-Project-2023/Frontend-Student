@@ -104,6 +104,11 @@
     "button": "Send",
     "subtitle": "Forgot Your Password?"
   },
+  "gtEmail": {
+    "NatID": "National ID",
+    "button": "Send",
+    "subtitle": "Please  enter your national ID"
+  },
   "week": {
     "saturday": "Saturday",
     "sunday": "Sunday",

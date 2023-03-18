@@ -16,7 +16,7 @@
     &-logo {
       width: 45%;
       padding: 2rem 2rem;
-      background: rgba(170, 220, 211, 0.83);
+      background: rgba(0, 48, 135, 0.6);
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -26,7 +26,7 @@
         color: white;
       }
       & img {
-        width: 30%;
+        width: 35%;
         height: 30%;
       }
     }
@@ -39,7 +39,7 @@
       align-items: center;
       &-title {
         & h2 {
-          color: #1c7a69;
+          color: $Blue3;
         }
       }
       &-form {
@@ -54,18 +54,18 @@
           margin: 1rem 0rem 0rem 0rem;
         }
         & button {
-          background: #1c7a69;
+          background: $Blue3;
           color: whitesmoke;
-          padding: 0.5rem 2rem;
+          padding: 0.5rem 3rem;
           border: none;
           border-radius: 50px;
         }
         & button:hover {
-          background: rgba(124, 188, 177, 0.83);
+          background: #6ea4e7;;
         }
         & a,
         h6 {
-          color: #1c7a69;
+          color: $Blue3;
           text-decoration: none;
         }
 
