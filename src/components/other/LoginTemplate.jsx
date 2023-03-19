@@ -8,13 +8,15 @@ import bck from "../../shared/images/bck.png";
 export const LoginTemplate = (props) => {
   const { t } = useTranslation();
   const [userUX, setUserUX] = useState({
-    submitLoading: false,
+    loading: false,
     error: false,
     errorMsg: "",
   });
+
   useEffect(() => {
     setUserUX(props.userUX);
   }, [props.userUX]);
+
   return (
     <div className="loginCont" style={{ backgroundImage: `url(${bck})` }}>
       <div className="loginCont-loginCard">
@@ -34,9 +36,14 @@ export const LoginTemplate = (props) => {
               <h6>{props.input2}</h6>
               {props.inputtwo}
             </div>
+            <div className="loginCont-loginCard-content-form-input" action="">
+              <h6>{props.input3}</h6>
+              {props.inputthree}
+            </div>
+
             {props.forget && <Link to="/forgetpwd">{t(`login.forget`)}</Link>}
             <div className="loginCont-loginCard-content-form-button">
-              {userUX.submitLoading ? (
+              {userUX.loading ? (
                 <FormButton type="loading" />
               ) : (
                 <button>{props.button}</button>

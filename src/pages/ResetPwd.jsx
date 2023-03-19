@@ -1,17 +1,17 @@
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { STUDENT_URL } from "../shared/API";
+import { BASE_URL } from "../shared/API";
 import { useTranslation } from "react-i18next";
-import { BiError } from "react-icons/bi";
-import { FormButton } from "../components/buttons/Buttons";
+
+// Reusable Components and Images
 import lock from "../shared/images/lock.png";
 import { LoginTemplate } from "../components/other/LoginTemplate";
 
 export const ResetPwd = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const { token } = useParams();
+  const { token, email } = useParams();
   const [input, setInput] = useState({
     password: "",
     confirmPassword: "",
@@ -71,7 +71,7 @@ export const ResetPwd = () => {
     e.preventDefault();
     setUserUX((prev) => ({ ...prev, loading: true, error: false }));
     axios
-      .post(STUDENT_URL + "api/reset_password/" + token, {
+      .post(BASE_URL + "/auth/reset_password/" + token, {
         password: input.password,
         confpassword: input.confirmPassword,
       })
@@ -80,7 +80,7 @@ export const ResetPwd = () => {
         setUserUX((prev) => ({ ...prev, loading: false }));
         setPwd(true);
         setTimeout(() => {
-          navigate("/admin/login");
+          navigate("/login");
         }, 2000);
       })
       .catch((error) => {
@@ -93,7 +93,50 @@ export const ResetPwd = () => {
       });
   };
 
-  return (
+  return email ? (
+    <LoginTemplate
+      userUX={userUX}
+      handle={handlePwdReset}
+      input1={t(`login.email`)}
+      input2={t(`reset.new-pswrd`)}
+      input3={t(`reset.conf-pswrd`)}
+      inputone={
+        <input
+          type="email"
+          name="email"
+          id="email"
+          defaultValue={email}
+          readOnly
+        />
+      }
+      inputtwo={
+        <input
+          type="password"
+          name="password"
+          id="password"
+          value={input.password}
+          onChange={onInputChange}
+          onBlur={validateInput}
+          required
+        />
+      }
+      inputthree={
+        <input
+          type="password"
+          name="confirmPassword"
+          id="confirmPassword"
+          value={input.confirmPassword}
+          onChange={onInputChange}
+          onBlur={validateInput}
+          required
+        />
+      }
+      logo={lock}
+      forget={false}
+      title=" "
+      button={t(`reset.button`)}
+    />
+  ) : (
     <LoginTemplate
       handle={handlePwdReset}
       input1={t(`reset.new-pswrd`)}

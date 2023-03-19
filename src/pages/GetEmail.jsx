@@ -18,8 +18,6 @@ export const GetEmail = () => {
   const nationalIdRef = useRef();
   const navigate = useNavigate();
 
-  const openNewWindow = (data) => {};
-
   const handleGetEmail = (e) => {
     e.preventDefault();
     setUserUX((prev) => ({ ...prev, loading: true, error: false }));
@@ -29,7 +27,7 @@ export const GetEmail = () => {
       })
       .then((res) => {
         console.log(res);
-        openNewWindow(res.data);
+        navigate(`/resetpwd/${res.data.token}/${res.data.email}`);
         setUserUX((prev) => ({ ...prev, loading: false }));
       })
       .catch((error) => {

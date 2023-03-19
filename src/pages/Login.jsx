@@ -16,7 +16,7 @@ export const Login = () => {
   const authContext = useAuth();
   const navigate = useNavigate();
   const [userUX, setUserUX] = useState({
-    submitLoading: false,
+    loading: false,
     error: false,
     errorMsg: "",
   });
@@ -30,7 +30,7 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    setUserUX((prev) => ({ ...prev, submitLoading: true, error: false }));
+    setUserUX((prev) => ({ ...prev, loading: true, error: false }));
     const userCredentials = {
       email: emailRef.current.value,
       password: pwdRef.current.value,
@@ -39,13 +39,13 @@ export const Login = () => {
       .post(BASE_URL + "/auth/student_login", userCredentials)
       .then((res) => {
         console.log(res);
-        setUserUX((prev) => ({ ...prev, submitLoading: false }));
+        setUserUX((prev) => ({ ...prev, loading: false }));
         authContext.login(res.data.token, res.data.role, res.data.studentId);
         navigate("/student");
       })
       .catch((error) => {
         setUserUX({
-          submitLoading: false,
+          loading: false,
           error: true,
           errorMsg:
             error.response.status === 400
@@ -82,7 +82,7 @@ export const Login = () => {
           required
         />
       }
-      logo={logo }
+      logo={logo}
       forget={true}
       title={t(`login.subtitle`)}
       button={t(`login.button`)}
