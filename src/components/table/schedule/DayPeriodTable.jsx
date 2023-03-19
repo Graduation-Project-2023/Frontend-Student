@@ -168,16 +168,10 @@ export const DayPeriodTable = (props) => {
       </div>
       {!props.view && (
         <>
-          <button
-            type="submit"
-            className="form-card-button form-card-button-save"
-          >
+          <button type="submit" className="button button-save">
             {t(`common.save`)}
           </button>
-          <button
-            type="reset"
-            className="form-card-button form-card-button-cancel"
-          >
+          <button type="reset" className="button button-cancel">
             {t(`common.cancel`)}
           </button>
         </>

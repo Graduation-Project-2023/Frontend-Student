@@ -1,0 +1,17 @@
+.btnBar {
+  background-color: #2070ba;
+  text-align: center;
+
+  & button {
+    background-color: #ffffff;
+    border: 0.5px solid #2070ba;
+    border-radius: 15px;
+    color: #000000;
+    @include font(1.7rem, 2rem, 700);
+    padding: 0.2rem 1rem;
+    margin: 0;
+    &:hover {
+      background-color: rgba(223, 227, 238, 0.6);
+    }
+  }
+}
