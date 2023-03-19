@@ -22,7 +22,7 @@ export const AdmissionInfo = () => {
           <h4 className="admission-container-title">
             {t("admission.admissionTitle")}
           </h4>
-          <p className="admission-container-text">
+          <span className="admission-container-text">
             <h5 className="admission-container-text">
               {t("admission.admission1")}
             </h5>
@@ -59,7 +59,7 @@ export const AdmissionInfo = () => {
             </h5>
 
             <div>{t("admission.admissionFinalText")}</div>
-          </p>
+          </span>
         </div>
       </div>
       <div></div>
