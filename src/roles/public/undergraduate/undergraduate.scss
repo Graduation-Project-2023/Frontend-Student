@@ -8,24 +8,15 @@
   align-items: center;
   padding: 0 85px;
 
-  /*&-title{
-        text-align: center;
-        color: #003087;
-        font-size: 25px;
-        font-weight: bold;
-        margin-bottom:20px;
-        margin-top: 20px;
-    }*/
 
   &-image {
     border-radius: 30px;
     height: 275.65px;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 50px 85px;
+    max-width: fit-content;
   }
   &-text {
-    padding: 0 35px;
     color: white;
     font-size: 16px;
     line-height: 19px;
