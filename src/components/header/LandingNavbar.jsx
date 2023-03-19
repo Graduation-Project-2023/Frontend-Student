@@ -12,16 +12,13 @@ export const LandingNavbar = () => {
       <Link to="/" className="landing-nav-title">
         {t("landingNav.home")}
       </Link>
-      <Link to="#" className="landing-nav-title">
-        {t("landingNav.colleges")}
+      <Link to="/staff" className="landing-nav-title">
+        {t("home.staff")}
       </Link>
-      <Link to="#" className="landing-nav-title">
-        {t("landingNav.faculties")}
+      <Link to="/undergraduate" className="landing-nav-title">
+        {t("home.undergraduate")}
       </Link>
-      <Link to="#" className="landing-nav-title">
-        {t("landingNav.research")}
-      </Link>
-      <Link to="#" className="landing-nav-title">
+      <Link to="/landing" className="landing-nav-title">
         {t("landingNav.center")}
       </Link>
       <Link to="/admission_info" className="landing-nav-title">

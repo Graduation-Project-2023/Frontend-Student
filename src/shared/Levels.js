@@ -1,7 +1,7 @@
 export const LEVELS = [
-  { id: 0, level: "one" },
-  { id: 1, level: "two" },
-  { id: 2, level: "three" },
-  { id: 3, level: "four" },
-  { id: 4, level: "five" },
+  { id: 0, level: "00" },
+  { id: 1, level: "01" },
+  { id: 2, level: "02" },
+  { id: 3, level: "03" },
+  { id: 4, level: "04" },
 ];

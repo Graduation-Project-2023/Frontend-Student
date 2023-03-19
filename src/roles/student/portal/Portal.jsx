@@ -15,9 +15,6 @@ export const Portal = () => {
   });
   const authContext = useAuth();
   const { t } = useTranslation();
-  // const config = {
-  //   headers: { Authorization: `Bearer ${authContext.token}` },
-  // };
 
   useEffect(() => {
     setUserUX((prev) => ({
@@ -46,6 +43,15 @@ export const Portal = () => {
     // eslint-disable-next-line
   }, [authContext.token]);
 
+  const dateFormatter = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = date.getUTCDate().toString().padStart(2, "0");
+    const month = (date.getUTCMonth() + 1).toString().padStart(2, "0");
+    const year = date.getUTCFullYear().toString();
+
+    return `${day}/${month}/${year}`;
+  };
+
   return (
     <div className="container">
       <SidebarCont>
@@ -67,6 +73,12 @@ export const Portal = () => {
                           <span>loading....</span>
                         ) : items.enum === true ? (
                           <span>{t(`enums.${studentData[items.name]}`)}</span>
+                        ) : items.date === true ? (
+                          <span>
+                            {studentData[items.name] === null
+                              ? t("enums.null")
+                              : dateFormatter(studentData[items.name])}
+                          </span>
                         ) : (
                           <span>
                             {studentData[items.name] === null

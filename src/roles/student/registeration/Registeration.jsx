@@ -34,6 +34,7 @@ export const Registeration = () => {
   });
   const authContext = useAuth();
   const { t } = useTranslation();
+
   const barSelect = (lvl) => {
     setLvls(lvl);
   };
@@ -325,7 +326,7 @@ export const Registeration = () => {
               return (
                 <div key={level.id}>
                   <div className="commonTable">
-                    <h2>{level.level}</h2>
+                    <h4>المقررات المتاحة</h4>
                     <table>
                       <tbody>
                         <tr>
@@ -334,7 +335,7 @@ export const Registeration = () => {
                               {t(heading.label).toUpperCase()}
                             </th>
                           ))}
-                          <th>save/delete</th>
+                          <th>اضافة | حذف</th>
                         </tr>
                         {availableClasses
                           .filter((item) => item.level.level === level.id)
@@ -369,7 +370,7 @@ export const Registeration = () => {
                                           removeCourseFromTable(item.classes)
                                         }
                                       >
-                                        remove
+                                        حذف
                                       </button>
                                     ) : (
                                       <button
@@ -377,7 +378,7 @@ export const Registeration = () => {
                                           addCourseToTable(item.classes)
                                         }
                                       >
-                                        add
+                                        اضافة
                                       </button>
                                     )}
                                   </td>
