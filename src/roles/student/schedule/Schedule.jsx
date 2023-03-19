@@ -28,7 +28,7 @@ export const Schedule = () => {
     axios
       .get(
         STUDENT_URL +
-          `/table/${authContext.id}/decc46ba-7d4b-11ed-a1eb-0242ac120002`
+          `/table?studentId=${authContext.id}&semesterId=decc46ba-7d4b-11ed-a1eb-0242ac120002`
       )
       .then((res) => {
         console.log(res.data);
