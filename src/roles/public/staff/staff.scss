@@ -1,34 +1,31 @@
 .staff-container-1 {
   display: grid;
-  grid-template-columns: 60% 40%;
+  grid-template-columns: 70% 30%;
   background-color: #3d7dca;
-  direction: ltr;
-
   height: 393px;
-  padding-left: 80px;
+  padding: 0 85px;
 
   &-title {
     display: block;
     font-weight: 700;
     font-size: 25px;
-    padding: 38px 558px 15px 555px;
+    padding: 45px 0 0px 0;
     color: #444444;
   }
   &-image {
-    margin: 60px;
-    margin-left: 150px;
+    display: block;
     border-radius: 30px;
     height: 266.48px;
+    margin: 60px 85px;
   }
   &-text {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
+    margin-top: 65px;
     line-height: 19px;
-    margin-top: 35px;
-    padding-top: 15px;
     color: white;
-    width: 685px;
+    max-width: 700px;
   }
 }
 
@@ -36,16 +33,15 @@
   display: grid;
   grid-template-columns: 70% 30%;
   background-color: #3d7dca;
-  direction: ltr;
   align-items: center;
   justify-content: center;
   margin-top: 25px;
   height: 371px;
-  padding-left: 80px;
-
+  padding: 0 85px;
+  
   &-text {
     color: white;
-    width: 855px;
+    max-width: 700px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -53,48 +49,29 @@
   }
   &-title {
     font-style: normal;
+    padding: 0 20px 0 20px;
     font-weight: 700;
     font-size: 25px;
     line-height: 24px;
     color: #444444;
   }
-  /*&-arrow {
-        height: 150px;
-        width: 600px;
-        background-color: yellow;
-        overflow: hidden;
-    }
-    &-trapezoid-1 {
-        background-color:green;	
-        height: 50px;
-        width: 150px;
-        transform: rotate(-50deg); 	
-        margin-bottom: 55px;
-    
-    }
-    &-trapezoid-2 {
-        margin: 0;
-        background-color:black;	
-        height: 50px;
-        width: 150px;
-        transform: rotate(40deg); 
-    }
-    */
 }
 
 .staff-container-3 {
   display: grid;
   grid-template-columns: 30% 70%;
   background-color: #3d7dca;
-  direction: ltr;
   margin-top: 25px;
   height: 371px;
   align-items: center;
   justify-content: center;
+  padding: 0 85px;
+
 
   &-text {
     color: white;
-    width: 897px;
+    max-width: 897px;
+    padding: 0 20px 0 20px;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -106,7 +83,10 @@
     font-size: 25px;
     line-height: 24px;
     color: #444444;
-    padding-left: 124px;
+    
+  }
+  & li {
+    max-width: 700px;
   }
 }
 
@@ -114,15 +94,15 @@
   display: grid;
   grid-template-columns: 70% 30%;
   background-color: #3d7dca;
-  direction: ltr;
   align-items: center;
   justify-content: center;
   margin-top: 25px;
   height: 371px;
-  padding-left: 80px;
-
+  padding: 0 85px;
+  
   &-text {
     font-style: normal;
+    padding: 0 20px 0 20px;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
@@ -134,5 +114,8 @@
     font-size: 25px;
     line-height: 24px;
     color: #444444;
+  }
+  & li {
+    max-width: 700px;
   }
 }
