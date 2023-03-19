@@ -1,0 +1,35 @@
+.button {
+  margin: 1rem;
+  padding: 0.5rem;
+  border-radius: 2px;
+  min-width: 5rem;
+  @include font(1.3rem, 1.5rem, 500);
+  transition-duration: 0.4s;
+
+  &-save {
+    @include colorandback(white, $Blue2);
+    border: 1px solid $Blue2;
+
+    &:hover {
+      @include colorandback(black, rgba(66, 66, 197, 0.753));
+    }
+  }
+
+  &-cancel {
+    @include colorandback($Black, $White);
+    border: 1px solid $Grey3;
+
+    &:hover {
+      @include colorandback(white, $Grey3);
+    }
+  }
+
+  &-delete {
+    @include colorandback(black, rgb(232, 1, 1));
+    border: 1px solid $Grey3;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
