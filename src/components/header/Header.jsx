@@ -68,7 +68,7 @@ export const Header = () => {
         <button className="langbtn" onClick={toggleLang}>
           {i18next.language === "en" ? "AR" : "EN"}
         </button>
-        <label className="search-icon">
+        {/* <label className="search-icon">
           <AiOutlineSearch />
           <input
             type="search"
@@ -78,7 +78,7 @@ export const Header = () => {
             name="s"
             title="Search for:"
           />
-        </label>
+        </label> */}
       </div>
       <div className="hbody-text">{t("common.universityName")}</div>
       <div>

@@ -1,10 +1,7 @@
 import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import { STUDENT_URL } from "../shared/API";
+import { BASE_URL } from "../shared/API";
 import { useTranslation } from "react-i18next";
-import { BiError } from "react-icons/bi";
-import { FormButton } from "../components/buttons/Buttons";
 import frgt from "../shared/images/frgt.png";
 import { LoginTemplate } from "../components/other/LoginTemplate";
 
@@ -21,7 +18,7 @@ export const ForgetPwd = () => {
     e.preventDefault();
     setUserUX((prev) => ({ ...prev, loading: true, error: false }));
     axios
-      .post(STUDENT_URL + "api/forgot_password", {
+      .post(BASE_URL + "/auth/forgot_password", {
         email: emailRef.current.value,
       })
       .then((res) => {

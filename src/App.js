@@ -35,8 +35,8 @@ function App() {
         <Route path="" element={<Home />} exact />
         <Route path="login" element={<Login />} />
         <Route path="forgetpwd" element={<ForgetPwd />} />
-        <Route path="resetpwd/:token" element={<ResetPwd />} />
-        <Route path="getEmail" element={<GetEmail />} />
+        <Route path="resetpwd/:token/:email" element={<ResetPwd />} />
+        <Route path="credentials" element={<GetEmail />} />
         <Route path="landing" element={<Landing />} />
         <Route path="admission_info" element={<AdmissionInfo />} />
         <Route path="undergraduate" element={<Undergraduate />} />

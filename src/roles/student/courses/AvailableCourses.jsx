@@ -112,8 +112,8 @@ export const AvailableCourses = () => {
       <SidebarCont>
         {courses.map((item) => {
           return (
-            <div className="cont">
-              <div key={item.level} className="mb-5">
+            <div className="cont" key={item.level}>
+              <div className="mb-5">
                 <CommonTable
                   header={`${item.level}`}
                   headings={TableHeadings}

@@ -15,8 +15,8 @@ export const Sidebar = (props) => {
           alt="logo"
         />
         <div>
-          <h1>name</h1>
-          <h2>dataaaaa</h2>
+          <h1>محمد احمد محمود</h1>
+          <h2>القسم : حاسبات وتحكم </h2>
         </div>
       </div>
 
