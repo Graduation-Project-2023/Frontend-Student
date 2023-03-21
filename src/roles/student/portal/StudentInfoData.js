@@ -40,12 +40,12 @@ export const StudentInfoData = [
       {
         id: 1,
         title: "common.prevQualificationInstitute",
-        name: "InstitutePreviousQualification",
+        name: "institutePreviousQualification",
       },
       {
         id: 2,
         title: "common.prevQualification",
-        name: "PreviousQualification",
+        name: "previousQualification",
       },
       {
         id: 3,
@@ -62,7 +62,7 @@ export const StudentInfoData = [
       {
         id: 5,
         title: "common.totalPrevQualification",
-        name: "TotalPreviousQualification",
+        name: "totalPreviousQualification",
       },
       { id: 6, title: "common.schoolSeat", name: "schoolSeatId" },
     ],
