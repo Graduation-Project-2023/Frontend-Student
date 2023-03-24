@@ -1,3 +1,4 @@
+import { NewInfo } from "../roles/student/newInfo/NewInfo";
 export const TestingPage = () => {
-  return <div></div>;
+  return <NewInfo />;
 };

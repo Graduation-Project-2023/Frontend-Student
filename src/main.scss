@@ -14,3 +14,8 @@
 @import "./components/table/vertical/verticalTable";
 @import "./styles/components/buttons";
 @import "./roles/student/registeration/registeration";
+
+// new info styles
+@import "../src/roles/student/newInfo/newNavbar";
+@import "../src/roles/student/newInfo/newHeader";
+@import "../src/roles/student/newInfo/newInfo";

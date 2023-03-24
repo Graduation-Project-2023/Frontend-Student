@@ -85,7 +85,11 @@
     "lecturer": "المحاضر",
     "place": "المكان",
     "universityName": "جامعة قناة السويس",
-    "portal": "بوابة الطلاب"
+    "portal": "بوابة الطلاب",
+    "name": "الاسم",
+    "department": "القسم",
+    "level": "المستوى",
+    "program": "البرنامج"
   },
   "login": {
     "email": "اسم المستخدم",

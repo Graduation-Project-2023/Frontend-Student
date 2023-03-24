@@ -1,0 +1,72 @@
+.header-navbar {
+  background-color: white;
+  height: 60px;
+  display: flex;
+  align-items: center;
+
+  &-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+
+    & li {
+      display: inline;
+      @include font(1.2rem, 1.4rem, 400);
+      & a {
+        text-decoration: none !important;
+        transition: all 0.3s ease-out;
+        &:hover {
+          padding: 0.5rem;
+          color: white !important;
+          border: 1px solid $Blue4;
+          background-color: $Blue2;
+          border-radius: 8px;
+        }
+      }
+    }
+
+    &-active {
+      padding: 0.5rem;
+      color: white !important;
+      border: 1px solid $Blue4;
+      background-color: $Blue2;
+      border-radius: 8px;
+    }
+  }
+}
+
+.main-header {
+  color: white;
+  @include font(1.9rem, 2.2rem, 400);
+  // background-color: #a8cdf0;
+  background-image: linear-gradient(to left, #a8cdf0, #dfefff, #a8cdf0);
+  text-align: center;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 150px auto 150px;
+  color: #164e83;
+
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dropdown {
+      .btn-primary {
+        --bs-btn-active-bg: $Blue1 !important;
+      }
+      &-toggle::after {
+        display: none;
+      }
+      & button {
+        color: #164e83;
+        background-color: transparent;
+        border: none;
+      }
+    }
+  }
+}

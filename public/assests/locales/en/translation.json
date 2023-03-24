@@ -83,7 +83,11 @@
     "lecturer": "Lecturer",
     "place": "Place",
     "universityName": "Suez Canal University",
-    "portal": "Portal"
+    "portal": "Portal",
+    "name": "Name",
+    "department": "Department",
+    "level": "Level",
+    "program": "Program"
   },
   "login": {
     "email": "E-mail",
@@ -126,19 +130,19 @@
     "4": "Level 5"
   },
   "staff": {
-    "container-1-title":"Induction",
-    "container-1-text":"The induction event/session is your start point in the process of becoming familiar with, and settling into, University life. During your induction session you will be introduced to your workplace, team, and supervisors. you will be informed with your duties and schedules. Also, you will be handed your ID card, username, and passwords of the professors-related digital platforms. Your induction session is your opportunity to investigate, to ask questions, and to introduce yourself to the employees. Always feel free to explore your environment, and ask for help if needed.",
-    "container-2-title":"Accommodation / Staff Housing",
-    "container-2-text":"Suez Canal University provides the academic staff with housing services. The service is manifested in the tutors Lounge located in El-Sheikh Zayed district next to the International Swimming pool in in Ismailia. The lounge consists of 2 blocks that have a total of 45 rooms with a housing capacity of 180 residents. To qualify for admission, applicants must complete all secondary school graduation requirements, maintain a high level of academic performance and submit all required documents before the set deadlines. Having the minimum academic requirements does not guarantee admission to the University, but rather ensures entry to the selection process. There is a minimum level of academic achievement for each faculty that is decided by the supreme council of universities each year.",
-    "container-3-title":"How To Apply",
-    "container-4-title":"Professional development",
-    "container-3-list-title":"The Library aspires to be the main source of intellectual and civilized knowledge, with its sources of information in science and culture as well as its material and human capabilities and support services in the advancement of knowledge and research movement and the development of the educational process. Library services:",
-    "container-4-list-title":"Available courses:"
+    "container-1-title": "Induction",
+    "container-1-text": "The induction event/session is your start point in the process of becoming familiar with, and settling into, University life. During your induction session you will be introduced to your workplace, team, and supervisors. you will be informed with your duties and schedules. Also, you will be handed your ID card, username, and passwords of the professors-related digital platforms. Your induction session is your opportunity to investigate, to ask questions, and to introduce yourself to the employees. Always feel free to explore your environment, and ask for help if needed.",
+    "container-2-title": "Accommodation / Staff Housing",
+    "container-2-text": "Suez Canal University provides the academic staff with housing services. The service is manifested in the tutors Lounge located in El-Sheikh Zayed district next to the International Swimming pool in in Ismailia. The lounge consists of 2 blocks that have a total of 45 rooms with a housing capacity of 180 residents. To qualify for admission, applicants must complete all secondary school graduation requirements, maintain a high level of academic performance and submit all required documents before the set deadlines. Having the minimum academic requirements does not guarantee admission to the University, but rather ensures entry to the selection process. There is a minimum level of academic achievement for each faculty that is decided by the supreme council of universities each year.",
+    "container-3-title": "How To Apply",
+    "container-4-title": "Professional development",
+    "container-3-list-title": "The Library aspires to be the main source of intellectual and civilized knowledge, with its sources of information in science and culture as well as its material and human capabilities and support services in the advancement of knowledge and research movement and the development of the educational process. Library services:",
+    "container-4-list-title": "Available courses:"
   },
   "undergraduate": {
-    "container-1-text":"Suez Canal University is the leading educational and research institution in the Canal Region. Our academic status of glory has not been earned/accomplished overnight. As the university, since its establishment, has been more than keen to offer its attendees an outstanding opportunity to learn, develop, and succeed. Suez Canal University has recruited both of its campuses, the old and new ones, to support its mission and vision of continuous learning.SCU has the doors wide open for both the national and international students to join in for either a bachelor’s degree or postgraduate degree. The scope of learning is not limited to undergraduate education. On the contrary, it has extended to include postgraduate education as well, making Suez Canal University an Egyptian educational institution of remarkable variation in the offered levels of education and the awarded certificates.We aim to offer our students value, knowledge, and scientific power to make a positive change in the world. No matter what your scope of study is, your major subject or interest might be, you will find the right program for you, as SCU has 20 faculties operating on its campus.",
-    "container-2-title":"Diploma Conditions ",
-    "container-3-title":"Required Documents"
+    "container-1-text": "Suez Canal University is the leading educational and research institution in the Canal Region. Our academic status of glory has not been earned/accomplished overnight. As the university, since its establishment, has been more than keen to offer its attendees an outstanding opportunity to learn, develop, and succeed. Suez Canal University has recruited both of its campuses, the old and new ones, to support its mission and vision of continuous learning.SCU has the doors wide open for both the national and international students to join in for either a bachelor’s degree or postgraduate degree. The scope of learning is not limited to undergraduate education. On the contrary, it has extended to include postgraduate education as well, making Suez Canal University an Egyptian educational institution of remarkable variation in the offered levels of education and the awarded certificates.We aim to offer our students value, knowledge, and scientific power to make a positive change in the world. No matter what your scope of study is, your major subject or interest might be, you will find the right program for you, as SCU has 20 faculties operating on its campus.",
+    "container-2-title": "Diploma Conditions ",
+    "container-3-title": "Required Documents"
   },
 
   "student": {
@@ -260,49 +264,48 @@
   "diplomaConditions": {
     "1": "The student must hold a bachelor's degree from one of the universities recognized by the supreme council of universities.",
     "2": "The student must meet the conditions of admission as well as the department's approval.",
-    "3":"The student must submit a hard copy of the required documents at the administration's building and then submit a soft copy through the admission from on the website.",
-    "4":"The student selects the appropriate courses and updates the registration form, then passes it to the academic advisor and the head of the specialized scientific department for accreditation. Eventually, the vice dean for postgraduate studies and research approves of the form.",
-    "5":"If the student meets the admission criteria, he/she will not be admitted until the tuition fees are paid.",
-    "6":"Payment of tuition fees is a must for the student to be allowed to attend and record courses.",
-    "7":"A student who still has not selected his/her courses of study after the last week of the spring semester and the first week of the summer semester will not be allowed to attend lectures.",
-    "8":"The institute/faculty council may, on the recommendation of the department council, accept the registration of a student who holds a bachelor's degree in a specialization not related to the department after passing several supplementary courses at the Bachelor level established by the competent section board.",
-    "9":"If the number of the assigned courses exceeds four, the institute/faculty will offer the student a preparatory year for qualification. The year will not be counted among the official years of study."
+    "3": "The student must submit a hard copy of the required documents at the administration's building and then submit a soft copy through the admission from on the website.",
+    "4": "The student selects the appropriate courses and updates the registration form, then passes it to the academic advisor and the head of the specialized scientific department for accreditation. Eventually, the vice dean for postgraduate studies and research approves of the form.",
+    "5": "If the student meets the admission criteria, he/she will not be admitted until the tuition fees are paid.",
+    "6": "Payment of tuition fees is a must for the student to be allowed to attend and record courses.",
+    "7": "A student who still has not selected his/her courses of study after the last week of the spring semester and the first week of the summer semester will not be allowed to attend lectures.",
+    "8": "The institute/faculty council may, on the recommendation of the department council, accept the registration of a student who holds a bachelor's degree in a specialization not related to the department after passing several supplementary courses at the Bachelor level established by the competent section board.",
+    "9": "If the number of the assigned courses exceeds four, the institute/faculty will offer the student a preparatory year for qualification. The year will not be counted among the official years of study."
   },
   "reqDocuments": {
-    "1":"Bachelor's degree certificate + a copy.",
-    "2":"Certificate of subject's grades + a copy.",
-    "3":"Birth certificate + 2 copies.",
-    "4":"Military service completion certificate + a copy.",
-    "5":"Employer's approval of the applicant's professional study.",
-    "6":"6 personal photos.",
-    "7":"Two plastic files.",
-    "8":"1 pound stamp.",
-    "9":"50L.E envelope withdrawal.",
-    "10":"Tuition fees.",
-    "11":"Registration in the diploma will only be accepted after fulfilling the conditions and documents mentioned."
+    "1": "Bachelor's degree certificate + a copy.",
+    "2": "Certificate of subject's grades + a copy.",
+    "3": "Birth certificate + 2 copies.",
+    "4": "Military service completion certificate + a copy.",
+    "5": "Employer's approval of the applicant's professional study.",
+    "6": "6 personal photos.",
+    "7": "Two plastic files.",
+    "8": "1 pound stamp.",
+    "9": "50L.E envelope withdrawal.",
+    "10": "Tuition fees.",
+    "11": "Registration in the diploma will only be accepted after fulfilling the conditions and documents mentioned."
   },
   "libraryServices": {
-    "1":"Traditional information sources.",
-    "2":"Traditional periodicals.",
-    "3":"Searching databases and information networks electronically.",
-    "4":"Electronic periodicals.",
-    "5":"Relationships with local publishers.",
-    "6":"Photography and reproduction.",
-    "7":"Ongoing briefing.",
-    "8":"Email and Internet.",
-    "9":"Reference services.",
-    "10":"Technical training for beneficiaries.",
-    "11":"Guidance for students in using the library facilities."
+    "1": "Traditional information sources.",
+    "2": "Traditional periodicals.",
+    "3": "Searching databases and information networks electronically.",
+    "4": "Electronic periodicals.",
+    "5": "Relationships with local publishers.",
+    "6": "Photography and reproduction.",
+    "7": "Ongoing briefing.",
+    "8": "Email and Internet.",
+    "9": "Reference services.",
+    "10": "Technical training for beneficiaries.",
+    "11": "Guidance for students in using the library facilities."
   },
   "availableCourses": {
-    "1":"Search Engines",
-    "2":"Microsoft PowerPoint",
-    "3":"Microsoft Word.",
-    "4":"Search Excel",
-    "5":"Endnote",
-    "6":"Microsoft Excel",
-    "7":"Web-Authorizing using Dream Weaver.",
-    "8":"Plagiarism checker and avoidance"
+    "1": "Search Engines",
+    "2": "Microsoft PowerPoint",
+    "3": "Microsoft Word.",
+    "4": "Search Excel",
+    "5": "Endnote",
+    "6": "Microsoft Excel",
+    "7": "Web-Authorizing using Dream Weaver.",
+    "8": "Plagiarism checker and avoidance"
   }
 }
-
