@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { NewHeader } from "./NewHeader";
 import { NewNavbar } from "./NewNavbar";
 import { useTranslation } from "react-i18next";
@@ -6,10 +7,11 @@ import profile from "./profile.png";
 
 export const NewInfo = () => {
   const { t } = useTranslation();
+  const [navNumber, setNavNumber] = useState(2);
   return (
     <>
       <NewHeader />
-      <NewNavbar navType={2} />
+      <NewNavbar navType={navNumber} />
       <div className="main-container">
         <h1>بيانات الطالب</h1>
         <div className="main-container-data">
@@ -103,6 +105,29 @@ export const NewInfo = () => {
               );
             }
           })}
+        </div>
+        <div>
+          <button
+            onClick={() => {
+              setNavNumber(1);
+            }}
+          >
+            1
+          </button>
+          <button
+            onClick={() => {
+              setNavNumber(2);
+            }}
+          >
+            2
+          </button>
+          <button
+            onClick={() => {
+              setNavNumber(3);
+            }}
+          >
+            3
+          </button>
         </div>
       </div>
     </>
