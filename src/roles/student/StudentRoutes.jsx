@@ -6,6 +6,7 @@ import { AvailableCourses } from "./courses/AvailableCourses";
 import { StudentSidebar } from "./sidebar/StudentSidebar";
 import { Progress } from "./progress/Progress";
 import { Schedule } from "./schedule/Schedule";
+import { Assistant } from "./assistant/Assistant";
 
 export const StudentRoutes = () => {
   return (
@@ -19,6 +20,7 @@ export const StudentRoutes = () => {
         <Route path="progress" element={<Progress />} />
         <Route path="payment" element={<Payment />} />
         <Route path="schedule" element={<Schedule />} />
+        <Route path="assistant" element={<Assistant />} />
         <Route path="*" element={<Portal />} />
       </Routes>
     </>

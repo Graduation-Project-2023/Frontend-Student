@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { LoginRoute } from "./routes/PrivateRoutes";
 import axios from "axios";
 ////////// Styles //////////
+import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.js";
 import "./main.scss";

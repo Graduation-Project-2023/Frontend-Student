@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import i18next from "i18next";
 // import { useAuth } from "../../hooks/useAuth";
 // import axios from "axios";
 // import { BASE_URL } from "../../shared/API";
-import { AiOutlineSearch } from "react-icons/ai";
 import logo from "../../shared/images/logo2.png";
 
 const languages = [
@@ -27,6 +27,7 @@ export const Header = () => {
   // });
   // const authContext = useAuth();
   const { t } = useTranslation();
+  const location = useLocation();
   const currentLanguage = languages.find(
     (lang) => lang.code === i18next.language
   );
@@ -60,6 +61,11 @@ export const Header = () => {
       (lang) => lang.code !== i18next.language
     );
     i18next.changeLanguage(nextLanguage.code);
+    const pathArray = location.pathname.split("/");
+    const lastPathname = pathArray[pathArray.length - 1];
+    if (lastPathname === "assistant") {
+      window.location.reload();
+    }
   };
 
   return (
