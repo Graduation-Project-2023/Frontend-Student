@@ -16,7 +16,6 @@ export const Sidebar = (props) => {
         />
         <div>
           <h1>محمد احمد محمود</h1>
-          <h2>القسم : حاسبات وتحكم </h2>
         </div>
       </div>
 
@@ -30,7 +29,8 @@ export const Sidebar = (props) => {
                   isActive ? "sidebar-list-active" : ""
                 }
               >
-                {`${t(item.name)}`}
+                <span className="sidebar-list-icon">{item.icon}</span>
+                <span>{`${t(item.name)}`}</span>
               </NavLink>
             </li>
           );

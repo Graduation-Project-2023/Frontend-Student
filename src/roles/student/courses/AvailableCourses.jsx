@@ -110,10 +110,10 @@ export const AvailableCourses = () => {
   return (
     <div className="container">
       <SidebarCont>
-        {courses.map((item) => {
-          return (
-            <div className="cont" key={item.level}>
-              <div className="mb-5">
+        <div className="cont">
+          {courses.map((item) => {
+            return (
+              <div className="mb-5" key={item.level}>
                 <CommonTable
                   header={`${item.level}`}
                   headings={TableHeadings}
@@ -121,9 +121,9 @@ export const AvailableCourses = () => {
                   userUX={userUX}
                 />
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </SidebarCont>
     </div>
   );
