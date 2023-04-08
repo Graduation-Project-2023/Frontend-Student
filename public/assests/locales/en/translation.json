@@ -147,6 +147,7 @@
 
   "student": {
     "info": "Student info",
+    "home": "Home",
     "courses": "Available courses",
     "Registration": "Registration",
     "progress": "Student progress",
