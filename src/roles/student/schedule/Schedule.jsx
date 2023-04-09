@@ -71,16 +71,12 @@ export const Schedule = () => {
   }, [authContext.id]);
 
   return (
-    <div className="container">
-      <SidebarCont>
-        <div className="cont">
-          <DayPeriodTable
-            tableData={tableData}
-            cellsSetter={() => {}}
-            view={true}
-          />
-        </div>
-      </SidebarCont>
-    </div>
+    <SidebarCont>
+      <DayPeriodTable
+        tableData={tableData}
+        cellsSetter={() => {}}
+        view={true}
+      />
+    </SidebarCont>
   );
 };

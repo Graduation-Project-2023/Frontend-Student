@@ -106,30 +106,28 @@ export const Progress = () => {
   }, []);
 
   return (
-    <div className="container">
-      <SidebarCont>
-        <div className="cont">
-          <div className="mb-5">
-            <VerticalTable
-              headings={StudentTableHeadings}
-              data={testingStudent}
-            />
-          </div>
-
-          {courses.map((item) => {
-            return (
-              <div key={item.level} className="mb-5">
-                <CommonTable
-                  header={`${item.level}`}
-                  headings={TableHeadings}
-                  data={item.courses}
-                  userUX={userUX}
-                />
-              </div>
-            );
-          })}
+    <SidebarCont>
+      <div className="cont">
+        <div className="mb-5">
+          <VerticalTable
+            headings={StudentTableHeadings}
+            data={testingStudent}
+          />
         </div>
-      </SidebarCont>
-    </div>
+
+        {courses.map((item) => {
+          return (
+            <div key={item.level} className="mb-5">
+              <CommonTable
+                header={`${item.level}`}
+                headings={TableHeadings}
+                data={item.courses}
+                userUX={userUX}
+              />
+            </div>
+          );
+        })}
+      </div>
+    </SidebarCont>
   );
 };

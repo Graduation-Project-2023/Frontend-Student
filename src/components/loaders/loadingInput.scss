@@ -1,0 +1,30 @@
+.loadingForm {
+  overflow: hidden;
+  padding: 0;
+  background-color: #e9ecef;
+  &-shimmer {
+    padding: 0;
+    height: 2rem;
+    background: linear-gradient(
+      99.72deg,
+      #f7f7f7 -56.2%,
+      #f7f7f7 36.73%,
+      #ffffff 46.37%,
+      #f7f7f7 51.87%,
+      #f7f7f7 61.58%,
+      #f7f7f7 81.5%,
+      #f7f7f7 157.01%
+    );
+
+    background-repeat: no-repeat;
+    animation: shimmer 1.5s infinite linear;
+  }
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(300%);
+    }
+  }
+}

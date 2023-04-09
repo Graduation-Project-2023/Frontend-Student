@@ -1,10 +1,10 @@
 .main-container {
-  width: 90vw;
+  width: 100%;
   height: auto;
-  margin: 20px auto;
+  margin: 0px auto;
   padding: 20px;
   border-radius: 10px;
-  background-color: #f5faff;
+  background-color: white;
 
   & h1 {
     border-bottom: 1px solid #d9d9d9;
@@ -43,26 +43,5 @@
 
   &:last-child {
     border-bottom: 1px solid #d9d9d9;
-  }
-
-  &-header {
-    padding: 30px 7%;
-    border-left: 1px solid #d9d9d9;
-    border-right: 1px solid #d9d9d9;
-    border-bottom: 1px dotted #eaeaea;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    &-img {
-      & img {
-        width: 200px;
-        height: 200px;
-      }
-    }
-    &-data {
-      height: 100%;
-      align-items: center;
-      width: 100%;
-    }
   }
 }

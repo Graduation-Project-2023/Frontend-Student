@@ -1,22 +1,20 @@
 @import "./styles/abstract/mixins";
 @import "./styles/base/reset";
-@import "../src/roles/public/home/home";
-@import "../src/roles/public/landing/landing";
-@import "../src/roles/public/admission/admissionInfo";
-@import "../src/roles/public/undergraduate/undergraduate";
-@import "../src/roles/public/staff/staff";
 @import "./styles/layout/header";
-@import "./styles/student/info";
+@import "./styles/layout/landing_navbar";
 @import "./styles/components/loginTemplate";
 @import "./styles/components/sidebar";
 @import "./styles/components/commonPage";
+@import "./styles/components/buttons";
+@import "./styles/student/info";
 @import "./components/table/common/commonTable";
 @import "./components/table/vertical/verticalTable";
-@import "./styles/components/buttons";
+@import "./components/loaders/loadingInput";
+@import "./roles/public/home/home";
+@import "./roles/public/landing/landing";
+@import "./roles/public/admission/admissionInfo";
+@import "./roles/public/undergraduate/undergraduate";
+@import "./roles/public/staff/staff";
 @import "./roles/student/registeration/registeration";
 @import "./roles/student/assistant/assistant";
-
-// new info styles
-@import "../src/roles/student/newInfo/newNavbar";
-@import "../src/roles/student/newInfo/newHeader";
-@import "../src/roles/student/newInfo/newInfo";
+@import "./roles/student/portal/portal";

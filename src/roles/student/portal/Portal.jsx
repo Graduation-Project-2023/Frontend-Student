@@ -5,6 +5,7 @@ import { SidebarCont } from "../../../components/header/SidebarCont";
 import { useTranslation } from "react-i18next";
 import { StudentInfoData } from "./StudentInfoData";
 import axios from "axios";
+import { LoadingInput } from "../../../components/loaders/LoadingInput";
 
 export const Portal = () => {
   const [studentData, setStudentData] = useState({});
@@ -52,49 +53,127 @@ export const Portal = () => {
     return `${day}/${month}/${year}`;
   };
 
+  const functionTest = () => {
+    const dataTypes = {
+      name1: "englishName",
+      name2: "arabicName",
+    };
+
+    console.log(studentData[dataTypes.name1]);
+  };
+
   return (
-    <div className="container">
-      <SidebarCont>
-        <div className="cont">
+    <SidebarCont>
+      <div className="main-container">
+        <h1>بيانات الطالب</h1>
+        <div className="main-container-data">
           {StudentInfoData.map((item) => {
             return (
-              <div key={item.id} className="info">
-                <h1 className="info-title">{`${t(item.title)}`}</h1>
-                <div className="infoCard">
-                  {item.data.map((items) => {
-                    return (
-                      <div className="infoCard-item" key={items.id}>
-                        <span className="infoCard-item-title">
-                          {`${t(items.title)}`}
-                        </span>
-                        {userUX.error ? (
-                          userUX.errorMsg
-                        ) : userUX.loading ? (
-                          <span>loading....</span>
-                        ) : items.enum === true ? (
-                          <span>{t(`enums.${studentData[items.name]}`)}</span>
-                        ) : items.date === true ? (
-                          <span>
-                            {studentData[items.name] === null
-                              ? t("enums.null")
-                              : dateFormatter(studentData[items.name])}
-                          </span>
-                        ) : (
-                          <span>
-                            {studentData[items.name] === null
-                              ? t("enums.null")
-                              : studentData[items.name]}
-                          </span>
-                        )}
-                      </div>
-                    );
+              <section className="section-container" key={item.id}>
+                <h3>{t(item.title)}</h3>
+                <div className="section-container-data">
+                  {item.data.map((dataItem) => {
+                    if (dataItem.row) {
+                      return userUX.loading ? (
+                        <LoadingInput
+                          row={true}
+                          label={t(dataItem.title)}
+                          key={dataItem.id}
+                        />
+                      ) : (
+                        <div className="col-lg-12 mb-4" key={dataItem.id}>
+                          <label className="form-label">
+                            {t(dataItem.title)}
+                          </label>
+                          <div>
+                            {dataItem.type === "textarea" ? (
+                              <textarea
+                                readOnly
+                                className="form-control"
+                                defaultValue={
+                                  studentData[dataItem.name] === null ||
+                                  studentData[dataItem.name] === undefined
+                                    ? t("enums.null")
+                                    : dataItem.enum
+                                    ? t(`enums.${studentData[dataItem.name]}`)
+                                    : dataItem.date
+                                    ? dateFormatter(studentData[dataItem.name])
+                                    : studentData[dataItem.name]
+                                }
+                              ></textarea>
+                            ) : (
+                              <input
+                                readOnly
+                                type={"text"}
+                                defaultValue={
+                                  studentData[dataItem.name] === null ||
+                                  studentData[dataItem.name] === undefined
+                                    ? t("enums.null")
+                                    : dataItem.enum
+                                    ? t(`enums.${studentData[dataItem.name]}`)
+                                    : dataItem.date
+                                    ? dateFormatter(studentData[dataItem.name])
+                                    : studentData[dataItem.name]
+                                }
+                                className="form-control"
+                              />
+                            )}
+                          </div>
+                        </div>
+                      );
+                    } else {
+                      return userUX.loading ? (
+                        <LoadingInput
+                          splitLabel={[
+                            { id: 0, label: t(dataItem.splitRow[0].title) },
+                            { id: 1, label: t(dataItem.splitRow[1].title) },
+                          ]}
+                          key={dataItem.id}
+                        />
+                      ) : (
+                        <div className="row" key={dataItem.id}>
+                          {dataItem.splitRow.map((splitData) => {
+                            return (
+                              <div className="col-lg-6 mb-4" key={splitData.id}>
+                                <label className="form-label">
+                                  {t(splitData.title)}
+                                </label>
+                                <div>
+                                  <input
+                                    readOnly
+                                    type="text"
+                                    defaultValue={
+                                      studentData[splitData.name] === null ||
+                                      studentData[splitData.name] === undefined
+                                        ? t("enums.null")
+                                        : splitData.enum
+                                        ? t(
+                                            `enums.${
+                                              studentData[splitData.name]
+                                            }`
+                                          )
+                                        : splitData.date
+                                        ? dateFormatter(
+                                            studentData[splitData.name]
+                                          )
+                                        : studentData[splitData.name]
+                                    }
+                                    className="form-control"
+                                  />
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      );
+                    }
                   })}
                 </div>
-              </div>
+              </section>
             );
           })}
         </div>
-      </SidebarCont>
-    </div>
+      </div>
+    </SidebarCont>
   );
 };

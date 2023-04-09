@@ -294,114 +294,112 @@ export const Registeration = () => {
   };
 
   return (
-    <div className="container">
-      <SidebarCont>
-        <div className="cont">
-          <div className="mb-4">
-            <VerticalTable
-              headings={StudentTableHeadings}
-              data={testingStudent}
-            />
-          </div>
-          {userUX.table.error && (
-            <h1>
-              <h1>{userUX.table.errorMsg}</h1>
-              <h1>{userUX.table.errorMsg}</h1>
-              <h1>{userUX.table.errorMsg}</h1>
-              <h1>{userUX.table.errorMsg}</h1>
-            </h1>
-          )}
-          <div className="btnBar">
-            {LEVELS.map((level) => {
-              return (
-                <button onClick={() => barSelect(level.id)} key={level.id}>
-                  {level.level}
-                </button>
-              );
-            })}
-          </div>
-          {LEVELS.map((level) => {
-            if (level.id !== lvls) return null;
-            else {
-              return (
-                <div key={level.id}>
-                  <div className="commonTable">
-                    <h4>المقررات المتاحة</h4>
-                    <table>
-                      <tbody>
-                        <tr>
-                          {CoursesTableHeadings.map((heading) => (
-                            <th key={heading.id}>
-                              {t(heading.label).toUpperCase()}
-                            </th>
-                          ))}
-                          <th>اضافة | حذف</th>
-                        </tr>
-                        {availableClasses
-                          .filter((item) => item.level.level === level.id)
-                          .map((item) => {
-                            if (item.classes.length === 0) return null;
-                            else {
-                              return (
-                                <tr key={item.classes[0].id}>
-                                  {CoursesTableHeadings.map((heading) => {
-                                    if (heading.name === "name") {
-                                      return (
-                                        <td key={heading.id}>
-                                          {i18next.language === "en"
-                                            ? item.classes[0]["englishName"]
-                                            : item.classes[0]["arabicName"]}
-                                        </td>
-                                      );
-                                    } else {
-                                      return (
-                                        <td key={heading.id}>
-                                          {item.classes[0][heading.name]}
-                                        </td>
-                                      );
-                                    }
-                                  })}
-                                  <td>
-                                    {courseInstancesIds.includes(
-                                      item.classes[0].courseInstanceId
-                                    ) ? (
-                                      <button
-                                        onClick={() =>
-                                          removeCourseFromTable(item.classes)
-                                        }
-                                      >
-                                        حذف
-                                      </button>
-                                    ) : (
-                                      <button
-                                        onClick={() =>
-                                          addCourseToTable(item.classes)
-                                        }
-                                      >
-                                        اضافة
-                                      </button>
-                                    )}
-                                  </td>
-                                </tr>
-                              );
-                            }
-                          })}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              );
-            }
-          })}
-          <div className="mt-4">
-            <DayPeriodTable
-              cellsSetter={handleCellsSetter}
-              tableData={tableData}
-              saveTableData={saveTableData}
-            />
-          </div>
+    <SidebarCont>
+      <div className="cont">
+        <div className="mb-4">
+          <VerticalTable
+            headings={StudentTableHeadings}
+            data={testingStudent}
+          />
         </div>
-      </SidebarCont>
-    </div>
+        {userUX.table.error && (
+          <h1>
+            <h1>{userUX.table.errorMsg}</h1>
+            <h1>{userUX.table.errorMsg}</h1>
+            <h1>{userUX.table.errorMsg}</h1>
+            <h1>{userUX.table.errorMsg}</h1>
+          </h1>
+        )}
+        <div className="btnBar">
+          {LEVELS.map((level) => {
+            return (
+              <button onClick={() => barSelect(level.id)} key={level.id}>
+                {level.level}
+              </button>
+            );
+          })}
+        </div>
+        {LEVELS.map((level) => {
+          if (level.id !== lvls) return null;
+          else {
+            return (
+              <div key={level.id}>
+                <div className="commonTable">
+                  <h4>المقررات المتاحة</h4>
+                  <table>
+                    <tbody>
+                      <tr>
+                        {CoursesTableHeadings.map((heading) => (
+                          <th key={heading.id}>
+                            {t(heading.label).toUpperCase()}
+                          </th>
+                        ))}
+                        <th>اضافة | حذف</th>
+                      </tr>
+                      {availableClasses
+                        .filter((item) => item.level.level === level.id)
+                        .map((item) => {
+                          if (item.classes.length === 0) return null;
+                          else {
+                            return (
+                              <tr key={item.classes[0].id}>
+                                {CoursesTableHeadings.map((heading) => {
+                                  if (heading.name === "name") {
+                                    return (
+                                      <td key={heading.id}>
+                                        {i18next.language === "en"
+                                          ? item.classes[0]["englishName"]
+                                          : item.classes[0]["arabicName"]}
+                                      </td>
+                                    );
+                                  } else {
+                                    return (
+                                      <td key={heading.id}>
+                                        {item.classes[0][heading.name]}
+                                      </td>
+                                    );
+                                  }
+                                })}
+                                <td>
+                                  {courseInstancesIds.includes(
+                                    item.classes[0].courseInstanceId
+                                  ) ? (
+                                    <button
+                                      onClick={() =>
+                                        removeCourseFromTable(item.classes)
+                                      }
+                                    >
+                                      حذف
+                                    </button>
+                                  ) : (
+                                    <button
+                                      onClick={() =>
+                                        addCourseToTable(item.classes)
+                                      }
+                                    >
+                                      اضافة
+                                    </button>
+                                  )}
+                                </td>
+                              </tr>
+                            );
+                          }
+                        })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            );
+          }
+        })}
+        <div className="mt-4">
+          <DayPeriodTable
+            cellsSetter={handleCellsSetter}
+            tableData={tableData}
+            saveTableData={saveTableData}
+          />
+        </div>
+      </div>
+    </SidebarCont>
   );
 };

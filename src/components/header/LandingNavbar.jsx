@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useAuth } from "../../hooks/useAuth";
 
@@ -7,29 +7,34 @@ export const LandingNavbar = () => {
   const navigate = useNavigate();
   const authContext = useAuth();
 
+  const navItems = [
+    { id: "1", path: "/", name: "landingNav.home" },
+    { id: "2", path: "/staff", name: "home.staff" },
+    { id: "3", path: "/undergraduate", name: "home.undergraduate" },
+    { id: "4", path: "/landing", name: "landingNav.center" },
+    { id: "5", path: "/admission_info", name: "landingNav.admission_info" },
+    { id: "6", path: "/login", name: "common.portal" },
+  ];
+
   return (
-    <nav className="landing-nav">
-      <Link to="/" className="landing-nav-title">
-        {t("landingNav.home")}
-      </Link>
-      <Link to="/staff" className="landing-nav-title">
-        {t("home.staff")}
-      </Link>
-      <Link to="/undergraduate" className="landing-nav-title">
-        {t("home.undergraduate")}
-      </Link>
-      <Link to="/landing" className="landing-nav-title">
-        {t("landingNav.center")}
-      </Link>
-      <Link to="/admission_info" className="landing-nav-title">
-        {t("landingNav.admission_info")}
-      </Link>
-      <Link
-        to={authContext.isLoggedIn ? "/student" : "/login"}
-        className="landing-nav-title"
-      >
-        {t("common.portal")}
-      </Link>
+    <nav className="transitionNavParent">
+      <ul className="transitionNav">
+        {navItems.map((item) => {
+          return (
+            <li key={item.id}>
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  isActive ? "transitionNav-active" : ""
+                }
+                data-hover={t(item.name)}
+              >
+                {t(item.name)}
+              </NavLink>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 };

@@ -1,13 +1,17 @@
 .sidebarContainer {
   display: grid;
-  grid-template-columns: 30% 60%;
-  gap: 10%;
+  grid-template-columns: 400px auto;
+  gap: 50px;
+  margin: 80px 50px;
+}
+.over-flow-hidden {
+  overflow-x: hidden;
 }
 .sidebar {
   position: absolute;
   background: linear-gradient(168.64deg, #3d7dca 0%, #003087 76.04%);
-  margin: 5rem;
   width: 400px;
+  margin: 80px 50px;
   height: auto;
   border-radius: 5px;
 
