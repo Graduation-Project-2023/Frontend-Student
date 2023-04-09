@@ -89,7 +89,11 @@
     "name": "الاسم",
     "department": "القسم",
     "level": "المستوى",
-    "program": "البرنامج"
+    "program": "البرنامج",
+    "add/delete": "اضافة/حذف",
+    "startPeriod": "بداية الفترة",
+    "endPeriod": "نهاية الفترة",
+    "smartAssistant": "المساعد الذكي"
   },
   "login": {
     "email": "اسم المستخدم",
@@ -169,8 +173,9 @@
     "hours": "عدد الساعات",
     "type": "نوع المقرر",
     "pre": "كود الطلب المسبق",
-    "passed": "passed",
-    "registeration": "مسجل"
+    "passed": "ناجح",
+    "registeration": "مسجل",
+    "available": "المقررات المتاحة"
   },
   "enums": {
     "MALE": "ذكر",

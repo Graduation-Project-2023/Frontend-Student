@@ -39,8 +39,23 @@ export const CoursesTableHeadings = [
     label: "courses.name",
     name: "name",
   },
-  { id: 1, label: "common.lecturer", name: "lecturer" },
-  { id: 2, label: "common.place", name: "place" },
+  {
+    id: 1,
+    label: "common.day",
+    name: "day",
+  },
+  {
+    id: 2,
+    label: "common.startPeriod",
+    name: "startPeriod",
+  },
+  {
+    id: 3,
+    label: "common.endPeriod",
+    name: "endPeriod",
+  },
+  { id: 4, label: "common.lecturer", name: "lecturer" },
+  { id: 5, label: "common.place", name: "place" },
 ];
 
 // testing only will delete later

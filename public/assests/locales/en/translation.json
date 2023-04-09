@@ -87,7 +87,11 @@
     "name": "Name",
     "department": "Department",
     "level": "Level",
-    "program": "Program"
+    "program": "Program",
+    "add/delte": "Add/Delete",
+    "startPeriod": "Start Period",
+    "endPeriod": "End Period",
+    "smartAssistant": "Smart Assistant"
   },
   "login": {
     "email": "E-mail",
@@ -184,7 +188,8 @@
     "type": "Type",
     "pre": "Prerequisite Code",
     "passed": "Passed",
-    "registeration": "Registeration"
+    "registeration": "Registeration",
+    "available": "Available Courses"
   },
   "enums": {
     "MALE": "Male",

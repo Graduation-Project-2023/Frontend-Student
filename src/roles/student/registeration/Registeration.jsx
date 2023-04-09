@@ -325,7 +325,7 @@ export const Registeration = () => {
             return (
               <div key={level.id}>
                 <div className="commonTable">
-                  <h4>المقررات المتاحة</h4>
+                  <h4 className="p-1">{t("courses.available")}</h4>
                   <table>
                     <tbody>
                       <tr>
@@ -334,7 +334,7 @@ export const Registeration = () => {
                             {t(heading.label).toUpperCase()}
                           </th>
                         ))}
-                        <th>اضافة | حذف</th>
+                        <th>{t("common.add/delete")}</th>
                       </tr>
                       {availableClasses
                         .filter((item) => item.level.level === level.id)
@@ -350,6 +350,16 @@ export const Registeration = () => {
                                         {i18next.language === "en"
                                           ? item.classes[0]["englishName"]
                                           : item.classes[0]["arabicName"]}
+                                      </td>
+                                    );
+                                  } else if (heading.name === "day") {
+                                    return (
+                                      <td key={heading.id}>
+                                        {t(
+                                          `week.${item.classes[0][
+                                            heading.name
+                                          ].toLowerCase()}`
+                                        )}
                                       </td>
                                     );
                                   } else {

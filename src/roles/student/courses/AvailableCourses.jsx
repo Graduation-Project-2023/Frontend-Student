@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
 
@@ -22,6 +23,7 @@ export const AvailableCourses = () => {
     error: false,
     errorMsg: "",
   });
+  const { t } = useTranslation();
 
   useEffect(() => {
     // TO DELETE
@@ -113,7 +115,7 @@ export const AvailableCourses = () => {
         return (
           <div className="mb-5" key={item.level}>
             <CommonTable
-              header={`${item.level}`}
+              header={`${t("common.level").toUpperCase()} "${item.level}"`}
               headings={TableHeadings}
               data={item.courses}
               userUX={userUX}

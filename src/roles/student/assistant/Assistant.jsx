@@ -81,7 +81,7 @@ export const Assistant = () => {
 
   return (
     <SidebarCont>
-      <div style={{ height: "700px", width: "700px", margin: "2rem" }}>
+      <div style={{ height: "600px", width: "auto", marginBottom: "60px" }}>
         <ConversationHeader>
           <Avatar src={assistantAvatar} name="Assistant" />
           <ConversationHeader.Content>

@@ -10,6 +10,7 @@
     border-collapse: collapse;
     width: 100%;
     table-layout: fixed;
+    background-color: white;
 
     & td,
     th {
@@ -24,10 +25,6 @@
     & th {
       background-color: #2070ba;
       color: white;
-    }
-
-    & td {
-      background-color: #dfe3ee;
     }
   }
 }
