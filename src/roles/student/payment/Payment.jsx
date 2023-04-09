@@ -1,3 +1,5 @@
+import { SidebarCont } from "../../../components/header/SidebarCont";
+
 export const Payment = () => {
-  return <div>Payment</div>;
+  return <SidebarCont>hello</SidebarCont>;
 };

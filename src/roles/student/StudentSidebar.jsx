@@ -1,4 +1,4 @@
-import { Sidebar } from "../../../components/header/Sidebar";
+import { Sidebar } from "../../components/header/Sidebar";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaBookReader, FaMoneyCheck, FaRobot } from "react-icons/fa";
 import { AiOutlineUserAdd } from "react-icons/ai";
@@ -35,8 +35,13 @@ export const StudentSidebar = () => {
       name: "common.smartAssistant",
       icon: <FaRobot />,
     },
-    // { id: "6", path: "fees", name: "student.fees", icon: <FaMoneyCheck /> },
-
+    { id: "6", path: "fees", name: "student.fees", icon: <FaMoneyCheck /> },
+    {
+      id: "7",
+      path: "receipts",
+      name: "student.receipts",
+      icon: <FaMoneyCheck />,
+    },
     // {
     //   id: "7",
     //   path: "grades",

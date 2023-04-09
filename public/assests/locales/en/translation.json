@@ -171,7 +171,8 @@
     "allowed_hrs": "Allowed Hours",
     "advisor": "Academic Advisor",
     "allowed_courses": "Allowed Courses",
-    "schedule": "Schedule"
+    "schedule": "Schedule",
+    "receipts": "Receipts"
   },
   "info": {
     "personal": "Personal info",
