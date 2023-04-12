@@ -1,4 +1,4 @@
-export const UndergraduateData = {
+export const PostgraduateData = {
   firstList: [
     { id: 0, title: "diplomaConditions.1" },
     { id: 1, title: "diplomaConditions.2" },

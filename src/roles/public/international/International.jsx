@@ -1,13 +1,11 @@
 // Reusable Components and Images
 import img1 from "../../../shared/images/images.jpeg";
 import { useTranslation } from "react-i18next";
-import { LandingNavbar } from "../../../components/header/LandingNavbar";
 
-export const AdmissionInfo = () => {
+export const International = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <LandingNavbar />
       <div className="admission-first-container">
         <p>
           {t("admission.firstcontainer1")}
@@ -62,7 +60,6 @@ export const AdmissionInfo = () => {
           </span>
         </div>
       </div>
-      <div></div>
     </div>
   );
 };

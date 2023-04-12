@@ -1,18 +1,15 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { useAuth } from "../../hooks/useAuth";
 
 export const LandingNavbar = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-  const authContext = useAuth();
 
   const navItems = [
-    { id: "1", path: "/", name: "landingNav.home" },
-    { id: "2", path: "/staff", name: "home.staff" },
-    { id: "3", path: "/undergraduate", name: "home.undergraduate" },
-    { id: "4", path: "/landing", name: "landingNav.center" },
-    { id: "5", path: "/admission_info", name: "landingNav.admission_info" },
+    { id: "1", path: "", name: "landingNav.home" },
+    { id: "2", path: "staff", name: "home.staff" },
+    { id: "3", path: "undergraduate", name: "home.undergraduate" },
+    { id: "4", path: "postgraduate", name: "home.postgraduate" },
+    { id: "5", path: "international", name: "home.international" },
     { id: "6", path: "/login", name: "common.portal" },
   ];
 

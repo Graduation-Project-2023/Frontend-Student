@@ -16,13 +16,9 @@ import { Header } from "./components/header/Header";
 ////////// Private Routes //////////
 import { StudentRoutes } from "./roles/student/StudentRoutes";
 ////////// Public Routes //////////
-import { Home } from "./roles/public/home/Home.jsx";
+import { LandingRoutes } from "./roles/public/LandingRoutes";
 import { Unauthorized } from "./pages/Unauthorized";
 import { Redirecting } from "./pages/Redirecting";
-import { Landing } from "./roles/public/landing/Landing";
-import { AdmissionInfo } from "./roles/public/admission/AdmissionInfo";
-import { Staff } from "./roles/public/staff/Staff";
-import { Undergraduate } from "./roles/public/undergraduate/Undergraduate";
 import { NotFound } from "./pages/NotFound";
 import { TestingPage } from "./common/TestingPage";
 
@@ -33,15 +29,11 @@ function App() {
       <Header />
       <Routes>
         {/* Public Routes */}
-        <Route path="" element={<Home />} exact />
+        <Route path="/*" element={<LandingRoutes />} exact />
         <Route path="login" element={<Login />} />
         <Route path="forgetpwd" element={<ForgetPwd />} />
         <Route path="resetpwd/:token/:email" element={<ResetPwd />} />
         <Route path="acquire_credentials" element={<GetEmail />} />
-        <Route path="landing" element={<Landing />} />
-        <Route path="admission_info" element={<AdmissionInfo />} />
-        <Route path="undergraduate" element={<Undergraduate />} />
-        <Route path="staff" element={<Staff />} />
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route path="redirecting" element={<Redirecting />} />
         <Route path="testing" element={<TestingPage />} />

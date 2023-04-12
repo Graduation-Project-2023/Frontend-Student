@@ -1,15 +1,11 @@
 import { useTranslation } from "react-i18next";
 import { StaffData } from "./StaffData.js";
-
-// Reusable Components and Images
-import { LandingNavbar } from "../../../components/header/LandingNavbar";
 import image6 from "../../../shared/images/image6.jpg";
 
 export const Staff = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <LandingNavbar />
       <div className="staff-container-1">
         <div>
           <div>
