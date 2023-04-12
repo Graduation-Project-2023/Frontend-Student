@@ -65,6 +65,11 @@
   & li:hover a {
     transform: translateY(-100%);
   }
+
+  [aria-current]:not([aria-current="false"]) {
+    transform: translateY(-100%);
+  }
+
   &-active {
     & a {
       transform: translateY(-100%);

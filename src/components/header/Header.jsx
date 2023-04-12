@@ -89,31 +89,29 @@ export const Header = () => {
           : authContext.college?.arabicName}
       </div>
       <div className="main-header-item">
-        {authContext.isLoggedIn && (
-          <Dropdown>
-            <Dropdown.Toggle>
-              <BiWorld size={30} />
-            </Dropdown.Toggle>
+        <Dropdown>
+          <Dropdown.Toggle>
+            <BiWorld size={30} />
+          </Dropdown.Toggle>
 
-            <Dropdown.Menu>
-              <Dropdown.Item>{t("common.language")}</Dropdown.Item>
-              {languages.map(({ code, name }) => (
-                <Dropdown.Item key={code}>
-                  <span
-                    className={classNames("dropdown-item", {
-                      disabled: i18next.language === code,
-                    })}
-                    onClick={() => {
-                      i18next.changeLanguage(code);
-                    }}
-                  >
-                    {name}
-                  </span>
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
-        )}
+          <Dropdown.Menu>
+            <Dropdown.Item>{t("common.language")}</Dropdown.Item>
+            {languages.map(({ code, name }) => (
+              <Dropdown.Item key={code}>
+                <span
+                  className={classNames("dropdown-item", {
+                    disabled: i18next.language === code,
+                  })}
+                  onClick={() => {
+                    i18next.changeLanguage(code);
+                  }}
+                >
+                  {name}
+                </span>
+              </Dropdown.Item>
+            ))}
+          </Dropdown.Menu>
+        </Dropdown>
       </div>
     </nav>
   );
