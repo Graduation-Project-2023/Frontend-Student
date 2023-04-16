@@ -29,6 +29,8 @@ export const Login = () => {
   }, [authContext.isLoggedIn]);
 
   const handleLogin = (e) => {
+    authContext.login("brrrrrrrrrrrrrr", "STUDENT", "brrrrrrrrrrrrrr");
+
     e.preventDefault();
     setUserUX((prev) => ({ ...prev, loading: true, error: false }));
     const userCredentials = {

@@ -1,13 +1,14 @@
 import { SidebarCont } from "../../../components/header/SidebarCont";
-import { useNavigate } from "react-router-dom";
 
 export const Payment = () => {
+  const handlePay = () => {
+    window.open(
+      "http://localhost:3000/portal/student/fees/dd134isdfgn",
+      "payment_gateway",
+      "menubar=1,resizable=1,width=900,height=700"
+    );
+  };
 
-  const navigate = useNavigate(); 
-  const handlePay = () =>{  
-    navigate("/paymentPopup");
-  }
-  
   return (
     <SidebarCont>
       <button onClick={handlePay}> pay now</button>
