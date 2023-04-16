@@ -117,6 +117,16 @@
     "button": "Send",
     "subtitle": "Please  enter your national ID"
   },
+  "payment": {
+    "header": "You Have To Pay",
+    "ccn": "Card Number",
+    "ccnTxt": "Please enter the 16-digit number on your card",
+    "cvv": "CVV",
+    "cvvTxt": "Enter the 3-digit number on the back of your card",
+    "date": "Expiry Date",
+    "password": "Enter Your Acadimic Password",
+    "button": "Pay Now"
+  },
   "week": {
     "saturday": "Saturday",
     "sunday": "Sunday",

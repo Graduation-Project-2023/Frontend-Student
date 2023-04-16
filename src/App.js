@@ -21,6 +21,8 @@ import { Unauthorized } from "./pages/Unauthorized";
 import { Redirecting } from "./pages/Redirecting";
 import { NotFound } from "./pages/NotFound";
 import { TestingPage } from "./common/TestingPage";
+import { Payment } from "./roles/student/payment/Payment";
+import { PaymentPopup } from "./roles/student/payment/PaymentPopup";
 
 function App() {
   axios.defaults.withCredentials = true;
@@ -37,6 +39,8 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route path="redirecting" element={<Redirecting />} />
         <Route path="testing" element={<TestingPage />} />
+        <Route path="Payment" element={<Payment />} />
+        <Route path="PaymentPopup" element={<PaymentPopup />} />
 
         {/* Student Routes (Private) */}
         <Route element={<LoginRoute allowedRoles={"STUDENT"} />}>
