@@ -11,6 +11,7 @@
     text-decoration: none;
     margin: 60px;
     font-size: 15px;
+    
   }
 }
 
@@ -29,14 +30,10 @@
   grid-template-columns: 60% 40%;
   background-color: white;
   justify-content: center;
-  margin-top: 20px;
   align-items: center;
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-bottom: 20px;
   color: grey;
   font-size: 18px;
-
+  padding: 5% 0% 5% 3%;
   /* &-title{
         text-align: center;
         color: #003087;
@@ -56,21 +53,25 @@
 }
 
 .admission-container {
-  background-color: $Blue4 ;
+  background-color: #1681FF40 ;
   padding: 40px;
   display: grid;
   grid-template-columns: 75% 25%;
 
   &-title {
-    color: #003087;
+    color: #22277A;
     font-weight: bold;
     margin-bottom: 30px;
+    padding-left: 10%;
   }
 
   &-text {
-    color: grey;
+    color: #7F8187;
     font-size: 18px;
     padding-top: 2px;
+    padding-left: 2%;
   
   }
 }
+.final-text {
+  padding: 1% 0% 0% 2%}
