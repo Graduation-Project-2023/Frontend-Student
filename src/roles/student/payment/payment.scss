@@ -1,0 +1,83 @@
+.payCont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  width: 100vw;
+  background: #dfe3ee;
+  &-hr {
+    margin: 0;
+  }
+  &-wrap {
+    padding-bottom: 3rem;
+    background: white;
+    width: 40%;
+    height: fit-content;
+    border-radius: 1rem;
+    h6 {
+      color: #00000099;
+      font-size: x-small;
+    }
+    h5 {
+      font-size: small;
+    }
+    h4 {
+      font-size: medium;
+    }
+    &-head {
+      padding-top: 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &-div {
+        padding: 0 0.1rem;
+        div {
+          text-align: center;
+        }
+        img {
+          width: 70%;
+        }
+      }
+    }
+    &-content {
+      &-img {
+        width: 100%;
+        height: 30%;
+        text-align: center;
+        & img {
+          width: 30%;
+        }
+      }
+      &-div {
+        text-align: center;
+        &-btn {
+          border: none;
+          border-radius: 0.4rem;
+          padding: 0.6rem;
+          width: 92%;
+          background: #3d7dca;
+          color: whitesmoke;
+          font-weight: 600;
+          font-size: large;
+        }
+      }
+      &-form {
+        padding: 0rem 1rem 1rem 1rem;
+        width: 90%;
+        &-div {
+          margin: 1rem;
+          &-input {
+            border: 0.5px solid black;
+            border-radius: 1rem;
+            padding: 0.1rem;
+            width: 50%;
+            background-repeat: no-repeat;
+            background-position: 98% 50%;
+            background-size: contain;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
