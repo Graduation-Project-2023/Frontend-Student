@@ -56,7 +56,7 @@ export const International = () => {
               {t("admission.admission9")}
             </h5>
 
-            <div>{t("admission.admissionFinalText")}</div>
+            <div className="final-text">{t("admission.admissionFinalText")}</div>
           </span>
         </div>
       </div>

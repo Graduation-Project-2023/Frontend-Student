@@ -16,7 +16,7 @@ export const Home = () => {
     <>
       <div className="home">
         <div className="home-bg">
-          <div className="home-btns">
+          {/*<div className="home-btns">
             <button className="home-btn home-btn-side">
               <h1 className="home-btn-icon">
                 <FaChalkboardTeacher />
@@ -35,7 +35,7 @@ export const Home = () => {
               </h1>
               {t("home.postgraduate")}
             </button>
-          </div>
+  </div>*/}
         </div>
       </div>
 

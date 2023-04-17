@@ -29,12 +29,13 @@
   background-color: white;
   justify-content: center;
   padding-bottom: 40px;
-  margin-top: 50px;
   align-items: center;
   color: grey;
   font-size: 18px;
   padding-left: 60px;
   padding-right: 60px;
+  padding-bottom: 50px;
+  padding-top: 30px;
 
   &-title {
     text-align: center;
@@ -57,20 +58,20 @@
 .second-container {
   display: grid;
   grid-template-columns: 70% 30%;
-  background-color: $Blue2 ;
+  background-color: #1681FF40 ;
   padding-left: 40px;
   padding-right: 40px;
 
   &-text {
     margin-top: 20px;
-    color: $White;
+    color: #FFFFFF;
     font-size: 18px;
-    padding: 20px;
+    padding: 40px 0px 40px 20px;
   }
 
   &-title {
 
-    color: $Black;
+    color: #003087;
     font-weight: bold;
     text-align: center;
     margin-top: 20%;
@@ -81,19 +82,19 @@
 .third-container {
   display: grid;
   grid-template-columns: 30% 70%;
-  background-color: $Blue2;
+  background-color: #FFFFFF;
   padding-left: 40px;
   padding-left: 40px;
 
   &-text {
     margin-top: 20px;
-    color: $White;
+    color: #7F8187;
     font-size: 18px;
     padding: 20px;
   }
 
   &-title {
-    color: $Black;
+    color: #003087;
     font-weight: bold;
     text-align: center;
     margin-top: 30%;
@@ -101,10 +102,6 @@
   }
 }
 
-.seperatingColor{
-  height: 40px;
-  background-color: $Blue4 ;
-}
 
 /*.trapeziod1{
     background-color: grey;

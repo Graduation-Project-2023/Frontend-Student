@@ -22,11 +22,11 @@ export const Postgraduate = () => {
           ))}
         </ul>
       </div>
-      <div className="seecond-container">
-        <h3 className="seecond-container-title">
+      <div className="thirdd-container">
+        <h3 className="thirdd-container-title">
           {t("undergraduate.container-3-title")}
         </h3>
-        <ol className="seecond-container-text">
+        <ol className="thirdd-container-text">
           {PostgraduateData.secondList.map((item) => (
             <li key={item.id}>{t(item.title)}</li>
           ))}

@@ -1,7 +1,7 @@
 .staff-container-1 {
   display: grid;
   grid-template-columns: 70% 30%;
-  background-color: #3d7dca;
+  background-color: #FFFFFF;
   height: 393px;
   padding: 0 85px;
 
@@ -10,7 +10,7 @@
     font-weight: 700;
     font-size: 25px;
     padding: 45px 0 0px 0;
-    color: #444444;
+    color: #22277A;
   }
   &-image {
     display: block;
@@ -21,10 +21,10 @@
   &-text {
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     margin-top: 65px;
     line-height: 19px;
-    color: white;
+    color: #7F8187;
     max-width: 700px;
   }
 }
@@ -32,10 +32,9 @@
 .staff-container-2 {
   display: grid;
   grid-template-columns: 70% 30%;
-  background-color: #3d7dca;
+  background-color: #1681FF40;
   align-items: center;
   justify-content: center;
-  margin-top: 25px;
   height: 371px;
   padding: 0 85px;
   
@@ -44,7 +43,7 @@
     max-width: 700px;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 19px;
   }
   &-title {
@@ -53,15 +52,14 @@
     font-weight: 700;
     font-size: 25px;
     line-height: 24px;
-    color: #444444;
+    color: #22277A;
   }
 }
 
 .staff-container-3 {
   display: grid;
   grid-template-columns: 30% 70%;
-  background-color: #3d7dca;
-  margin-top: 25px;
+  background-color: #FFFFFF;
   height: 371px;
   align-items: center;
   justify-content: center;
@@ -69,12 +67,12 @@
 
 
   &-text {
-    color: white;
+    color: #7F8187;
     max-width: 897px;
     padding: 0 20px 0 20px;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 19px;
   }
   &-title {
@@ -82,7 +80,7 @@
     font-weight: 700;
     font-size: 25px;
     line-height: 24px;
-    color: #444444;
+    color: #22277A;
     
   }
   & li {
@@ -93,10 +91,9 @@
 .staff-container-4 {
   display: grid;
   grid-template-columns: 70% 30%;
-  background-color: #3d7dca;
+  background-color: #1681FF40;
   align-items: center;
   justify-content: center;
-  margin-top: 25px;
   height: 371px;
   padding: 0 85px;
   
@@ -106,14 +103,14 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    color: white;
+    color: #7F8187;
   }
   &-title {
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
     line-height: 24px;
-    color: #444444;
+    color: #22277A;
   }
   & li {
     max-width: 700px;
