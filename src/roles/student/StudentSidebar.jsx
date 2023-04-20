@@ -6,6 +6,7 @@ import { GiSandsOfTime } from "react-icons/gi";
 import { CgCardHearts } from "react-icons/cg";
 import { BsFileEarmarkText } from "react-icons/bs";
 import { ImTable } from "react-icons/im";
+import { MdOutlineQuiz } from "react-icons/md";
 
 export const StudentSidebar = () => {
   const menu = [
@@ -42,12 +43,12 @@ export const StudentSidebar = () => {
       name: "student.receipts",
       icon: <FaMoneyCheck />,
     },
-    // {
-    //   id: "7",
-    //   path: "grades",
-    //   name: "student.grades",
-    //   icon: <BsFileEarmarkText />,
-    // },
+    {
+      id: "8",
+      path: "quiz",
+      name: "student.quiz",
+      icon: <MdOutlineQuiz />,
+    },
     // {
     //   id: "8",
     //   path: "desires",

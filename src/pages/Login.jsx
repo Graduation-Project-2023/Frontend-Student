@@ -1,11 +1,9 @@
 import { useRef, useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL } from "../shared/API";
 import { useAuth } from "../hooks/useAuth";
 import { useTranslation } from "react-i18next";
-import { BiError } from "react-icons/bi";
-import { FormButton } from "../components/buttons/Buttons";
 import logo from "../shared/images/logo.png";
 import { LoginTemplate } from "../components/other/LoginTemplate";
 
@@ -29,8 +27,6 @@ export const Login = () => {
   }, [authContext.isLoggedIn]);
 
   const handleLogin = (e) => {
-    authContext.login("brrrrrrrrrrrrrr", "STUDENT", "brrrrrrrrrrrrrr");
-
     e.preventDefault();
     setUserUX((prev) => ({ ...prev, loading: true, error: false }));
     const userCredentials = {
