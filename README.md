@@ -55,7 +55,7 @@
 401 token is requred       if the token is not provided in the url
 401 password and confirm password must match
 498 Invalid token           if the token is altered
-200 Password updated        if all is good
+200 Password updated        if all is good q
 ```
 
 ---
