@@ -1,0 +1,42 @@
+.paymentTable{
+    border: 2px solid rgb(159, 157, 157);
+    width: 800px;
+    height: 100px;
+    background-color: white;
+    &-header{
+        text-align: center;
+        border-bottom: 1px solid rgb(131, 126, 126);  
+     }
+     &-content{
+        font-weight: 600;
+        color: black;
+        border-bottom: 1px solid rgb(131, 126, 126); 
+        padding: 5px;
+        font-size: 17px;
+        
+        &-ex{
+            color: rgb(157, 149, 149);
+            font-size: 10px;
+        }
+        &-price{
+            color: rgb(157, 149, 149); 
+        }
+     }
+}
+.paymentBtn{
+    background-color: rgb(102, 102, 231) ;
+    color: white;
+    border-color: transparent;
+    width: 120px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 18px;
+    margin: 2px;
+   }
+   .paymentScissor{
+    font-size: 20px;
+   }
+
+   .paymentLine{
+    font-style: 1px solid black;
+   }
