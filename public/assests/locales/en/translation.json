@@ -182,7 +182,8 @@
     "advisor": "Academic Advisor",
     "allowed_courses": "Allowed Courses",
     "schedule": "Schedule",
-    "receipts": "Receipts"
+    "receipts": "Receipts",
+    "quiz": "Quizzes"
   },
   "info": {
     "personal": "Personal info",

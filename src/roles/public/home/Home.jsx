@@ -6,8 +6,7 @@ import HR from "../../../shared/images/humanResource.jpg";
 import eLearning from "../../../shared/images/eLearning.jpeg";
 import digital from "../../../shared/images/digitalTrans.png";
 import graduate from "../../../shared/images/graduating.jpeg";
-import { HiArrowNarrowRight, HiOutlineAcademicCap } from "react-icons/hi";
-import { FaChalkboardTeacher, FaChild } from "react-icons/fa";
+import { HiArrowNarrowRight } from "react-icons/hi";
 
 export const Home = () => {
   const { t } = useTranslation();
