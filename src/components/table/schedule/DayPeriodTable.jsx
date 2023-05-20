@@ -135,11 +135,8 @@ export const DayPeriodTable = (props) => {
                             </h6>
                             <span>
                               {i18next.language === "en"
-                                ? "Professor Name"
-                                : "اسم الدكتور"}
-                            </span>
-                            <span>
-                              {i18next.language === "en" ? "Place" : "المكان"}
+                                ? "Professor Name - Place"
+                                : "اسم الدكتور - المكان"}
                             </span>
                           </td>
                         );

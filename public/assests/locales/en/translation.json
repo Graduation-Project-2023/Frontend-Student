@@ -47,7 +47,7 @@
     "nationalId": "National ID",
     "marital": "Marital Status",
     "address": "Address",
-    "phone": "mobile Number",
+    "phone": "Mobile Number",
     "mail": "E-mail",
     "box": "Mail Box",
     "system": "System Mail",
@@ -160,14 +160,14 @@
   },
 
   "student": {
-    "info": "Student info",
+    "info": "Student Info",
     "home": "Home",
-    "courses": "Available courses",
+    "courses": "Available Courses",
     "Registration": "Registration",
-    "progress": "Student progress",
-    "desire": "Program desires",
+    "progress": "Student Progress",
+    "desire": "Program Desires",
     "grades": "Courses grades",
-    "fees": "Fees payment",
+    "fees": "Fees Payment",
     "name": "Student Name",
     "id": "Student ID",
     "department": "Department",
@@ -186,10 +186,10 @@
     "quiz": "Quizzes"
   },
   "info": {
-    "personal": "Personal info",
-    "family": "Family info",
-    "contact": "Contact info",
-    "pre": "Pre-Qualification info"
+    "personal": "Personal Info",
+    "family": "Family Info",
+    "contact": "Contact Info",
+    "pre": "Pre-Qualification Info"
   },
   "courses": {
     "code": "Code",
@@ -217,8 +217,8 @@
   },
   "home": {
     "staff": "Staff and employees",
-    "postgraduate": "postgraduate students",
-    "undergraduate": "undergraduate students",
+    "postgraduate": "postgraduate",
+    "undergraduate": "undergraduate",
     "international": "International",
     "aboutUs": "About Us",
     "aboutUsDescription": "SCU is a community of talented students, teachers, and researchers. In addition to, a wide range of professional, administrative support and service staff; all of whom are committed to help change this world for the better. Also, we encourage each other to work hard, not only to earn degrees or public recognition, but also to be leaders in this changing world",
@@ -326,5 +326,11 @@
     "6": "Microsoft Excel",
     "7": "Web-Authorizing using Dream Weaver.",
     "8": "Plagiarism checker and avoidance"
+  },
+  "assistant": {
+    "name": "Smart Assistant",
+    "message": "Hello, I'm your smart assistant. How can I help you?",
+    "placeholder": "Type message here",
+    "typing": "Your assistant is typing..."
   }
 }

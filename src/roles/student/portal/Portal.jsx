@@ -65,7 +65,7 @@ export const Portal = () => {
   return (
     <SidebarCont>
       <div className="main-container">
-        <h1>بيانات الطالب</h1>
+        <h1>{t("student.info")}</h1>
         <div className="main-container-data">
           {StudentInfoData.map((item) => {
             return (
