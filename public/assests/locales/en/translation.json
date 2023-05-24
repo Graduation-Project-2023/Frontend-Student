@@ -332,5 +332,17 @@
     "message": "Hello, I'm your smart assistant. How can I help you?",
     "placeholder": "Type message here",
     "typing": "Your assistant is typing..."
+  },
+  "receipts":{
+    "semester":"First Semester 2022/2023",
+    "creditHrs":"Number of credit hours",
+    "annual":"Annual fees",
+    "retake":"Retake fees",
+    "per":"50 per subject",
+    "book":"Book fees",
+    "totalFees":"Total fees",
+    "print":"Print",
+    "EGP":"ُEGP",
+    "hrs":"Cr.hrs"
   }
 }

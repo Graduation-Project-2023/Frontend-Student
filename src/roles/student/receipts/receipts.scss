@@ -1,8 +1,11 @@
 .paymentTable {
   border: 2px solid rgb(159, 157, 157);
-  width: 800px;
+  width: 900px;
   height: 100px;
   background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+
   &-header {
     text-align: center;
     border-bottom: 1px solid rgb(131, 126, 126);
@@ -14,6 +17,17 @@
     padding: 5px;
     font-size: 17px;
 
+    &-total{
+      font-weight: 600;
+    color: black;
+    border-bottom: 1px solid rgb(131, 126, 126);
+    padding: 5px;
+    font-size: 17px;
+    text-align: right;
+    
+   
+    }
+
     &-ex {
       color: rgb(157, 149, 149);
       font-size: 10px;
@@ -23,20 +37,35 @@
     }
   }
 }
-.paymentBtn {
-  background-color: rgb(102, 102, 231);
+
+.receiptsBtn-design {
+  margin-top: 50px;
+  background-color: rgb(75, 75, 209);
   color: white;
   border-color: transparent;
-  width: 120px;
+  width: 90px;
   height: 35px;
   border-radius: 5px;
   font-size: 18px;
   margin: 2px;
+ float: left;
+ margin-top: 10px;
+ margin-right: 42px;
+ margin-left: 42px;
 }
-.paymentScissor {
+.dashedScissor{
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+ }
+.Scissor {
   font-size: 20px;
+  flex-direction: column;
 }
 
-.paymentLine {
-  font-style: 1px solid black;
+.dashedLine {
+  border-top: 2px dashed rgb(12, 12, 12);
+  margin-top: 17px;
+  width: 880px;
+  flex-direction: column;
 }
