@@ -27,6 +27,7 @@ export const Portal = () => {
       .get(STUDENT_URL + `/info?studentId=${authContext.id}`)
       .then((res) => {
         console.log(res.data);
+        authContext.studentHandler(res.data);
         setStudentData(res.data);
         setUserUX((prev) => ({
           ...prev,
@@ -53,14 +54,14 @@ export const Portal = () => {
     return `${day}/${month}/${year}`;
   };
 
-  const functionTest = () => {
-    const dataTypes = {
-      name1: "englishName",
-      name2: "arabicName",
-    };
+  // const functionTest = () => {
+  //   const dataTypes = {
+  //     name1: "englishName",
+  //     name2: "arabicName",
+  //   };
 
-    console.log(studentData[dataTypes.name1]);
-  };
+  //   console.log(studentData[dataTypes.name1]);
+  // };
 
   return (
     <SidebarCont>

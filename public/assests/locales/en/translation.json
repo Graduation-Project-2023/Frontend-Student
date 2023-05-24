@@ -333,16 +333,17 @@
     "placeholder": "Type message here",
     "typing": "Your assistant is typing..."
   },
-  "receipts":{
-    "semester":"First Semester 2022/2023",
-    "creditHrs":"Number of credit hours",
-    "annual":"Annual fees",
-    "retake":"Retake fees",
-    "per":"50 per subject",
-    "book":"Book fees",
-    "totalFees":"Total fees",
-    "print":"Print",
-    "EGP":"ُEGP",
-    "hrs":"Cr.hrs"
+  "receipts": {
+    "semester": "First Semester 2022/2023",
+    "creditHrs": "Number of Credit Hours",
+    "annual": "Annual Fees",
+    "retake": "Retake Fees",
+    "per": "50 per Subject",
+    "book": "Book Fees",
+    "totalFees": "Total Fees",
+    "print": "Print",
+    "EGP": "EGP",
+    "hrs": "Hours",
+    "pay": "Pay"
   }
 }
