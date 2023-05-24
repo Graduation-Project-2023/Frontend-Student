@@ -1,13 +1,16 @@
 .home {
-  background-color: $Blue4;
+  background-color: $White;
   height: 600px;
+  width: 100%;
 
   &-bg {
-    background-image: url("https://mediaaws.almasryalyoum.com/news/large/2020/10/22/1344002_0.jpeg");
+    background-image: url("https://www.imagehost.at/images/2023/05/23/download.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%; /* stretch the image to match the width and height of the background area */
+    background-position: center center;
     height: 500px;
     filter: drop-shadow(5px 5px 5px rgb(169, 166, 166));
+    width: 100%;
   }
 
   &-btns {
@@ -51,21 +54,20 @@
   margin-top: -95px;
   &-title {
     color: $Blue2;
-    padding: 2% 0% 2% 3%;
+    padding: 2% 2% 2% 3%;
   }
 
   &-text {
     color: $Grey;
-    padding: 0% 0% 0% 3%;
+    padding: 0% 2% 0% 3%;
     font-size: 20px;
     max-width: 90%;
   }
 
   &-end {
     color: $Blue2;
-    direction: ltr;
-    padding: 2% 0% 2% 3%;
-    
+    padding: 2% 2% 2% 3%;
+    text-align: center;
   }
 }
 .aboutUs-end:hover {
@@ -102,6 +104,8 @@
       background-color: $Blue5;
       width: 300px;
       height: 400px;
+      transition: transform 0.5s ease-in-out;
+      transform-origin: center;
 
       &-pic {
         width: 300px;
@@ -131,13 +135,14 @@
         top: 95%;
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
       }
     }
   }
 }
 
 .home-container-grid-news:hover {
-  transform: scale(1.04);
+  transform: scale(1.1);
 }
 
 .home-container-grid-news:hover .home-container-grid-news-btn {
