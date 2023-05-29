@@ -21,69 +21,73 @@ export const Payment = () => {
     <SidebarCont>
       <div>
         <table className="paymentTable">
-          <tr>
-            <th className="paymentTable-header">{t("receipts.semester")}</th>
-          </tr>
-          <tr>
-            <td className="paymentTable-content">
-              <div> {t("receipts.creditHrs")}</div>
-              <div>
-                19{" "}
-                <span className="paymentTable-content-price">
-                  {t("receipts.hrs")}
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="paymentTable-content">
-              <div>{t("receipts.annual")}</div>
-              <div>
-                615{" "}
-                <span className="paymentTable-content-price">
-                  {t("receipts.EGP")}
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="paymentTable-content">
-              <div>
-                {t("receipts.retake")}
-                <span className="paymentTable-content-ex">
-                  /{t("receipts.per")}
-                </span>
-              </div>
-              <div>
-                50{" "}
-                <span className="paymentTable-content-price">
-                  {t("receipts.EGP")}
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="paymentTable-content">
-              <div>{t("receipts.book")}</div>
-              <div>
-                320{" "}
-                <span className="paymentTable-content-price">
-                  {t("receipts.EGP")}
-                </span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td className="paymentTable-content">
-              <div> {t("receipts.totalFees")}</div>
-              <div>
-                1000{" "}
-                <span className="paymentTable-content-price">
-                  {t("receipts.EGP")}{" "}
-                </span>
-              </div>
-            </td>
-          </tr>
+          <thead>
+            <tr>
+              <th className="paymentTable-header">{t("receipts.semester")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="paymentTable-content">
+                <div> {t("receipts.creditHrs")}</div>
+                <div>
+                  19{" "}
+                  <span className="paymentTable-content-price">
+                    {t("receipts.hrs")}
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="paymentTable-content">
+                <div>{t("receipts.annual")}</div>
+                <div>
+                  615{" "}
+                  <span className="paymentTable-content-price">
+                    {t("receipts.EGP")}
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="paymentTable-content">
+                <div>
+                  {t("receipts.retake")}
+                  <span className="paymentTable-content-ex">
+                    /{t("receipts.per")}
+                  </span>
+                </div>
+                <div>
+                  50{" "}
+                  <span className="paymentTable-content-price">
+                    {t("receipts.EGP")}
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="paymentTable-content">
+                <div>{t("receipts.book")}</div>
+                <div>
+                  320{" "}
+                  <span className="paymentTable-content-price">
+                    {t("receipts.EGP")}
+                  </span>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="paymentTable-content">
+                <div> {t("receipts.totalFees")}</div>
+                <div>
+                  1000{" "}
+                  <span className="paymentTable-content-price">
+                    {t("receipts.EGP")}{" "}
+                  </span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
         </table>
         <div className="receiptsBtn">
           <button className="button button-save" onClick={handlePay}>

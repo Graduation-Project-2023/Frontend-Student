@@ -24,8 +24,7 @@ export const AuthContextProvider = (props) => {
   const [role, setRole] = useState(storageRole);
   const [studId, setStudId] = useState(storageStudId);
   const [student, setStudent] = useState(storageStudent);
-
-  const userIsLoggedIn = !!token;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const loginHandler = (token, role, id) => {
     cookies.set("token", token);
@@ -34,6 +33,7 @@ export const AuthContextProvider = (props) => {
     setRole(role);
     setToken(token);
     setStudId(id);
+    setIsLoggedIn(true);
   };
 
   const logoutHandler = () => {
@@ -45,6 +45,7 @@ export const AuthContextProvider = (props) => {
     setToken(null);
     setRole(null);
     setStudent({});
+    setIsLoggedIn(false);
   };
 
   const studentHandler = (student) => {
@@ -57,7 +58,7 @@ export const AuthContextProvider = (props) => {
     role: role,
     id: studId,
     student: student,
-    isLoggedIn: userIsLoggedIn,
+    isLoggedIn: isLoggedIn,
     login: loginHandler,
     logout: logoutHandler,
     studentHandler: studentHandler,

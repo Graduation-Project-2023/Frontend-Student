@@ -88,7 +88,7 @@
     "department": "Department",
     "level": "Level",
     "program": "Program",
-    "add/delte": "Add/Delete",
+    "add/delete": "Add/Delete",
     "startPeriod": "Start Period",
     "endPeriod": "End Period",
     "smartAssistant": "Smart Assistant",
@@ -350,6 +350,10 @@
   "error": {
     "pwd": "Please enter a valid password",
     "pwdConf": "Password and confirm password must match",
-    "conf": "Please enter a valid confirm password"
+    "conf": "Please enter a valid confirm password",
+    "courseOcc": "Course already registered",
+    "timeReserved": "Time slot already reserved",
+    "classes": "Error fetching classes",
+    "tableData": "Error fetching table data"
   }
 }

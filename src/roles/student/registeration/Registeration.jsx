@@ -6,6 +6,8 @@ import axios from "axios";
 import i18next from "i18next";
 
 // Reusable Components
+import { Alert } from "react-bootstrap";
+import { BiError } from "react-icons/bi";
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { VerticalTable } from "../../../components/table/vertical/VerticalTable";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
@@ -71,7 +73,7 @@ export const Registeration = () => {
           tableData: {
             loading: false,
             error: true,
-            errorMsg: "error in student table data",
+            errorMsg: "error.tableData",
           },
         }));
       });
@@ -103,7 +105,7 @@ export const Registeration = () => {
           courses: {
             loading: false,
             error: true,
-            errorMsg: "error in classes",
+            errorMsg: "error.classes",
           },
         }));
       });
@@ -150,7 +152,7 @@ export const Registeration = () => {
         ...prev,
         table: {
           error: true,
-          errorMsg: "cell already occupied",
+          errorMsg: "error.timeReserved",
         },
       }));
       return false;
@@ -173,7 +175,7 @@ export const Registeration = () => {
         ...prev,
         table: {
           error: true,
-          errorMsg: "course already occupied",
+          errorMsg: "error.courseOcc",
         },
       }));
       return;
@@ -249,7 +251,7 @@ export const Registeration = () => {
             tableSubmit: {
               loading: false,
               error: true,
-              errorMsg: "error in table submit",
+              errorMsg: "common.error",
             },
           }));
         });
@@ -281,7 +283,7 @@ export const Registeration = () => {
             tableSubmit: {
               loading: false,
               error: true,
-              errorMsg: "error in table submit",
+              errorMsg: "common.error",
             },
           }));
         });
@@ -303,12 +305,13 @@ export const Registeration = () => {
           />
         </div>
         {userUX.table.error && (
-          <h1>
-            <h1>{userUX.table.errorMsg}</h1>
-            <h1>{userUX.table.errorMsg}</h1>
-            <h1>{userUX.table.errorMsg}</h1>
-            <h1>{userUX.table.errorMsg}</h1>
-          </h1>
+          <Alert
+            variant="danger"
+            className="d-flex align-items-center"
+            style={{ gap: "10px" }}
+          >
+            <BiError /> {t(userUX.table.errorMsg)}
+          </Alert>
         )}
         <div className="btnBar">
           {LEVELS.map((level) => {
@@ -375,19 +378,21 @@ export const Registeration = () => {
                                     item.classes[0].courseInstanceId
                                   ) ? (
                                     <button
+                                      className="btn btn-danger"
                                       onClick={() =>
                                         removeCourseFromTable(item.classes)
                                       }
                                     >
-                                      حذف
+                                      {t("common.delete")}
                                     </button>
                                   ) : (
                                     <button
+                                      className="btn btn-info"
                                       onClick={() =>
                                         addCourseToTable(item.classes)
                                       }
                                     >
-                                      اضافة
+                                      {t("common.add")}
                                     </button>
                                   )}
                                 </td>
@@ -407,6 +412,7 @@ export const Registeration = () => {
             cellsSetter={handleCellsSetter}
             tableData={tableData}
             saveTableData={saveTableData}
+            userUX={userUX.tableSubmit}
           />
         </div>
       </div>
