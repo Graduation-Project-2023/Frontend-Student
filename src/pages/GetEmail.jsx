@@ -35,7 +35,7 @@ export const GetEmail = () => {
         setUserUX({
           loading: false,
           error: true,
-          errorMsg: error.response.data.message,
+          errorMsg: "common.error",
         });
       });
   };

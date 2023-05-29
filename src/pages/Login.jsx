@@ -47,8 +47,8 @@ export const Login = () => {
           error: true,
           errorMsg:
             error.response.status === 400
-              ? t("common.invalidCred")
-              : t("common.error"),
+              ? "common.invalidCred"
+              : "common.error",
         });
         console.log(error);
       });

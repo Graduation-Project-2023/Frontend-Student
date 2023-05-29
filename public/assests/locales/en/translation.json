@@ -91,7 +91,8 @@
     "add/delte": "Add/Delete",
     "startPeriod": "Start Period",
     "endPeriod": "End Period",
-    "smartAssistant": "Smart Assistant"
+    "smartAssistant": "Smart Assistant",
+    "error": "Something went wrong, please try again later"
   },
   "login": {
     "email": "E-mail",
@@ -345,5 +346,10 @@
     "EGP": "EGP",
     "hrs": "Hours",
     "pay": "Pay"
+  },
+  "error": {
+    "pwd": "Please enter a valid password",
+    "pwdConf": "Password and confirm password must match",
+    "conf": "Please enter a valid confirm password"
   }
 }
