@@ -1,0 +1,80 @@
+.paymentTable {
+  border: 2px solid rgb(159, 157, 157);
+  width: 100%;
+  height: 100px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+
+  &-header {
+    text-align: center;
+    border-bottom: 1px solid rgb(131, 126, 126);
+  }
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 600;
+    color: black;
+    border-bottom: 1px solid rgb(131, 126, 126);
+    padding: 5px;
+    font-size: 17px;
+
+    &-total {
+      font-weight: 600;
+      color: black;
+      border-bottom: 1px solid rgb(131, 126, 126);
+      padding: 5px;
+      font-size: 17px;
+      text-align: right;
+    }
+
+    &-ex {
+      color: rgb(157, 149, 149);
+      font-size: 10px;
+    }
+    &-price {
+      color: rgb(157, 149, 149);
+    }
+  }
+}
+
+.receiptsBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+
+  & button {
+    margin: 0 !important;
+    margin-top: 10px !important;
+    border-radius: 5px;
+  }
+}
+.receiptsBtn-design {
+  margin-top: 50px;
+  background-color: rgb(75, 75, 209);
+  color: white;
+  border-color: transparent;
+  margin: 2px;
+}
+
+.dashedScissor {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.Scissor {
+  font-size: 20px;
+  flex-direction: column;
+}
+
+.dashedLine {
+  border-top: 2px dashed rgb(12, 12, 12);
+  margin-top: 17px;
+  width: 100%;
+  flex-direction: column;
+}

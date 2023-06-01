@@ -1,21 +1,24 @@
-import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import i18next from "i18next";
+import profile from "../../shared/images/profile.png";
 
 export const Sidebar = (props) => {
   const menu = props.menu;
-
+  const authContext = useAuth();
   const { t } = useTranslation();
 
   return (
     <nav className="sidebar">
       <div className="sidebar-title">
-        <img
-          src="https://www.pngmart.com/files/10/User-Account-Person-PNG-File.png"
-          alt="logo"
-        />
+        <img src={profile} alt="logo" />
         <div>
-          <h1>محمد احمد محمود</h1>
+          <h1>
+            {i18next.language === "en"
+              ? authContext.student.englishName || ""
+              : authContext.student.arabicName || ""}
+          </h1>
         </div>
       </div>
 
@@ -30,7 +33,7 @@ export const Sidebar = (props) => {
                 }
               >
                 <span className="sidebar-list-icon">{item.icon}</span>
-                <span>{`${t(item.name)}`}</span>
+                <span className="sidebar-list-text">{`${t(item.name)}`}</span>
               </NavLink>
             </li>
           );

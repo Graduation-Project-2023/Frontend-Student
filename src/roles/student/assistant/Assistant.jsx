@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useAuth } from "../../../hooks/useAuth";
 import { useTranslation } from "react-i18next";
-import i18next from "i18next";
 import axios from "axios";
 import { STUDENT_URL } from "../../../shared/API";
 import {
@@ -15,15 +14,16 @@ import {
   ConversationHeader,
 } from "@chatscope/chat-ui-kit-react";
 import assistantAvatar from "../../../shared/images/gpt.jpg";
-import profile from "../../../shared/images/profile.jpeg";
+import profile from "../../../shared/images/profile.png";
 
 // Reusable Components and Images
 import { SidebarCont } from "../../../components/header/SidebarCont";
 
 export const Assistant = () => {
+  const { t, i18n } = useTranslation();
   const [messages, setMessages] = useState([
     {
-      message: "اهلا بك! انا مساعدك الالكتروني",
+      message: t("assistant.message"),
       sentTime: "just now",
       sender: "assistant",
     },
@@ -33,12 +33,10 @@ export const Assistant = () => {
   const authContext = useAuth();
 
   useEffect(() => {
-    if (i18next.language === "ar") {
-      setArabic(true);
-    } else {
-      setArabic(false);
-    }
-  }, [i18next.language]);
+    i18n.on("languageChanged", () => {
+      setArabic(i18n.language === "ar");
+    });
+  }, [i18n]);
 
   const handleSend = (message) => {
     const newMessage = {
@@ -93,7 +91,7 @@ export const Assistant = () => {
                 margin: "0 10px",
               }}
             >
-              المساعد الذكي
+              {t("assistant.name")}
             </span>
           </ConversationHeader.Content>
         </ConversationHeader>
@@ -107,7 +105,7 @@ export const Assistant = () => {
               scrollBehavior="smooth"
               typingIndicator={
                 isTyping ? (
-                  <TypingIndicator content="Your assistant is typing" />
+                  <TypingIndicator content={t("assistant.typing")} />
                 ) : null
               }
             >
@@ -130,7 +128,7 @@ export const Assistant = () => {
               })}
             </MessageList>
             <MessageInput
-              placeholder="Type message here"
+              placeholder={t("assistant.placeholder")}
               onSend={handleSend}
               attachButton={false}
             />

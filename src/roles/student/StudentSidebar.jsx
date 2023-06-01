@@ -3,10 +3,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FaBookReader, FaMoneyCheck, FaRobot } from "react-icons/fa";
 import { AiOutlineUserAdd } from "react-icons/ai";
 import { GiSandsOfTime } from "react-icons/gi";
-import { CgCardHearts } from "react-icons/cg";
-import { BsFileEarmarkText } from "react-icons/bs";
 import { ImTable } from "react-icons/im";
-import { MdOutlineQuiz } from "react-icons/md";
 
 export const StudentSidebar = () => {
   const menu = [
@@ -43,18 +40,6 @@ export const StudentSidebar = () => {
       name: "student.receipts",
       icon: <FaMoneyCheck />,
     },
-    {
-      id: "8",
-      path: "quiz",
-      name: "student.quiz",
-      icon: <MdOutlineQuiz />,
-    },
-    // {
-    //   id: "8",
-    //   path: "desires",
-    //   name: "student.desire",
-    //   icon: <CgCardHearts />,
-    // },
   ];
   return <Sidebar menu={menu} />;
 };
