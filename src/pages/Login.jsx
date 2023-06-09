@@ -38,7 +38,7 @@ export const Login = () => {
       .then((res) => {
         console.log(res);
         setUserUX((prev) => ({ ...prev, loading: false }));
-        authContext.login(res.data.token, res.data.role, res.data.studentId);
+        authContext.login(res.data.email, res.data.role, res.data.studentId);
         navigate("/student");
       })
       .catch((error) => {

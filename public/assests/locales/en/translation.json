@@ -129,7 +129,9 @@
     "button": "Pay Now",
     "choose": "Choose Payment Method",
     "wallet": "Wallet",
-    "credit": "Credit Card"
+    "credit": "Credit Card",
+    "phoneError": "Please enter a valid phone number",
+    "payment": "Payment"
   },
   "week": {
     "saturday": "Saturday",
