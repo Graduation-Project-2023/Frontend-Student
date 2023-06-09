@@ -8,6 +8,9 @@ import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
+import ListGroup from "react-bootstrap/ListGroup";
+import Spinner from "react-bootstrap/Spinner";
+import Alert from "react-bootstrap/Alert";
 
 export const ChooseMethod = (props) => {
   const { show, hide } = props;
@@ -22,6 +25,7 @@ export const ChooseMethod = (props) => {
     errorMsg: "",
   });
   const [isPaying, setIsPaying] = useState({ state: false, url: "" });
+  const [koshk, setKoshk] = useState({ state: false, data: {} });
   const { t, i18n } = useTranslation();
   const authContext = useAuth();
 
@@ -31,13 +35,6 @@ export const ChooseMethod = (props) => {
     } else {
       setPhone({ state: false, number: "", error: false });
     }
-  };
-
-  const pagePopup = (pageLink) => {
-    console.log(pageLink);
-    const popup = window.open(pageLink, "popup", "width=600,height=600");
-    if (popup) popup.focus();
-    else alert("Please allow popups for this website");
   };
 
   const handlePayment = (e) => {
@@ -59,35 +56,7 @@ export const ChooseMethod = (props) => {
       last_name: authContext.student.englishName,
       state: "NA",
     };
-    if (selectedPayment === "credit") {
-      axios
-        .post(STUDENT_URL + `/payment?studentId=${authContext.id}`, {
-          type: "card",
-          order_cart: [
-            {
-              name: "iphone x",
-              amount_cents: "2400000",
-              description: "iphone x 64GB",
-              quantity: "1",
-            },
-          ],
-          billing_data: billingData,
-          amount_cents: "2400000",
-        })
-        .then((res) => {
-          setUserUX((prev) => ({ ...prev, loading: false }));
-          setIsPaying({
-            state: true,
-            url: `https://accept.paymob.com/api/acceptance/iframes/416800?payment_token=${res.data}`,
-          });
-
-          console.log(res.data);
-        })
-        .catch((err) => {
-          setUserUX({ loading: false, error: true, errorMsg: err });
-          console.log(err);
-        });
-    } else if (selectedPayment === "wallet") {
+    if (selectedPayment === "wallet") {
       if (phone.number.length !== 11) {
         setPhone((prev) => ({ ...prev, error: true }));
         return;
@@ -117,6 +86,37 @@ export const ChooseMethod = (props) => {
           setUserUX({ loading: false, error: true, errorMsg: err });
           console.log(err);
         });
+    } else {
+      axios
+        .post(STUDENT_URL + `/payment?studentId=${authContext.id}`, {
+          type: selectedPayment,
+          order_cart: [
+            {
+              name: "iphone x",
+              amount_cents: "2400000",
+              description: "iphone x 64GB",
+              quantity: "1",
+            },
+          ],
+          billing_data: billingData,
+          amount_cents: "2400000",
+        })
+        .then((res) => {
+          setUserUX((prev) => ({ ...prev, loading: false }));
+          console.log(res.data);
+          if (selectedPayment === "koshk") {
+            setKoshk({ state: true, data: res.data });
+          } else if (selectedPayment === "credit") {
+            setIsPaying({
+              state: true,
+              url: `https://accept.paymob.com/api/acceptance/iframes/416800?payment_token=${res.data}`,
+            });
+          }
+        })
+        .catch((err) => {
+          setUserUX({ loading: false, error: true, errorMsg: err });
+          console.log(err);
+        });
     }
   };
 
@@ -132,10 +132,30 @@ export const ChooseMethod = (props) => {
       <Form onSubmit={handlePayment}>
         <Modal.Header>
           <Modal.Title>
-            {isPaying.state ? t("payment.payment") : t("payment.choose")}
+            {isPaying.state
+              ? t("payment.payment")
+              : koshk.state
+              ? t("payment.koshkTitle")
+              : t("payment.choose")}
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
+          {koshk.state && (
+            <>
+              <Alert variant="info">{t("payment.koshkMsg")}</Alert>
+              <ListGroup>
+                <ListGroup.Item>
+                  {t("payment.billRef")}: {koshk.data.bill_reference}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  {t("payment.amount")}: {koshk.data.amount}
+                </ListGroup.Item>
+                <ListGroup.Item>
+                  {t("payment.notes")}: {koshk.data.message}
+                </ListGroup.Item>
+              </ListGroup>
+            </>
+          )}
           {isPaying.state ? (
             <div
               style={{
@@ -154,62 +174,82 @@ export const ChooseMethod = (props) => {
               />
             </div>
           ) : (
-            <>
-              <Form.Check
-                reverse={i18n.language === "ar"}
-                label={t("payment.wallet")}
-                name="payment"
-                type="radio"
-                id="wallet"
-                value="wallet"
-                inline
-                onChange={handleChange}
-                required
-              />
-              <Form.Check
-                reverse={i18n.language === "ar"}
-                label={t("payment.credit")}
-                name="payment"
-                type="radio"
-                id="credit"
-                inline
-                value="credit"
-                onChange={handleChange}
-                required
-              />
-              {phone.state && (
-                <Form.Group className="m-3" controlId="phone">
-                  <Form.Label>{t("common.phone")}</Form.Label>
-                  <Form.Control
-                    type="number"
-                    placeholder={t("common.phone")}
-                    value={phone.number}
-                    onChange={(e) =>
-                      setPhone({ ...phone, number: e.target.value })
-                    }
-                    required
-                  />
-                  {phone.error && (
-                    <Form.Text className="text-danger">
-                      {t("payment.phoneError")}
-                    </Form.Text>
-                  )}
-                </Form.Group>
-              )}
-            </>
+            !koshk.state && (
+              <>
+                <Form.Check
+                  reverse={i18n.language === "ar"}
+                  label={t("payment.wallet")}
+                  name="payment"
+                  type="radio"
+                  id="wallet"
+                  value="wallet"
+                  inline
+                  onChange={handleChange}
+                  required
+                />
+                <Form.Check
+                  reverse={i18n.language === "ar"}
+                  label={t("payment.credit")}
+                  name="payment"
+                  type="radio"
+                  id="credit"
+                  inline
+                  value="credit"
+                  onChange={handleChange}
+                  required
+                />
+                <Form.Check
+                  reverse={i18n.language === "ar"}
+                  label={t("payment.koshk")}
+                  name="payment"
+                  type="radio"
+                  id="koshk"
+                  inline
+                  value="koshk"
+                  onChange={handleChange}
+                  required
+                />
+                {phone.state && (
+                  <Form.Group className="m-3" controlId="phone">
+                    <Form.Label>{t("common.phone")}</Form.Label>
+                    <Form.Control
+                      type="number"
+                      placeholder={t("common.phone")}
+                      value={phone.number}
+                      onChange={(e) =>
+                        setPhone({ ...phone, number: e.target.value })
+                      }
+                      required
+                    />
+                    {phone.error && (
+                      <Form.Text className="text-danger">
+                        {t("payment.phoneError")}
+                      </Form.Text>
+                    )}
+                  </Form.Group>
+                )}
+              </>
+            )
           )}
         </Modal.Body>
         {!isPaying.state && (
           <Modal.Footer>
-            <Button type="submit" variant="primary" disabled={userUX.loading}>
-              {t("payment.button")}
-            </Button>
+            {!koshk.state && (
+              <Button type="submit" variant="primary" disabled={userUX.loading}>
+                {userUX.loading ? (
+                  <Spinner animation="border" size="sm" />
+                ) : (
+                  t("payment.button")
+                )}
+              </Button>
+            )}
+
             <Button
               variant="secondary"
               onClick={hideModal}
               disabled={userUX.loading}
             >
-              {t("common.cancel")}
+              {koshk.state ? t("common.close") : t("common.cancel")}
             </Button>
           </Modal.Footer>
         )}
