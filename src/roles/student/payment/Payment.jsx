@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // Components
@@ -5,20 +6,34 @@ import { SidebarCont } from "../../../components/header/SidebarCont";
 import { BiPrinter } from "react-icons/bi";
 import { HiScissors } from "react-icons/hi";
 import { AiOutlineCreditCard } from "react-icons/ai";
+import { ChooseMethod } from "./ChooseMethod";
 
 export const Payment = () => {
+  const [paymentMethod, setPaymentMethod] = useState(false);
   const { t } = useTranslation();
 
+  // const handlePay = () => {
+  //   window.open(
+  //     "http://localhost:3000/portal/student/fees/dd134isdfgn",
+  //     "payment_gateway",
+  //     "menubar=1,resizable=1,width=900,height=700"
+  //   );
+  // };
+
   const handlePay = () => {
-    window.open(
-      "http://localhost:3000/portal/student/fees/dd134isdfgn",
-      "payment_gateway",
-      "menubar=1,resizable=1,width=900,height=700"
-    );
+    setPaymentMethod(true);
   };
 
   return (
     <SidebarCont>
+      {paymentMethod && (
+        <ChooseMethod
+          show={paymentMethod}
+          hide={() => {
+            setPaymentMethod(false);
+          }}
+        />
+      )}
       <div>
         <table className="paymentTable">
           <thead>

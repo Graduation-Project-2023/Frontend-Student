@@ -92,7 +92,8 @@
     "startPeriod": "Start Period",
     "endPeriod": "End Period",
     "smartAssistant": "Smart Assistant",
-    "error": "Something went wrong, please try again later"
+    "error": "Something went wrong, please try again later",
+    "close": "Close"
   },
   "login": {
     "email": "E-mail",
@@ -126,7 +127,18 @@
     "cvvTxt": "Enter the 3-digit number on the back of your card",
     "date": "Expiry Date",
     "password": "Enter Your Acadimic Password",
-    "button": "Pay Now"
+    "button": "Pay Now",
+    "choose": "Choose Payment Method",
+    "wallet": "Wallet",
+    "credit": "Credit Card",
+    "phoneError": "Please enter a valid phone number",
+    "payment": "Payment",
+    "koshk": "Kiosk",
+    "koshkTitle": "Kiosk Payment",
+    "billRef": "Bill Reference",
+    "amount": "Amount",
+    "notes": "Notes",
+    "koshkMsg": "Go to the nearest kiosk, ask for Madfouaat Mutanouea Accept and give your reference number."
   },
   "week": {
     "saturday": "Saturday",
