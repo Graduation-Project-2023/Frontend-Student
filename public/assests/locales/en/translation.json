@@ -138,7 +138,8 @@
     "billRef": "Bill Reference",
     "amount": "Amount",
     "notes": "Notes",
-    "koshkMsg": "Go to the nearest kiosk, ask for Madfouaat Mutanouea Accept and give your reference number."
+    "koshkMsg": "Go to the nearest kiosk, ask for Madfouaat Mutanouea Accept and give your reference number.",
+    "usingWallet": "Payment using Wallet"
   },
   "week": {
     "saturday": "Saturday",

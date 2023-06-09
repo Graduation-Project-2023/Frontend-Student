@@ -79,7 +79,7 @@ export const ChooseMethod = (props) => {
         })
         .then((res) => {
           setUserUX((prev) => ({ ...prev, loading: false }));
-          setIsPaying({ state: true, url: res.data });
+          window.location.href = res.data;
           console.log(res.data);
         })
         .catch((err) => {
@@ -130,15 +130,14 @@ export const ChooseMethod = (props) => {
   return (
     <Modal show={show} onHide={hideModal}>
       <Form onSubmit={handlePayment}>
-        <Modal.Header>
-          <Modal.Title>
-            {isPaying.state
-              ? t("payment.payment")
-              : koshk.state
-              ? t("payment.koshkTitle")
-              : t("payment.choose")}
-          </Modal.Title>
-        </Modal.Header>
+        {!isPaying.state && (
+          <Modal.Header>
+            <Modal.Title>
+              {koshk.state ? t("payment.koshkTitle") : t("payment.choose")}
+            </Modal.Title>
+          </Modal.Header>
+        )}
+
         <Modal.Body>
           {koshk.state && (
             <>
@@ -170,7 +169,7 @@ export const ChooseMethod = (props) => {
                 src={isPaying.url}
                 width="100%"
                 height="100%"
-                title="payment"
+                title={t("payment.usingWallet")}
               />
             </div>
           ) : (
@@ -186,6 +185,7 @@ export const ChooseMethod = (props) => {
                   inline
                   onChange={handleChange}
                   required
+                  disabled={userUX.loading}
                 />
                 <Form.Check
                   reverse={i18n.language === "ar"}
@@ -197,6 +197,7 @@ export const ChooseMethod = (props) => {
                   value="credit"
                   onChange={handleChange}
                   required
+                  disabled={userUX.loading}
                 />
                 <Form.Check
                   reverse={i18n.language === "ar"}
@@ -208,6 +209,7 @@ export const ChooseMethod = (props) => {
                   value="koshk"
                   onChange={handleChange}
                   required
+                  disabled={userUX.loading}
                 />
                 {phone.state && (
                   <Form.Group className="m-3" controlId="phone">
