@@ -68,14 +68,14 @@ export const ChooseMethod = (props) => {
           identifier: "01010101010",
           order_cart: [
             {
-              name: "iphone x",
-              amount_cents: "2400000",
-              description: "iphone x 64GB",
+              name: "College Fees",
+              amount_cents: "240000",
+              description: "Semester Fees for 2022/2023",
               quantity: "1",
             },
           ],
           billing_data: billingData,
-          amount_cents: "2400000",
+          amount_cents: "240000",
         })
         .then((res) => {
           setUserUX((prev) => ({ ...prev, loading: false }));
@@ -92,14 +92,14 @@ export const ChooseMethod = (props) => {
           type: selectedPayment,
           order_cart: [
             {
-              name: "iphone x",
-              amount_cents: "2400000",
-              description: "iphone x 64GB",
+              name: "College Fees",
+              amount_cents: "240000",
+              description: "Semester Fees for 2022/2023",
               quantity: "1",
             },
           ],
           billing_data: billingData,
-          amount_cents: "2400000",
+          amount_cents: "240000",
         })
         .then((res) => {
           setUserUX((prev) => ({ ...prev, loading: false }));
