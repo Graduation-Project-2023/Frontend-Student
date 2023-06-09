@@ -130,15 +130,14 @@ export const ChooseMethod = (props) => {
   return (
     <Modal show={show} onHide={hideModal}>
       <Form onSubmit={handlePayment}>
-        <Modal.Header>
-          <Modal.Title>
-            {isPaying.state
-              ? t("payment.payment")
-              : koshk.state
-              ? t("payment.koshkTitle")
-              : t("payment.choose")}
-          </Modal.Title>
-        </Modal.Header>
+        {!isPaying.state && (
+          <Modal.Header>
+            <Modal.Title>
+              {koshk.state ? t("payment.koshkTitle") : t("payment.choose")}
+            </Modal.Title>
+          </Modal.Header>
+        )}
+
         <Modal.Body>
           {koshk.state && (
             <>
