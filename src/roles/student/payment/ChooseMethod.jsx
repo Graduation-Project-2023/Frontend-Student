@@ -33,7 +33,6 @@ export const ChooseMethod = (props) => {
 
   const handlePayment = (e) => {
     e.preventDefault();
-    console.log(paymentMethod);
     if (paymentMethod === "") {
       setUserUX((prev) => ({
         ...prev,
@@ -70,9 +69,10 @@ export const ChooseMethod = (props) => {
       },
       amount_cents: "240000",
     };
-    if (paymentData === "wallet") {
+    if (paymentMethod === "wallet") {
       if (phone.number.length !== 11) {
         setPhone((prev) => ({ ...prev, error: true }));
+        setUserUX((prev) => ({ ...prev, loading: false }));
         return;
       }
       setPhone((prev) => ({ ...prev, error: false }));
@@ -123,7 +123,7 @@ export const ChooseMethod = (props) => {
   };
 
   const hideModal = () => {
-    if (userUX.loading || isPaying.state) {
+    if (userUX.loading) {
       return;
     }
     hide();
@@ -140,7 +140,7 @@ export const ChooseMethod = (props) => {
           </Modal.Header>
         )}
 
-        <Modal.Body style={{ padding: isPaying ? "0" : "" }}>
+        <Modal.Body style={{ padding: isPaying.state ? "0" : "" }}>
           {koshk.state && (
             <>
               <Alert variant="info">{t("payment.koshkMsg")}</Alert>
@@ -255,32 +255,33 @@ export const ChooseMethod = (props) => {
             )
           )}
         </Modal.Body>
-        {!isPaying.state && (
-          <Modal.Footer>
-            {!koshk.state && (
-              <Button
-                type="submit"
-                variant="primary"
-                disabled={userUX.loading}
-                onClick={handlePayment}
-              >
-                {userUX.loading ? (
-                  <Spinner animation="border" size="sm" />
-                ) : (
-                  t("payment.button")
-                )}
-              </Button>
-            )}
 
+        <Modal.Footer>
+          {!koshk.state && !isPaying.state && (
             <Button
-              variant="secondary"
-              onClick={hideModal}
+              type="submit"
+              variant="primary"
               disabled={userUX.loading}
+              onClick={handlePayment}
             >
-              {koshk.state ? t("common.close") : t("common.cancel")}
+              {userUX.loading ? (
+                <Spinner animation="border" size="sm" />
+              ) : (
+                t("payment.button")
+              )}
             </Button>
-          </Modal.Footer>
-        )}
+          )}
+
+          <Button
+            variant="secondary"
+            onClick={hideModal}
+            disabled={userUX.loading}
+          >
+            {koshk.state || isPaying.state
+              ? t("common.close")
+              : t("common.cancel")}
+          </Button>
+        </Modal.Footer>
       </Form>
     </Modal>
   );
