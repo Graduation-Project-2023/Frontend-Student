@@ -26,37 +26,51 @@ export const ChooseMethod = (props) => {
   });
   const [isPaying, setIsPaying] = useState({ state: false, url: "" });
   const [koshk, setKoshk] = useState({ state: false, data: {} });
+  const [frameLoading, setFrameLoading] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState("");
   const { t, i18n } = useTranslation();
   const authContext = useAuth();
 
-  const handleChange = (e) => {
-    if (e.target.value === "wallet") {
-      setPhone({ state: true, number: "", error: false });
-    } else {
-      setPhone({ state: false, number: "", error: false });
-    }
-  };
-
   const handlePayment = (e) => {
     e.preventDefault();
+    console.log(paymentMethod);
+    if (paymentMethod === "") {
+      setUserUX((prev) => ({
+        ...prev,
+        error: true,
+        errorMsg: "payment.chooseMethod",
+      }));
+      return;
+    }
     setUserUX((prev) => ({ ...prev, loading: true }));
-    const selectedPayment = e.target.elements.payment.value;
-    const billingData = {
-      apartment: "NA",
-      email: authContext.token,
-      floor: "NA",
-      first_name: authContext.student.arabicName,
-      street: authContext.student.address,
-      building: "NA",
-      phone_number: phone.number || authContext.student.contactPhone,
-      shipping_method: "NA",
-      postal_code: "NA",
-      city: "NA",
-      country: "EG",
-      last_name: authContext.student.englishName,
-      state: "NA",
+    const paymentData = {
+      type: paymentMethod,
+      order_cart: [
+        {
+          name: "College Fees",
+          amount_cents: "240000",
+          description: "Semester Fees for 2022/2023",
+          quantity: "1",
+        },
+      ],
+      billing_data: {
+        apartment: "NA",
+        email: authContext.token,
+        floor: "NA",
+        first_name: authContext.student.arabicName,
+        street: authContext.student.address,
+        building: "NA",
+        phone_number: phone.number || authContext.student.contactPhone,
+        shipping_method: "NA",
+        postal_code: "NA",
+        city: "NA",
+        country: "EG",
+        last_name: authContext.student.englishName,
+        state: "NA",
+      },
+      amount_cents: "240000",
     };
-    if (selectedPayment === "wallet") {
+    if (paymentData === "wallet") {
       if (phone.number.length !== 11) {
         setPhone((prev) => ({ ...prev, error: true }));
         return;
@@ -64,18 +78,8 @@ export const ChooseMethod = (props) => {
       setPhone((prev) => ({ ...prev, error: false }));
       axios
         .post(STUDENT_URL + `/payment?studentId=${authContext.id}`, {
-          type: "wallet",
-          identifier: "01010101010",
-          order_cart: [
-            {
-              name: "College Fees",
-              amount_cents: "240000",
-              description: "Semester Fees for 2022/2023",
-              quantity: "1",
-            },
-          ],
-          billing_data: billingData,
-          amount_cents: "240000",
+          ...paymentData,
+          identifier: phone.number,
         })
         .then((res) => {
           setUserUX((prev) => ({ ...prev, loading: false }));
@@ -88,25 +92,14 @@ export const ChooseMethod = (props) => {
         });
     } else {
       axios
-        .post(STUDENT_URL + `/payment?studentId=${authContext.id}`, {
-          type: selectedPayment,
-          order_cart: [
-            {
-              name: "College Fees",
-              amount_cents: "240000",
-              description: "Semester Fees for 2022/2023",
-              quantity: "1",
-            },
-          ],
-          billing_data: billingData,
-          amount_cents: "240000",
-        })
+        .post(STUDENT_URL + `/payment?studentId=${authContext.id}`, paymentData)
         .then((res) => {
           setUserUX((prev) => ({ ...prev, loading: false }));
           console.log(res.data);
-          if (selectedPayment === "koshk") {
+          if (paymentMethod === "koshk") {
             setKoshk({ state: true, data: res.data });
-          } else if (selectedPayment === "credit") {
+          } else if (paymentMethod === "card") {
+            setFrameLoading(true);
             setIsPaying({
               state: true,
               url: `https://accept.paymob.com/api/acceptance/iframes/416800?payment_token=${res.data}`,
@@ -120,8 +113,17 @@ export const ChooseMethod = (props) => {
     }
   };
 
+  const handlePaymentMethod = (e) => {
+    setPaymentMethod(e.target.value);
+    if (e.target.value === "wallet") {
+      setPhone({ state: true, number: "", error: false });
+    } else {
+      setPhone({ state: false, number: "", error: false });
+    }
+  };
+
   const hideModal = () => {
-    if (userUX.loading) {
+    if (userUX.loading || isPaying.state) {
       return;
     }
     hide();
@@ -129,7 +131,7 @@ export const ChooseMethod = (props) => {
 
   return (
     <Modal show={show} onHide={hideModal}>
-      <Form onSubmit={handlePayment}>
+      <Form>
         {!isPaying.state && (
           <Modal.Header>
             <Modal.Title>
@@ -138,7 +140,7 @@ export const ChooseMethod = (props) => {
           </Modal.Header>
         )}
 
-        <Modal.Body>
+        <Modal.Body style={{ padding: isPaying ? "0" : "" }}>
           {koshk.state && (
             <>
               <Alert variant="info">{t("payment.koshkMsg")}</Alert>
@@ -165,11 +167,30 @@ export const ChooseMethod = (props) => {
                 height: "80vh",
               }}
             >
+              {frameLoading && (
+                <div
+                  className="d-flex justify-content-center align-items-center"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    position: "absolute",
+                  }}
+                >
+                  <Spinner
+                    animation="grow"
+                    variant="primary"
+                    style={{ width: "50px", height: "50px" }}
+                  />
+                </div>
+              )}
               <iframe
                 src={isPaying.url}
                 width="100%"
                 height="100%"
                 title={t("payment.usingWallet")}
+                onLoad={() => {
+                  setFrameLoading(false);
+                }}
               />
             </div>
           ) : (
@@ -183,7 +204,7 @@ export const ChooseMethod = (props) => {
                   id="wallet"
                   value="wallet"
                   inline
-                  onChange={handleChange}
+                  onChange={handlePaymentMethod}
                   required
                   disabled={userUX.loading}
                 />
@@ -192,10 +213,10 @@ export const ChooseMethod = (props) => {
                   label={t("payment.credit")}
                   name="payment"
                   type="radio"
-                  id="credit"
+                  id="card"
                   inline
-                  value="credit"
-                  onChange={handleChange}
+                  value="card"
+                  onChange={handlePaymentMethod}
                   required
                   disabled={userUX.loading}
                 />
@@ -207,7 +228,7 @@ export const ChooseMethod = (props) => {
                   id="koshk"
                   inline
                   value="koshk"
-                  onChange={handleChange}
+                  onChange={handlePaymentMethod}
                   required
                   disabled={userUX.loading}
                 />
@@ -237,7 +258,12 @@ export const ChooseMethod = (props) => {
         {!isPaying.state && (
           <Modal.Footer>
             {!koshk.state && (
-              <Button type="submit" variant="primary" disabled={userUX.loading}>
+              <Button
+                type="submit"
+                variant="primary"
+                disabled={userUX.loading}
+                onClick={handlePayment}
+              >
                 {userUX.loading ? (
                   <Spinner animation="border" size="sm" />
                 ) : (
