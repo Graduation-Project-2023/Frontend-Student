@@ -139,7 +139,11 @@
     "amount": "Amount",
     "notes": "Notes",
     "koshkMsg": "Go to the nearest kiosk, ask for Madfouaat Mutanouea Accept and give your reference number.",
-    "usingWallet": "Payment using Wallet"
+    "usingWallet": "Payment using Wallet",
+    "success": "Payment Successful!",
+    "redirecting": "Redirecting to the another page",
+    "seconds": "seconds",
+    "failed": "Payment Failed!"
   },
   "week": {
     "saturday": "Saturday",

@@ -84,7 +84,6 @@ export const Login = () => {
       forget={true}
       title={t(`login.subtitle`)}
       button={t(`login.button`)}
-      // userUX={userUX}
     />
   );
 };
