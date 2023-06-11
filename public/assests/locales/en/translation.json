@@ -88,10 +88,12 @@
     "department": "Department",
     "level": "Level",
     "program": "Program",
-    "add/delte": "Add/Delete",
+    "add/delete": "Add/Delete",
     "startPeriod": "Start Period",
     "endPeriod": "End Period",
-    "smartAssistant": "Smart Assistant"
+    "smartAssistant": "Smart Assistant",
+    "error": "Something went wrong, please try again later",
+    "close": "Close"
   },
   "login": {
     "email": "E-mail",
@@ -125,7 +127,23 @@
     "cvvTxt": "Enter the 3-digit number on the back of your card",
     "date": "Expiry Date",
     "password": "Enter Your Acadimic Password",
-    "button": "Pay Now"
+    "button": "Pay Now",
+    "choose": "Choose Payment Method",
+    "wallet": "Wallet",
+    "credit": "Credit Card",
+    "phoneError": "Please enter a valid phone number",
+    "payment": "Payment",
+    "koshk": "Kiosk",
+    "koshkTitle": "Kiosk Payment",
+    "billRef": "Bill Reference",
+    "amount": "Amount",
+    "notes": "Notes",
+    "koshkMsg": "Go to the nearest kiosk, ask for Madfouaat Mutanouea Accept and give your reference number.",
+    "usingWallet": "Payment using Wallet",
+    "success": "Payment Successful!",
+    "redirecting": "Redirecting to the another page",
+    "seconds": "seconds",
+    "failed": "Payment Failed!"
   },
   "week": {
     "saturday": "Saturday",
@@ -332,5 +350,27 @@
     "message": "Hello, I'm your smart assistant. How can I help you?",
     "placeholder": "Type message here",
     "typing": "Your assistant is typing..."
+  },
+  "receipts": {
+    "semester": "First Semester 2022/2023",
+    "creditHrs": "Number of Credit Hours",
+    "annual": "Annual Fees",
+    "retake": "Retake Fees",
+    "per": "50 per Subject",
+    "book": "Book Fees",
+    "totalFees": "Total Fees",
+    "print": "Print",
+    "EGP": "EGP",
+    "hrs": "Hours",
+    "pay": "Pay"
+  },
+  "error": {
+    "pwd": "Please enter a valid password",
+    "pwdConf": "Password and confirm password must match",
+    "conf": "Please enter a valid confirm password",
+    "courseOcc": "Course already registered",
+    "timeReserved": "Time slot already reserved",
+    "classes": "Error fetching classes",
+    "tableData": "Error fetching table data"
   }
 }

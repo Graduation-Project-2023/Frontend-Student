@@ -1,9 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import i18next from "i18next";
 import profile from "../../shared/images/profile.png";
 
 export const Sidebar = (props) => {
   const menu = props.menu;
+  const authContext = useAuth();
   const { t } = useTranslation();
 
   return (
@@ -11,7 +14,11 @@ export const Sidebar = (props) => {
       <div className="sidebar-title">
         <img src={profile} alt="logo" />
         <div>
-          <h1>محمد احمد محمود</h1>
+          <h1>
+            {i18next.language === "en"
+              ? authContext.student.englishName || ""
+              : authContext.student.arabicName || ""}
+          </h1>
         </div>
       </div>
 

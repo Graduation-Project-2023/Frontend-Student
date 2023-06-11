@@ -30,7 +30,7 @@ export const ForgetPwd = () => {
         setUserUX({
           loading: false,
           error: true,
-          errorMsg: error.response.data.message,
+          errorMsg: "common.error",
         });
       });
   };

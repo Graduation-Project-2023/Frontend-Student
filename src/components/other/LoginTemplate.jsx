@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { FormButton } from "../../components/buttons/Buttons";
 import { Link } from "react-router-dom";
 import { BiError } from "react-icons/bi";
+import { Alert } from "react-bootstrap";
 import bck from "../../shared/images/bck.png";
 
 export const LoginTemplate = (props) => {
@@ -50,12 +51,13 @@ export const LoginTemplate = (props) => {
               )}
             </div>
             {userUX.error && (
-              <div>
-                <span className="wrong" role="alert">
-                  <BiError />
-                  {userUX.errorMsg}
-                </span>
-              </div>
+              <Alert
+                variant="danger"
+                className="d-flex align-items-center"
+                style={{ gap: "10px" }}
+              >
+                <BiError /> {t(userUX.errorMsg)}
+              </Alert>
             )}
           </form>
         </div>

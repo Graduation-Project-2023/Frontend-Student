@@ -38,7 +38,7 @@ export const Login = () => {
       .then((res) => {
         console.log(res);
         setUserUX((prev) => ({ ...prev, loading: false }));
-        authContext.login(res.data.token, res.data.role, res.data.studentId);
+        authContext.login(res.data.email, res.data.role, res.data.studentId);
         navigate("/student");
       })
       .catch((error) => {
@@ -47,8 +47,8 @@ export const Login = () => {
           error: true,
           errorMsg:
             error.response.status === 400
-              ? t("common.invalidCred")
-              : t("common.error"),
+              ? "common.invalidCred"
+              : "common.error",
         });
         console.log(error);
       });
@@ -84,7 +84,6 @@ export const Login = () => {
       forget={true}
       title={t(`login.subtitle`)}
       button={t(`login.button`)}
-      // userUX={userUX}
     />
   );
 };

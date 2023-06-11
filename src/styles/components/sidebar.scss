@@ -23,11 +23,14 @@
     & h1 {
       @include font(2rem, 2.3rem, 500);
       color: #ffffff;
+      margin-top: 3rem;
     }
 
     & img {
       width: 7rem;
       height: 7rem;
+      position: absolute;
+      top: -4rem;
     }
   }
 
@@ -35,6 +38,7 @@
     padding: 1rem !important;
     list-style: none;
     text-align: center;
+    vertical-align: center;
     &-icon {
       @include font(1.4rem, 2rem, 700);
     }
