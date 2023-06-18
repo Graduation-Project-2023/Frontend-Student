@@ -21,11 +21,6 @@ export const ResetPwd = () => {
     error: false,
     errorMsg: "",
   });
-  const [pwd, setPwd] = useState(false);
-  const [error, setError] = useState({
-    password: "",
-    confirmPassword: "",
-  });
 
   const onInputChange = (e) => {
     const { name, value } = e.target;
@@ -38,24 +33,27 @@ export const ResetPwd = () => {
 
   const validateInput = (e) => {
     let { name, value } = e.target;
-    setError((prev) => {
-      const stateObj = { ...prev, [name]: "" };
+    setUserUX((prev) => {
+      const stateObj = { ...prev };
 
       switch (name) {
         case "password":
           if (!value) {
-            stateObj[name] = "Please enter the Password";
+            stateObj.error = true;
+            stateObj.errorMsg = "error.pwd";
           } else if (input.confirmPassword && value !== input.confirmPassword) {
-            stateObj["confirmPassword"] =
-              "Password and Confirm Password does not match";
+            stateObj.error = true;
+            stateObj.errorMsg = "error.pwdConf";
           }
           break;
 
         case "confirmPassword":
           if (!value) {
-            stateObj[name] = "Please enter Confirm Password";
+            stateObj.error = true;
+            stateObj.errorMsg = "error.conf";
           } else if (input.password && value !== input.password) {
-            stateObj[name] = "Password and Confirm Password does not match";
+            stateObj.error = true;
+            stateObj.errorMsg = "error.pwdConf";
           }
           break;
 
@@ -78,7 +76,6 @@ export const ResetPwd = () => {
       .then((res) => {
         console.log(res);
         setUserUX((prev) => ({ ...prev, loading: false }));
-        setPwd(true);
         setTimeout(() => {
           navigate("/login");
         }, 2000);
@@ -88,7 +85,7 @@ export const ResetPwd = () => {
         setUserUX({
           loading: false,
           error: true,
-          errorMsg: error.response.data.message,
+          errorMsg: "common.error",
         });
       });
   };
