@@ -38,26 +38,14 @@
     }
   }
 }
-
-.receiptsBtn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 15px;
-
-  & button {
-    margin: 0 !important;
-    margin-top: 10px !important;
-    border-radius: 5px;
-  }
-}
-.receiptsBtn-design {
-  margin-top: 50px;
-  background-color: rgb(75, 75, 209);
+.paymentBtn {
+  background-color: $Blue1;
   color: white;
   border-color: transparent;
   margin: 2px;
+  &:hover {
+    background-color: $Blue6;
+  }
 }
 
 .dashedScissor {
