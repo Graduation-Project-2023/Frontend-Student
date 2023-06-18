@@ -24,7 +24,7 @@
   }
 }
 .paymentBtn {
-  background-color: rgb(102, 102, 231);
+  background-color: $Blue1;
   color: white;
   border-color: transparent;
   width: 120px;
@@ -32,6 +32,9 @@
   border-radius: 5px;
   font-size: 18px;
   margin: 2px;
+  &:hover {
+    background-color: $Blue6;
+  }
 }
 .paymentScissor {
   font-size: 20px;

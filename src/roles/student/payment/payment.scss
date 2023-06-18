@@ -55,10 +55,13 @@
           border-radius: 0.4rem;
           padding: 0.6rem;
           width: 92%;
-          background: #3d7dca;
+          background: $Blue1;
           color: whitesmoke;
           font-weight: 600;
           font-size: large;
+          &:hover {
+            background: $Blue6;
+          }
         }
       }
       &-form {
