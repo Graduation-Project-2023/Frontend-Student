@@ -217,6 +217,8 @@
     "SEPARATED": "منفصل",
     "CHRISTIAN": "مسيحي",
     "MUSLIM": "مسلم",
+    "MANDATORY": "اجباري",
+    "ELECTIVE": "اختياري",
     "null": "غير محدد"
   },
   "home": {

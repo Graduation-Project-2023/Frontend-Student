@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
+import { useAuth } from "../../../hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
 import {
   TableHeadings,
   StudentTableHeadings,
-  testingCourses,
   testingStudent,
 } from "./ProgressData";
 
@@ -22,89 +22,55 @@ export const Progress = () => {
     errorMsg: "",
   });
   const { t } = useTranslation();
+  const authContext = useAuth();
 
   useEffect(() => {
-    // TO DELETE
-    if (testingCourses.length !== 0) {
-      const levelsCourses = testingCourses.reduce((acc, current) => {
-        const levelIndex = acc.findIndex(
-          (level) => level.level === current.level
-        );
-        if (levelIndex === -1) {
-          // Add a new level
-          acc.push({
-            level: current.level,
-            courses: [
-              {
+    setUserUX({ loading: true, error: false, errorMsg: "" });
+    // GET request to get student's available courses
+    axios
+      .get(`${STUDENT_URL}/progress?studentId=${authContext.id}`)
+      .then((res) => {
+        const coursesData = res.data.courses;
+        if (coursesData.length !== 0) {
+          const levelsCourses = coursesData.reduce((acc, current) => {
+            const levelIndex = acc.findIndex(
+              (level) => level.level === current.level
+            );
+            if (levelIndex === -1) {
+              // add new level
+              acc.push({
+                level: current.level,
+                courses: [
+                  {
+                    id: current.id,
+                    code: current.code,
+                    arabicName: current.arabicName,
+                    englishName: current.englishName,
+                  },
+                ],
+              });
+            } else {
+              // add class to existing level
+              acc[levelIndex].courses.push({
                 id: current.id,
                 code: current.code,
                 arabicName: current.arabicName,
                 englishName: current.englishName,
-              },
-            ],
-          });
+              });
+            }
+            return acc;
+          }, []);
+          setCourses(levelsCourses);
         } else {
-          // Add course to existing level
-          acc[levelIndex].courses.push({
-            id: current.id,
-            code: current.code,
-            arabicName: current.arabicName,
-            englishName: current.englishName,
-          });
+          setCourses([]);
         }
-        return acc;
-      }, []);
-      setCourses(levelsCourses);
-      console.log(levelsCourses);
-    } else {
-      setCourses([]);
-    }
-    //////////////////
-    // setUserUX({ loading: true, error: false, errorMsg: "" });
-    // // GET request to get student's available courses
-    // axios
-    //   .get(
-    //     `${STUDENT_URL}/available_courses/698b2eed-b652-4246-bdbc-610da8b67cb5`
-    //   )
-    //   .then((res) => {
-    //     console.log(res.data);
-    //     if (res.data.length !== 0) {
-    //       const levelsCourses = res.data.reduce((acc, current) => {
-    //         const levelIndex = acc.findIndex(
-    //           (level) => level.level === current.level
-    //         );
-    //         if (levelIndex === -1) {
-    //           // add new level
-    //           acc.push({
-    //             level: current.level,
-    //             courses: {
-    //               id: current.id,
-    //               code: current.code,
-    //               arabicName: current.arabicName,
-    //               englishName: current.englishName,
-    //             },
-    //           });
-    //         } else {
-    //           // add class to existing level
-    //           acc[levelIndex].courses.push({
-    //             id: current.id,
-    //             code: current.code,
-    //             arabicName: current.arabicName,
-    //             englishName: current.englishName,
-    //           });
-    //         }
-    //         return acc;
-    //       }, []);
-    //       setCourses(levelsCourses);
-    //     } else {
-    //       setCourses([]);
-    //     }
-    //     setUserUX({ loading: false, error: false, errorMsg: "" });
-    //   })
-    //   .catch((err) => {
-    //     console.log(err);
-    //     setUserUX({ loading: false, error: true, errorMsg: err.message });
-    //   });
+        setUserUX({ loading: false, error: false, errorMsg: "" });
+      })
+      .catch((err) => {
+        console.log(err);
+        setUserUX({ loading: false, error: true, errorMsg: err.message });
+      });
+    // eslint-disable-next-line
   }, []);
 
   return (
