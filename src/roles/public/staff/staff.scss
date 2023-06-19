@@ -1,118 +1,177 @@
 .staff-container-1 {
   display: grid;
+  border-radius: 20px;
   grid-template-columns: 70% 30%;
-  background-color: #FFFFFF;
-  height: 393px;
-  padding: 0 85px;
+  height: 300px;
+  padding: 3rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+  margin-bottom: 2rem;
+    
 
   &-title {
+    margin-right: 20px;
+    margin-left: 20px;
     display: block;
-    font-weight: 700;
-    font-size: 25px;
-    padding: 45px 0 0px 0;
-    color: #22277A;
+    font-size: 1.5vw;
+    padding: 5px;
+    color: #ffffff;
   }
   &-image {
-    display: block;
+    
+    margin-top: -20px;
     border-radius: 30px;
-    height: 266.48px;
-    margin: 60px 85px;
+    height: 250px;
+    
   }
   &-text {
+   
     font-style: normal;
     font-weight: 400;
-    font-size: 18px;
-    margin-top: 65px;
-    line-height: 19px;
-    color: #7F8187;
+    font-size: 1vw;
+    margin-top: 10px;
+    color: #ffffff;
     max-width: 700px;
+    word-spacing: 2px;
+    line-height: 25px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
 }
 
 .staff-container-2 {
-  display: grid;
-  grid-template-columns: 70% 30%;
-  background-color: #1681FF40;
+  margin-left: 40px;
+  margin-right: 40px;
+  padding-top: 100px;
+  background-color: rgba(176, 203, 255, 1);
   align-items: center;
   justify-content: center;
-  height: 371px;
   padding: 0 85px;
+  margin-bottom: 2rem;
+  border-radius: 10px;
+ 
+  &-line{
+    height: 3px;
+    border-radius: 5px;
+    background-color: rgba(235, 241, 255, 1);
   
+   }
   &-text {
     color: white;
-    max-width: 700px;
+    text-align: center;
     font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
     line-height: 19px;
+    word-spacing: 2px;
+    line-height: 25px;
+    font-size: 1vw;
+    padding: 20px 150px 50px 150px;
+    padding-left: 150px;
+    padding-right: 150px;
   }
   &-title {
     font-style: normal;
-    padding: 0 20px 0 20px;
+    padding: 20px 20px 20px 20px;
+    font-size: 1.5vw;
     font-weight: 700;
-    font-size: 25px;
+    text-align: center;
     line-height: 24px;
-    color: #22277A;
+    color:rgba(235, 241, 255, 1);
+
+   
+    
   }
 }
 
 .staff-container-3 {
   display: grid;
-  grid-template-columns: 30% 70%;
-  background-color: #FFFFFF;
-  height: 371px;
+  grid-template-columns: 40% 20% 40%;
   align-items: center;
   justify-content: center;
-  padding: 0 85px;
+  height: 300px;
+ // padding: 3rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+  margin-bottom: 2rem;
 
 
-  &-text {
-    color: #7F8187;
-    max-width: 897px;
-    padding: 0 20px 0 20px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 19px;
+ &-content{
+  &-title{
+    color: rgba(235, 241, 255, 1);
+    font-size: 1.5vw;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: -100px;
   }
-  &-title {
-    font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
+  &-text{
+    color: #ffffff;
+    font-size: 1vw;
     line-height: 24px;
-    color: #22277A;
+    padding: 0px 70px 0px 70px;
+  }
+ }
+ &-txt{
+  color: white;
+  font-size: 1vw;
+ }
+
+  &-img{
+    width: 200px;
+    height: 250px;
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
     
   }
+ 
   & li {
     max-width: 700px;
+   // padding-top: -30px;
   }
 }
 
 .staff-container-4 {
   display: grid;
-  grid-template-columns: 70% 30%;
-  background-color: #1681FF40;
-  align-items: center;
-  justify-content: center;
-  height: 371px;
-  padding: 0 85px;
+  border-radius: 5px;
+  grid-template-columns: 40% 40% 20%;
+  height: 300px;
+  padding: 3rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 95%;
+  margin-bottom: 2rem;
   
   &-text {
     font-style: normal;
-    padding: 0 20px 0 20px;
+    //padding: 0 20px 0 20px;
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    color: #7F8187;
+    color: rgba(235, 241, 255, 1);
+    word-spacing: 2px;
+    line-height: 25px;
+    padding-right: 90px;
+    padding-left: 90px;
   }
-  &-title {
+  &-list {
     font-style: normal;
-    font-weight: 700;
-    font-size: 25px;
+    font-size: 1vw;
     line-height: 24px;
-    color: #22277A;
+    color: white;
+    padding-right: 90px;
+    padding-left: 90px;
+    
   }
   & li {
     max-width: 700px;
+  }
+  &-img{
+    background-color:  rgba(189, 211, 255, 0.64);
+    width: 38%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-top: -10px;
+    
   }
 }

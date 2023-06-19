@@ -1,39 +1,46 @@
 import { useTranslation } from "react-i18next";
 import img1 from "../../../shared/images/images.jpeg";
+import bck1 from "../staff/bck right.png";
+import bck from "../staff/bck.png";
+import adm from "../../../shared/images/admission.jpg"
 
 export const Undergraduate = () => {
   const { t } = useTranslation();
 
   return (
     <div>
-      <div className="first-container">
+      <div className="first-container" style={{ backgroundImage: `url(${bck1})` }}>
         <span>
           <h3 className="first-container-title">{t("landing.welcome")}</h3>
-
+           <h3 className="first-container-txt">
           {t("landing.welcomeTextOne")}
           <br />
           {t("landing.welcomeTextTwo")}
+          </h3>
         </span>
-        <img className="first-container-image" src={img1} alt="/" />
+        <div className="first-container-image" >
+        <img src={img1} alt="/" />
+        </div>
       </div>
 
       <div className="second-container">
+      <h5 className="second-container-title">
+          {t("landing.secondContainerTitle1")}{" "}
+          {t("landing.secondContainerTitle2")}
+        </h5>
+        <div className="second-container-line"></div>
         <p className="second-container-text">
           {t("landing.secondContainer1")}
           <br />
           {t("landing.secondContainer2")}
         </p>
-        <h5 className="second-container-title">
-          {t("landing.secondContainerTitle1")} <br />{" "}
-          {t("landing.secondContainerTitle2")}
-        </h5>
+        
       </div>
-      <div className="seperatingColor"></div>
+      
 
-      <div className="third-container">
+      <div className="third-container" style={{ backgroundImage: `url(${bck})` }}>
+        <div>
         <h5 className="third-container-title">
-          <div className="trapeziod1"></div>
-          <div className="trapeziod2"></div>
           {t("landing.thirdcontainerTitle")}
         </h5>
 
@@ -51,6 +58,10 @@ export const Undergraduate = () => {
           {t("landing.thirdcontainerStep6")} <br />
           {t("landing.thirdcontainerStep7")}
         </p>
+        </div>
+        <div className="third-container-img">
+          <img src={adm} alt="/"/>
+        </div>
       </div>
     </div>
   );
