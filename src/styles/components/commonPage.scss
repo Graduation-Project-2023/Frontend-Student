@@ -1,6 +1,7 @@
 .common_cont {
+  
   padding: 20px 20px;
-  background: $Blue3;
+  background: #8FB4FF;
   width: 32%;
   height: 55%;
   @include flex(center, center, "");
@@ -10,7 +11,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -45%);
 
   &_icon {
     @include flex(center, center, "");
@@ -24,9 +25,17 @@
   &_text {
     color: whitesmoke;
     padding: 1rem 1rem;
-  }& h3,h2{
+  }
+  & h3{
+    font-size: 1vw;
     padding: 1rem 1rem;
-    font-size: 1.5rem;
+    // color: #C8535B;
+    // font-size: 1.5rem;
+  }
+  & h2{
+    font-size: 3vw;
+    padding: 1rem 1rem;
+    // font-size: 1.5rem;
   }
 
   &_bar {
