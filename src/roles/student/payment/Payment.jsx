@@ -114,10 +114,18 @@ export const Payment = () => {
           </table>
         </div>
         <div className="receiptsBtn">
-          <button className="button button-save" onClick={handlePay}>
+          <button
+            className="button button-save"
+            onClick={handlePay}
+            style={{ margin: "10px 0px 0px" }}
+          >
             {t("receipts.pay")} <AiOutlineCreditCard />
           </button>
-          <button className="button button-save" onClick={handlePrint}>
+          <button
+            className="button button-save"
+            onClick={handlePrint}
+            style={{ margin: "10px 10px 0px" }}
+          >
             {t("receipts.print")} <BiPrinter />
           </button>
         </div>

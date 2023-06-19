@@ -78,7 +78,10 @@ export const Receipts = () => {
           </tbody>
         </table>
         <div className="receiptsBtn">
-          <button className="button button-save">
+          <button
+            className="button button-save"
+            style={{ margin: "10px 0px 0px" }}
+          >
             {t("receipts.print")} <BiPrinter />
           </button>
         </div>

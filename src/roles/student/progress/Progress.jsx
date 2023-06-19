@@ -3,11 +3,8 @@ import { useAuth } from "../../../hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
-import {
-  TableHeadings,
-  StudentTableHeadings,
-  testingStudent,
-} from "./ProgressData";
+import { TableHeadings, StudentTableHeadings } from "./ProgressData";
+import { testingCourses, testingStudent } from "../../../shared/Testing";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
@@ -30,7 +27,8 @@ export const Progress = () => {
     axios
       .get(`${STUDENT_URL}/progress?studentId=${authContext.id}`)
       .then((res) => {
-        const coursesData = res.data.courses;
+        console.log(res);
+        const coursesData = testingCourses;
         if (coursesData.length !== 0) {
           const levelsCourses = coursesData.reduce((acc, current) => {
             const levelIndex = acc.findIndex(
@@ -46,6 +44,11 @@ export const Progress = () => {
                     code: current.code,
                     arabicName: current.arabicName,
                     englishName: current.englishName,
+                    courseType: current.courseType,
+                    hours: current.hours,
+                    preReq: current.preReq,
+                    finished: current.finished,
+                    unlocked: current.unlocked,
                   },
                 ],
               });
@@ -56,6 +59,11 @@ export const Progress = () => {
                 code: current.code,
                 arabicName: current.arabicName,
                 englishName: current.englishName,
+                courseType: current.courseType,
+                hours: current.hours,
+                preReq: current.preReq,
+                finished: current.finished,
+                unlocked: current.unlocked,
               });
             }
             return acc;

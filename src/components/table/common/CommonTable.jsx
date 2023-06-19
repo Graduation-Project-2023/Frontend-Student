@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai";
 
 // Component Props:
 // header: string
@@ -25,6 +26,23 @@ export const CommonTable = (props) => {
                   i18next.language === "en"
                     ? (item[heading.name] = item.englishName)
                     : (item[heading.name] = item.arabicName);
+                } else if (heading.name === "courseType") {
+                  return (
+                    <td key={heading.id}>{t(`enums.${item[heading.name]}`)}</td>
+                  );
+                } else if (
+                  heading.name === "unlocked" ||
+                  heading.name === "finished"
+                ) {
+                  return (
+                    <td key={heading.id}>
+                      {item[heading.name] ? (
+                        <AiOutlineCheck />
+                      ) : (
+                        <AiOutlineClose />
+                      )}
+                    </td>
+                  );
                 }
                 return <td key={heading.id}>{item[heading.name]}</td>;
               })}

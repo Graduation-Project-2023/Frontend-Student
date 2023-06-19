@@ -15,8 +15,8 @@ import { LEVELS } from "../../../shared/Levels";
 import {
   StudentTableHeadings,
   CoursesTableHeadings,
-  testingStudent,
 } from "./RegisterationData";
+import { testingStudent } from "../../../shared/Testing";
 
 export const Registeration = () => {
   const [tableData, setTableData] = useState([]);

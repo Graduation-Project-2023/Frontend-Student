@@ -1,12 +1,13 @@
 // Reusable Components and Images
 import img1 from "../../../shared/images/images.jpeg";
 import { useTranslation } from "react-i18next";
+import bck from "../staff/bck.png"
 
 export const International = () => {
   const { t } = useTranslation();
   return (
     <div>
-      <div className="admission-first-container">
+      <div className="admission-first-container" style={{ backgroundImage: `url(${bck})` }}>
         <p>
           {t("admission.firstcontainer1")}
           <br />
