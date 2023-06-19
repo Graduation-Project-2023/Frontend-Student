@@ -7,6 +7,7 @@ import {
   TableHeadings,
   StudentTableHeadings,
   testingStudent,
+  testingCourses,
 } from "./ProgressData";
 
 // Reusable Components
@@ -30,7 +31,8 @@ export const Progress = () => {
     axios
       .get(`${STUDENT_URL}/progress?studentId=${authContext.id}`)
       .then((res) => {
-        const coursesData = res.data.courses;
+        console.log(res);
+        const coursesData = testingCourses;
         if (coursesData.length !== 0) {
           const levelsCourses = coursesData.reduce((acc, current) => {
             const levelIndex = acc.findIndex(
@@ -46,6 +48,11 @@ export const Progress = () => {
                     code: current.code,
                     arabicName: current.arabicName,
                     englishName: current.englishName,
+                    courseType: current.courseType,
+                    hours: current.hours,
+                    preReq: current.preReq,
+                    finished: current.finished,
+                    unlocked: current.unlocked,
                   },
                 ],
               });
@@ -56,6 +63,11 @@ export const Progress = () => {
                 code: current.code,
                 arabicName: current.arabicName,
                 englishName: current.englishName,
+                courseType: current.courseType,
+                hours: current.hours,
+                preReq: current.preReq,
+                finished: current.finished,
+                unlocked: current.unlocked,
               });
             }
             return acc;
