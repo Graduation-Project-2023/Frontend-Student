@@ -3,12 +3,8 @@ import { useAuth } from "../../../hooks/useAuth";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
-import {
-  TableHeadings,
-  StudentTableHeadings,
-  testingStudent,
-  testingCourses,
-} from "./ProgressData";
+import { TableHeadings, StudentTableHeadings } from "./ProgressData";
+import { testingCourses, testingStudent } from "../../../shared/Testing";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
