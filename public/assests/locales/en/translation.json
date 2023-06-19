@@ -231,6 +231,8 @@
     "SEPARATED": "Separated",
     "CHRISTIAN": "Christian",
     "MUSLIM": "Muslim",
+    "MANDATORY": "Mandatory",
+    "ELECTIVE": "Elective",
     "null": "Undefined"
   },
   "home": {

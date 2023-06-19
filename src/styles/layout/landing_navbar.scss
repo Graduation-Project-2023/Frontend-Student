@@ -6,7 +6,7 @@
 
 .transitionNav {
   font-weight: 400;
-  font-size: 1vw;
+  font-size: 1.1vw;
   text-align: center;
   text-transform: uppercase;
   list-style: none;
@@ -27,7 +27,7 @@
 
     & a {
       padding: 0.3em 0;
-      color: #557DCD;
+      color: #557dcd;
       position: relative;
       display: inline-block;
       margin: 0;
@@ -45,7 +45,7 @@
         display: block;
         height: 3px;
         width: 100%;
-        background-color: #C8535B;
+        background-color: #c8535b;
         content: "";
       }
 
@@ -55,7 +55,7 @@
         top: 100%;
         left: 0;
         content: attr(data-hover);
-        color: #C8535B;
+        color: #c8535b;
         white-space: nowrap;
       }
     }

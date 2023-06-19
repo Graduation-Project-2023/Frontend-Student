@@ -40,15 +40,15 @@
 }
 
 .main-header {
-  background-color: #8FB4FF;
+  background-color: #8fb4ff;
   color: white;
   text-align: center;
-  padding: 0rem;
+  padding: 0.5rem;
   display: grid;
   grid-template-columns: 150px auto 150px;
   //color: transparent;
   // font-family: "Inter" !important;
-  // @include font(1.5rem, 2.2rem, 900);
+  @include font(1.5rem, 2.2rem, 600);
 
   &-item {
     display: flex;
@@ -63,7 +63,7 @@
         display: none;
       }
       & button {
-        color: #FFFAEE;
+        color: #fffaee;
         background-color: transparent;
         border: none;
       }
