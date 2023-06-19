@@ -42,7 +42,7 @@ export const PaymentCard = (props) => {
       };
     }
   };
-
+  
   return (
     <div>
       <div ref={printAreaRef}>
