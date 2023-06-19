@@ -100,7 +100,7 @@
     "password": "Password",
     "forget": "Forgot Your Password?",
     "title": "Welcome To Suez Canal University",
-    "button": "login",
+    "button": "Login",
     "subtitle": "LOGIN"
   },
   "reset": {
@@ -167,7 +167,7 @@
     "container-2-title": "Accommodation / Staff Housing",
     "container-2-text": "Suez Canal University provides the academic staff with housing services. The service is manifested in the tutors Lounge located in El-Sheikh Zayed district next to the International Swimming pool in in Ismailia. The lounge consists of 2 blocks that have a total of 45 rooms with a housing capacity of 180 residents. To qualify for admission, applicants must complete all secondary school graduation requirements, maintain a high level of academic performance and submit all required documents before the set deadlines. Having the minimum academic requirements does not guarantee admission to the University, but rather ensures entry to the selection process. There is a minimum level of academic achievement for each faculty that is decided by the supreme council of universities each year.",
     "container-3-title": "How To Apply",
-    "container-4-title": "Professional development",
+    "container-4-title": "Professional Development",
     "container-3-list-title": "The Library aspires to be the main source of intellectual and civilized knowledge, with its sources of information in science and culture as well as its material and human capabilities and support services in the advancement of knowledge and research movement and the development of the educational process. Library services:",
     "container-4-list-title": "Available courses:"
   },
@@ -237,14 +237,14 @@
   },
   "home": {
     "staff": "Staff and employees",
-    "postgraduate": "postgraduate",
-    "undergraduate": "undergraduate",
+    "postgraduate": "Postgraduate",
+    "undergraduate": "Undergraduate",
     "international": "International",
     "aboutUs": "About Us",
     "aboutUsDescription": "SCU is a community of talented students, teachers, and researchers. In addition to, a wide range of professional, administrative support and service staff; all of whom are committed to help change this world for the better. Also, we encourage each other to work hard, not only to earn degrees or public recognition, but also to be leaders in this changing world",
-    "contactUs": "contact us",
-    "training": "Training courses and e-learning",
-    "services": "University services",
+    "contactUs": "Contact Us",
+    "training": "Training Courses and E-Learning",
+    "services": "University Services",
     "more": "More",
     "managementUnit": "Managment information systems unit services",
     "managementUnitNews": "Book training for the basics of digital transformation certificate for postgraduate studies abroad at Suez Canal University",
@@ -253,8 +253,8 @@
     "eLearning": "E-Learning Unit",
     "eLearningNews": "Supporting e-learning by converting university courses into electronic courses and broadcasting them on the university’s website, and spreading the culture of e-learning",
     "digitalTrans": "Certificate in Fundamentals of Digital Transformation",
-    "latestNews": "Latest news & Upcoming",
-    "events": "events",
+    "latestNews": "Latest News & Upcoming ",
+    "events": "Events",
     "newsDates": "March,2023",
     "news": "Towards future education in the light of sustainable development… The fourth conference for educational and applied research for postgraduate studies will start tomorrow"
   },
@@ -264,8 +264,8 @@
     "welcomeTextTwo": "SCU is a community of talented students, teachers, and researchers. In addition to a wide range of professional, administrative support and service staff; all of whom are committed to help change this world for the better. Also, we encourage each other to work hard, not only to earn degrees or public recognition, but also to be leaders in this changing world. SCU seeks to prepare students for our diverse and connected world by creating an inclusive educational experience and a culture that respects the dignity of each individual on our campus. We are looking forward be an inclusive university that addresses",
     "secondContainer1": "Applicants must complete all secondary school graduation requirements, maintain a high level of academic performance and submit all required documents before the set deadlines. Having the minimum academic requirements does not guarantee admission to the University, but rather ensures entry to the selection process. There is a minimum level of academic achievement for each faculty that is decided by the supreme council of universities each year.",
     "secondContainer2": "SCU offers outstanding undergraduate curricula to its students. Those programs are instructed by exceptional professors, PhD holders and scholars of internationally recognized research and academic institutes. We are proud to have a unique and well qualified staff that brings perfection to our students and to our institute.",
-    "secondContainerTitle1": "How to qualify",
-    "secondContainerTitle2": "for admission",
+    "secondContainerTitle1": "How to Qualify",
+    "secondContainerTitle2": "for Admission",
     "thirdcontainerText": "To qualify for admission, applicants must complete secondary school graduation requirements and submit all required documents before the deadline to Join SCU for the academic year. Here are the documents needed to join us at SCU: ",
     "thirdcontainerStep1": "1. Original Secondary-year school Certificate",
     "thirdcontainerStep2": "2. Original Birth Certificate ",
@@ -274,7 +274,7 @@
     "thirdcontainerStep5": "5. Military Service Form (Namouzag 2 Gond), for Egyptian male students only ",
     "thirdcontainerStep6": "6. A copy of the students' national ID card. ",
     "thirdcontainerStep7": "7. A Medical report stamped by the Medical sector of the Egyptian Ministry of Higher Education The student must fill this application form and submit it before the due date",
-    "thirdcontainerTitle": "How to apply"
+    "thirdcontainerTitle": "How to Apply"
   },
   "admission": {
     "firstcontainer1": "We aim to offer our academic knowledge not only to our Egyptian students, but also to whoever feels the need to learn, develop, and succeed. At SCU, we aspire to supply our students with the knowledge to help change the world. We have twenty faculties actively operating on SCU old and new campuses, simultaneously, all to guarantee an organized process of continuous learning and innovation.",
