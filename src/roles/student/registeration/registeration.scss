@@ -1,10 +1,10 @@
 .btnBar {
-  background-color: #2070ba;
+  background-color: $Blue1;
   text-align: center;
 
   & button {
     background-color: #ffffff;
-    border: 0.5px solid #2070ba;
+    border: 0.5px solid $Blue1;
     border-radius: 15px;
     color: #000000;
     @include font(1.4rem, 2rem, 800);
