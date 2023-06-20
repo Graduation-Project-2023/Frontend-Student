@@ -13,7 +13,7 @@ import {
   TypingIndicator,
   ConversationHeader,
 } from "@chatscope/chat-ui-kit-react";
-import assistantAvatar from "../../../shared/images/gpt.jpg";
+import assistantAvatar from "../../../shared/images/gpt.png";
 import profile from "../../../shared/images/profile.png";
 
 // Reusable Components and Images

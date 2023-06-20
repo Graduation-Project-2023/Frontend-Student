@@ -7,11 +7,11 @@
   transition-duration: 0.4s;
 
   &-save {
-    @include colorandback(white, $Blue2);
-    border: 1px solid $Blue2;
+    @include colorandback(white, $Blue5);
+    border: 1px solid $Blue5;
 
     &:hover {
-      @include colorandback(black, rgba(66, 66, 197, 0.753));
+      @include colorandback(black, $Blue6);
     }
   }
 

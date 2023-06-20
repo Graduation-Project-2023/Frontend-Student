@@ -1,5 +1,5 @@
 .paymentTable {
-  border: 2px solid rgb(159, 157, 157);
+  border: 2px solid $Blue1;
   width: 100%;
   height: 100px;
   background-color: white;
@@ -7,8 +7,9 @@
   margin-right: auto;
 
   &-header {
+   
     text-align: center;
-    border-bottom: 1px solid rgb(131, 126, 126);
+    border-bottom: 1px solid $Blue1;
   }
   &-content {
     display: flex;
@@ -16,14 +17,14 @@
     justify-content: space-between;
     font-weight: 600;
     color: black;
-    border-bottom: 1px solid rgb(131, 126, 126);
+    border-bottom: 1px solid $Blue1;
     padding: 5px;
     font-size: 17px;
 
     &-total {
       font-weight: 600;
       color: black;
-      border-bottom: 1px solid rgb(131, 126, 126);
+      border-bottom: 1px solid $Blue1;
       padding: 5px;
       font-size: 17px;
       text-align: right;
@@ -38,26 +39,14 @@
     }
   }
 }
-
-.receiptsBtn {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 15px;
-
-  & button {
-    margin: 0 !important;
-    margin-top: 10px !important;
-    border-radius: 5px;
-  }
-}
-.receiptsBtn-design {
-  margin-top: 50px;
-  background-color: rgb(75, 75, 209);
+.paymentBtn {
+  background-color: $Blue1;
   color: white;
   border-color: transparent;
   margin: 2px;
+  &:hover {
+    background-color: $Blue6;
+  }
 }
 
 .dashedScissor {
