@@ -1,6 +1,6 @@
 .common_cont {
   padding: 20px 20px;
-  background: $Blue3;
+  background: #8FB4FF;
   width: 32%;
   height: 55%;
   @include flex(center, center, "");
@@ -10,8 +10,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-
+  transform: translate(-50%, -45%);
   &_icon {
     @include flex(center, center, "");
     border-radius: 5px;
@@ -24,11 +23,18 @@
   &_text {
     color: whitesmoke;
     padding: 1rem 1rem;
-  }& h3,h2{
-    padding: 1rem 1rem;
-    font-size: 1.5rem;
   }
-
+  & h3{
+    font-size: 1vw;
+    padding: 1rem 1rem;
+    // color: #C8535B;
+    // font-size: 1.5rem;
+  }
+  & h2{
+    font-size: 3vw;
+    padding: 1rem 1rem;
+    // font-size: 1.5rem;
+  }
   &_bar {
     padding: 2%;
     @include flex(center, center, "");
@@ -50,7 +56,6 @@
       }
     }
   }
-
   &_btn {
     padding: 0rem 0 0 0;
     width: 90%;
@@ -64,14 +69,13 @@
       border-radius: 3px;
       color: $Blue3;
       cursor: pointer;
-
+      transition: 0.5s;
       &:hover {
-        background: $Blue4;
+        background: rgb(220, 214, 214);
       }
     }
   }
 }
-
 @keyframes loading {
   0% {
     width: 0%;

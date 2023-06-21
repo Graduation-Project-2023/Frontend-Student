@@ -5,6 +5,10 @@ export const PostgraduateData = {
     { id: 2, title: "diplomaConditions.3" },
     { id: 3, title: "diplomaConditions.4" },
     { id: 4, title: "diplomaConditions.5" },
+  ],
+
+  thirdList: [
+    
     { id: 5, title: "diplomaConditions.6" },
     { id: 6, title: "diplomaConditions.7" },
     { id: 7, title: "diplomaConditions.8" },

@@ -2,13 +2,11 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
+import { testingCourses, testingStudent } from "../../../shared/Testing";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { CommonTable } from "../../../components/table/common/CommonTable";
-
-// to delete
-import { testingCourses } from "./testing";
 
 const TableHeadings = [
   { id: 0, label: "courses.code", name: "code" },

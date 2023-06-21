@@ -31,10 +31,15 @@ export const Header = () => {
     error: false,
     errorMsg: "",
   });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const { t } = useTranslation();
   const currentLanguage = languages.find(
     (lang) => lang.code === i18next.language
   );
+
+  useEffect(() => {
+    setIsLoggedIn(authContext.isLoggedIn);
+  }, [authContext]);
 
   useEffect(() => {
     document.body.dir = currentLanguage.dir || "ltr";
@@ -67,7 +72,7 @@ export const Header = () => {
   return (
     <nav className="main-header">
       <div className="main-header-item">
-        {authContext.isLoggedIn && (
+        {isLoggedIn && (
           <Dropdown>
             <Dropdown.Toggle>
               <CgProfile size={30} />

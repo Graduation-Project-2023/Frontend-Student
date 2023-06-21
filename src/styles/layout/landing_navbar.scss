@@ -1,16 +1,17 @@
 .transitionNavParent {
-  background-color: #22277A;
-  padding: 10px 0px;
+  background-color: transparent;
+  padding: 1rem 0rem;
   top: 0;
 }
 
 .transitionNav {
+  font-weight: 400;
+  font-size: 1.1vw;
   text-align: center;
   text-transform: uppercase;
-  font-weight: 500;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
 
   & * {
     box-sizing: border-box;
@@ -26,18 +27,17 @@
 
     & a {
       padding: 0.3em 0;
-      color: #b2daff;
+      color: #557dcd;
       position: relative;
       display: inline-block;
-      letter-spacing: 1px;
       margin: 0;
       text-decoration: none;
 
       &:before,
       &:after {
         position: absolute;
-        -webkit-transition: all 0.35s ease;
         transition: all 0.35s ease;
+        -webkit-transition: all 0.35s ease;
       }
 
       &:before {
@@ -45,17 +45,17 @@
         display: block;
         height: 3px;
         width: 100%;
+        background-color: #c8535b;
         content: "";
-        background-color: #a8cdf0;
       }
 
       &:after {
-        padding: 0.3em 0;
         position: absolute;
+        padding: 0.3em 0;
         top: 100%;
         left: 0;
         content: attr(data-hover);
-        color: white;
+        color: #c8535b;
         white-space: nowrap;
       }
     }

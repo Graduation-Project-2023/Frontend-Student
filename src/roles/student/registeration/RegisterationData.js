@@ -57,15 +57,3 @@ export const CoursesTableHeadings = [
   { id: 4, label: "common.lecturer", name: "lecturer" },
   { id: 5, label: "common.place", name: "place" },
 ];
-
-// testing only will delete later
-export const testingStudent = {
-  name: "Ahmed",
-  gpa: 3.5,
-  department: "CS",
-  registered_hrs: 12,
-  student_id: 123456,
-  allowed_hrs: 18,
-  advisor: "Dr. Ahmed",
-  allowed_courses: 3,
-};
