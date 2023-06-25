@@ -1,7 +1,7 @@
 import { Sidebar } from "../../components/header/Sidebar";
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineUserAdd } from "react-icons/ai";
 import { FaBookReader, FaMoneyCheck, FaRobot } from "react-icons/fa";
-import { AiOutlineUserAdd } from "react-icons/ai";
+import { MdOutlineQuiz } from "react-icons/md";
 import { GiSandsOfTime } from "react-icons/gi";
 import { ImTable } from "react-icons/im";
 
@@ -32,6 +32,12 @@ export const StudentSidebar = () => {
       path: "assistant",
       name: "common.smartAssistant",
       icon: <FaRobot />,
+    },
+    {
+      id: "10",
+      path: "quiz",
+      name: "common.quiz",
+      icon: <MdOutlineQuiz />,
     },
     { id: "6", path: "fees", name: "student.fees", icon: <FaMoneyCheck /> },
     {

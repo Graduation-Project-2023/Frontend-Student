@@ -93,7 +93,8 @@
     "endPeriod": "End Period",
     "smartAssistant": "Smart Assistant",
     "error": "Something went wrong, please try again later",
-    "close": "Close"
+    "close": "Close",
+    "quiz": "Quizzes"
   },
   "login": {
     "email": "E-mail",
@@ -374,5 +375,16 @@
     "timeReserved": "Time slot already reserved",
     "classes": "Error fetching classes",
     "tableData": "Error fetching table data"
+  },
+  "quiz": {
+    "remainingTime": "Remaining Time",
+    "givenTime": "Given Time",
+    "totalMarks": "Total Marks",
+    "submit": "Submit",
+    "next": "Next",
+    "hour": "Hour",
+    "hour": "Hours",
+    "minute": "Minute",
+    "minutes": "Minutes"
   }
 }
