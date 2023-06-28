@@ -6,6 +6,7 @@ import axios from "axios";
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { DayPeriodTable } from "../../../components/table/schedule/DayPeriodTable";
+import { Backdrop } from "../../../components/loaders/Backdrop";
 
 export const Schedule = () => {
   const [tableData, setTableData] = useState([]);
@@ -71,12 +72,15 @@ export const Schedule = () => {
   }, [authContext.id]);
 
   return (
-    <SidebarCont>
-      <DayPeriodTable
-        tableData={tableData}
-        cellsSetter={() => {}}
-        view={true}
-      />
-    </SidebarCont>
+    <>
+      {userUX.tableData.loading && <Backdrop />}
+      <SidebarCont>
+        <DayPeriodTable
+          tableData={tableData}
+          cellsSetter={() => {}}
+          view={true}
+        />
+      </SidebarCont>
+    </>
   );
 };

@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
-import { testingCourses, testingStudent } from "../../../shared/Testing";
+import { testingCourses } from "../../../shared/Testing";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { CommonTable } from "../../../components/table/common/CommonTable";
+import { Backdrop } from "../../../components/loaders/Backdrop";
 
 const TableHeadings = [
   { id: 0, label: "courses.code", name: "code" },
@@ -25,6 +26,9 @@ export const AvailableCourses = () => {
 
   useEffect(() => {
     // TO DELETE
+    setTimeout(() => {
+      setUserUX({ loading: false, error: false, errorMsg: "" });
+    }, 1000);
     if (testingCourses.length !== 0) {
       const levelsCourses = testingCourses.reduce((acc, current) => {
         const levelIndex = acc.findIndex(
@@ -107,7 +111,9 @@ export const AvailableCourses = () => {
     //   });
   }, []);
 
-  return (
+  return userUX.loading ? (
+    <Backdrop />
+  ) : (
     <SidebarCont>
       {courses.map((item) => {
         return (

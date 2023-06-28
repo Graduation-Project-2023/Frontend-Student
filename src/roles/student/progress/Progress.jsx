@@ -10,6 +10,7 @@ import { testingCourses, testingStudent } from "../../../shared/Testing";
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { CommonTable } from "../../../components/table/common/CommonTable";
 import { VerticalTable } from "../../../components/table/vertical/VerticalTable";
+import { Backdrop } from "../../../components/loaders/Backdrop";
 
 export const Progress = () => {
   const [courses, setCourses] = useState([]);
@@ -81,7 +82,9 @@ export const Progress = () => {
     // eslint-disable-next-line
   }, []);
 
-  return (
+  return userUX.loading ? (
+    <Backdrop />
+  ) : (
     <SidebarCont>
       <div className="cont">
         <div className="mb-5">
