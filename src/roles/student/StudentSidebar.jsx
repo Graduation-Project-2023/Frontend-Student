@@ -1,18 +1,15 @@
 import { Sidebar } from "../../components/header/Sidebar";
-import {
-  AiOutlineHome,
-  AiOutlineUserAdd,
-  AiOutlineWechat,
-} from "react-icons/ai";
+import { AiOutlineHome, AiOutlineUserAdd } from "react-icons/ai";
 import { FaBookReader, FaMoneyCheck, FaRobot } from "react-icons/fa";
 import { MdOutlineQuiz } from "react-icons/md";
 import { GiSandsOfTime } from "react-icons/gi";
 import { ImTable } from "react-icons/im";
+import { BiChat } from "react-icons/bi";
 
 export const StudentSidebar = () => {
   const menu = [
     { id: "1", path: "info", name: "student.info", icon: <AiOutlineHome /> },
-    { id: "11", path: "chat", name: "student.chat", icon: <AiOutlineWechat /> },
+    { id: "11", path: "chat", name: "student.chat", icon: <BiChat /> },
     {
       id: "2",
       path: "available_courses",
