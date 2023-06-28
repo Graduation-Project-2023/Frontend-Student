@@ -7,7 +7,9 @@
   justify-content: center;
   align-items: center;
   height: 91.8vh;
+  height: calc(100vh - 60px);
   width: 100vw;
+
   &-loginCard {
     // border: 1px solid red;
     display: flex;
@@ -17,7 +19,7 @@
       // border: 1px solid green;
       width: 45%;
       padding: 2rem 2rem;
-      background: #8FB4FFCC;
+      background: #8fb4ffcc;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -46,7 +48,7 @@
         & h2 {
           // border: 1px solid yellowgreen;
           font-size: 2vw;
-          color: #8FB4FF;
+          color: #8fb4ff;
         }
       }
       &-form {
@@ -62,7 +64,7 @@
           margin: 2rem 0rem 0rem 0rem;
         }
         & button {
-          background: #8FB4FF;
+          background: #8fb4ff;
           color: whitesmoke;
           font-size: 1.2vw;
           padding: 0.2rem 3rem;
@@ -75,11 +77,11 @@
         & a,
         h6 {
           font-size: 1.2vw;
-          color: #8FB4FF;
+          color: #8fb4ff;
           text-decoration: none;
           padding-top: 2rem;
         }
-        & a:hover{
+        & a:hover {
           color: #80a1e4;
           text-decoration: underline;
         }

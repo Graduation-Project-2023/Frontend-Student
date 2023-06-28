@@ -11,7 +11,7 @@ export const Backdrop = () => {
       }}
     >
       <div
-        class="text-center"
+        className="text-center"
         style={{
           position: "relative",
           width: "100vw",
@@ -19,7 +19,7 @@ export const Backdrop = () => {
         }}
       >
         <div
-          class="spinner-border"
+          className="spinner-border"
           role="status"
           style={{
             display: "block",

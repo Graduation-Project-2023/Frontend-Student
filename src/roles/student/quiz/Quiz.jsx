@@ -148,7 +148,7 @@ export const Quiz = () => {
   ) : (
     <SidebarCont>
       {userUX.quiz.error ? (
-        <div class="alert alert-danger" role="alert">
+        <div className="alert alert-danger" role="alert">
           {t("quiz.noQuiz")}
         </div>
       ) : (
@@ -165,6 +165,7 @@ export const Quiz = () => {
               style={{
                 borderRadius: "0",
                 width: "50%",
+                border: "1px solid #ced4da",
               }}
             >
               {t("quiz.remainingTime")}: {formatTime(remainingTime)}
@@ -173,15 +174,17 @@ export const Quiz = () => {
               variant="secondary"
               style={{
                 width: "25%",
+                border: "1px solid #ced4da",
               }}
             >
               {t("quiz.givenTime")}: {formatGivenTime(quiz.givenTime)}
             </ListGroup.Item>
             <ListGroup.Item
-              variant="info"
+              variant="secondary"
               style={{
                 borderRadius: "0",
                 width: "25%",
+                border: "1px solid #ced4da",
               }}
             >
               {t("quiz.totalMarks")}: {quiz.totalMarks}
