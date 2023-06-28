@@ -202,7 +202,8 @@
     "allowed_courses": "Allowed Courses",
     "schedule": "Schedule",
     "receipts": "Receipts",
-    "quiz": "Quizzes"
+    "quiz": "Quizzes",
+    "chat": "Chat"
   },
   "info": {
     "personal": "Personal Info",
@@ -383,8 +384,11 @@
     "submit": "Submit",
     "next": "Next",
     "hour": "Hour",
-    "hour": "Hours",
+    "hours": "Hours",
     "minute": "Minute",
     "minutes": "Minutes"
+  },
+  "chat": {
+    "searchName": "Search by name..."
   }
 }

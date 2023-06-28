@@ -9,6 +9,7 @@ import { Schedule } from "./schedule/Schedule";
 import { Assistant } from "./assistant/Assistant";
 import { Receipts } from "./receipts/Receipts";
 import { Quiz } from "./quiz/Quiz";
+import { Chat } from "./chat/Chat";
 import { NotFound } from "../../pages/NotFound";
 
 export const StudentRoutes = () => {
@@ -26,6 +27,7 @@ export const StudentRoutes = () => {
         <Route path="schedule" element={<Schedule />} />
         <Route path="assistant" element={<Assistant />} />
         <Route path="quiz" element={<Quiz />} />
+        <Route path="chat" element={<Chat />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>

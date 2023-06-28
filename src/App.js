@@ -8,7 +8,6 @@ import "bootstrap/dist/js/bootstrap.js";
 import "./main.scss";
 ////////// Shared Components //////////
 import { Login } from "./pages/Login";
-import { Footer } from "./common/Footer";
 import { ForgetPwd } from "./pages/ForgetPwd";
 import { GetEmail } from "./pages/GetEmail";
 import { ResetPwd } from "./pages/ResetPwd";
@@ -21,7 +20,6 @@ import { LandingRoutes } from "./roles/public/LandingRoutes";
 import { Unauthorized } from "./pages/Unauthorized";
 import { Redirecting } from "./pages/Redirecting";
 import { NotFound } from "./pages/NotFound";
-import { TestingPage } from "./common/TestingPage";
 import { PaymentStatus } from "./roles/student/payment/PaymentStatus";
 
 function App() {
@@ -39,7 +37,6 @@ function App() {
         <Route path="unauthorized" element={<Unauthorized />} />
         <Route path="redirecting" element={<Redirecting />} />
         <Route path="payment_status" element={<PaymentStatus />} />
-        <Route path="testing" element={<TestingPage />} />
 
         {/* Student Routes (Private) */}
         <Route element={<LoginRoute allowedRoles={"STUDENT"} />}>
@@ -49,7 +46,6 @@ function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

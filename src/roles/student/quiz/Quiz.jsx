@@ -6,7 +6,7 @@ import axios from "axios";
 // Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { QuestionCard } from "./QuestionCard";
-import Pagination from "react-bootstrap/Pagination";
+import { ListGroup, Pagination } from "react-bootstrap";
 
 export const Quiz = () => {
   const [quiz, setQuiz] = useState({ questions: [], givenTime: 0 });
@@ -150,21 +150,44 @@ export const Quiz = () => {
         <p>{userUX.quiz.errorMsg}</p>
       ) : (
         <>
-          <div>
-            <p>
+          <ListGroup
+            horizontal
+            style={{
+              margin: "0 5%",
+              textAlign: "center",
+            }}
+          >
+            <ListGroup.Item
+              variant="danger"
+              style={{
+                borderRadius: "0",
+                width: "50%",
+              }}
+            >
               {t("quiz.remainingTime")}: {formatTime(remainingTime)}
-            </p>
-            <p>
+            </ListGroup.Item>
+            <ListGroup.Item
+              variant="secondary"
+              style={{
+                width: "25%",
+              }}
+            >
               {t("quiz.givenTime")}: {formatGivenTime(quiz.givenTime)}
-            </p>
-            <p>
+            </ListGroup.Item>
+            <ListGroup.Item
+              variant="info"
+              style={{
+                borderRadius: "0",
+                width: "25%",
+              }}
+            >
               {t("quiz.totalMarks")}: {quiz.totalMarks}
-            </p>
-          </div>
+            </ListGroup.Item>
+          </ListGroup>
+
           <QuestionCard
             key={quiz.questions[questionNumber].id}
             question={quiz.questions[questionNumber]}
-            questionNumber={questionNumber}
             lastQuestion={questionNumber === quiz.questions.length - 1}
             submitQuiz={submitQuiz}
             nextQuestion={nextQuestion}
