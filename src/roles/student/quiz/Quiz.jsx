@@ -7,6 +7,7 @@ import axios from "axios";
 import { SidebarCont } from "../../../components/header/SidebarCont";
 import { QuestionCard } from "./QuestionCard";
 import { ListGroup, Pagination } from "react-bootstrap";
+import { Backdrop } from "../../../components/loaders/Backdrop";
 
 export const Quiz = () => {
   const [quiz, setQuiz] = useState({ questions: [], givenTime: 0 });
@@ -142,12 +143,14 @@ export const Quiz = () => {
     submitQuiz(answers);
   };
 
-  return (
+  return userUX.quiz.loading ? (
+    <Backdrop />
+  ) : (
     <SidebarCont>
-      {userUX.quiz.loading ? (
-        <p>Loading...</p>
-      ) : userUX.quiz.error ? (
-        <p>{userUX.quiz.errorMsg}</p>
+      {userUX.quiz.error ? (
+        <div class="alert alert-danger" role="alert">
+          {t("quiz.noQuiz")}
+        </div>
       ) : (
         <>
           <ListGroup
@@ -196,7 +199,12 @@ export const Quiz = () => {
 
           <div className="d-flex justify-content-center align-items-center">
             <Pagination>
-              <Pagination.First onClick={handleFirstPageClick} />
+              <Pagination.First
+                onClick={handleFirstPageClick}
+                style={{
+                  borderRadius: "0",
+                }}
+              />
               <Pagination.Prev onClick={handlePrevPageClick} />
 
               {quiz.questions.map((_, index) => (
@@ -210,7 +218,12 @@ export const Quiz = () => {
               ))}
 
               <Pagination.Next onClick={handleNextPageClick} />
-              <Pagination.Last onClick={handleLastPageClick} />
+              <Pagination.Last
+                onClick={handleLastPageClick}
+                style={{
+                  borderRadius: "0",
+                }}
+              />
             </Pagination>
           </div>
         </>

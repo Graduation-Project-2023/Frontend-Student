@@ -386,7 +386,8 @@
     "hour": "Hour",
     "hours": "Hours",
     "minute": "Minute",
-    "minutes": "Minutes"
+    "minutes": "Minutes",
+    "noQuiz": "No Quizzes Available..."
   },
   "chat": {
     "searchName": "Search by name..."
