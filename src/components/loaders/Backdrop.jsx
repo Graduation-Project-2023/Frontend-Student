@@ -5,7 +5,7 @@ export const Backdrop = () => {
         position: "absolute",
         top: "0",
         width: "100vw",
-        minHeight: "1150px",
+        minHeight: "1250px",
         zIndex: "99999999",
         backgroundColor: "rgba(0,0,0,0.5)",
       }}
