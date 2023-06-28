@@ -71,15 +71,16 @@ export const Schedule = () => {
       });
   }, [authContext.id]);
 
-  return userUX.tableData.loading ? (
-    <Backdrop />
-  ) : (
-    <SidebarCont>
-      <DayPeriodTable
-        tableData={tableData}
-        cellsSetter={() => {}}
-        view={true}
-      />
-    </SidebarCont>
+  return (
+    <>
+      {userUX.tableData.loading && <Backdrop />}
+      <SidebarCont>
+        <DayPeriodTable
+          tableData={tableData}
+          cellsSetter={() => {}}
+          view={true}
+        />
+      </SidebarCont>
+    </>
   );
 };
