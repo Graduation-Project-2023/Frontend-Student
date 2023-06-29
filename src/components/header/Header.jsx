@@ -124,13 +124,13 @@ export const Header = () => {
             </Dropdown.Toggle>
 
             <Dropdown.Menu>
-              <Dropdown.Item
+              <Dropdown.ItemText
                 style={{
                   textAlign: "center",
                 }}
               >
                 {t("common.language")}
-              </Dropdown.Item>
+              </Dropdown.ItemText>
               <Dropdown.Divider />
               {languages.map(({ code, name }) => (
                 <Dropdown.Item key={code}>
