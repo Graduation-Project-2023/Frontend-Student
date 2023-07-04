@@ -376,7 +376,11 @@
     "courseOcc": "Course already registered",
     "timeReserved": "Time slot already reserved",
     "classes": "Error fetching classes",
-    "tableData": "Error fetching table data"
+    "tableData": "Error fetching table data",
+    "payFirst": "Sorry! you have to pay the college fees first to view this page..",
+    "payNow": "Pay Now",
+    "noRcpts": "No receipts available",
+    "common": "Something went wrong, please try again later"
   },
   "quiz": {
     "remainingTime": "Remaining Time",

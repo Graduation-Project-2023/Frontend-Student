@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { STUDENT_URL } from "../../../shared/API";
 import axios from "axios";
 import { TableHeadings, StudentTableHeadings } from "./ProgressData";
-import { testingCourses, testingStudent } from "../../../shared/Testing";
+import { testingStudent } from "../../../shared/Testing";
 
 // Reusable Components
 import { SidebarCont } from "../../../components/header/SidebarCont";
@@ -24,12 +24,12 @@ export const Progress = () => {
 
   useEffect(() => {
     setUserUX({ loading: true, error: false, errorMsg: "" });
-    // GET request to get student's available courses
+    // GET request to get student's progress
     axios
       .get(`${STUDENT_URL}/progress?studentId=${authContext.id}`)
       .then((res) => {
         console.log(res);
-        const coursesData = testingCourses;
+        const coursesData = res.data.courses;
         if (coursesData.length !== 0) {
           const levelsCourses = coursesData.reduce((acc, current) => {
             const levelIndex = acc.findIndex(
