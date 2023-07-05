@@ -9,6 +9,7 @@ import { SidebarCont } from "../../../components/header/SidebarCont";
 import { Backdrop } from "../../../components/loaders/Backdrop";
 import { CommonTable } from "../../../components/table/common/CommonTable";
 import { GradesTableHeadings, GPAData } from "./GradesTableHeadings";
+import { Alert } from "react-bootstrap";
 
 export const Grades = () => {
   const [courses, setCourses] = useState([]);
@@ -78,14 +79,18 @@ export const Grades = () => {
     <Backdrop />
   ) : (
     <SidebarCont>
-      <div className="mb-5">
-        <CommonTable
-          header={t("receipts.semester")}
-          headings={GradesTableHeadings}
-          data={courses}
-          userUX={userUX}
-        />
-      </div>
+      {userUX.error ? (
+        <Alert variant="danger">{t(userUX.errorMsg)}</Alert>
+      ) : (
+        <div className="mb-5">
+          <CommonTable
+            header={t("receipts.semester")}
+            headings={GradesTableHeadings}
+            data={courses}
+            userUX={userUX}
+          />
+        </div>
+      )}
     </SidebarCont>
   );
 };
