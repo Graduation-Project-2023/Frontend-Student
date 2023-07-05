@@ -380,7 +380,8 @@
     "payFirst": "Sorry! you have to pay the college fees first to view this page..",
     "payNow": "Pay Now",
     "noRcpts": "No receipts available",
-    "common": "Something went wrong, please try again later"
+    "common": "Something went wrong, please try again later",
+    "noGrades": "No grades available"
   },
   "quiz": {
     "remainingTime": "Remaining Time",
@@ -396,5 +397,13 @@
   },
   "chat": {
     "searchName": "Search by name..."
+  },
+  "grades": {
+    "gpa": "GPA",
+    "classWork": "Class Work",
+    "final": "Final Exam",
+    "midterm": "Midterm Exam",
+    "total": "Total",
+    "grade": "Grade"
   }
 }

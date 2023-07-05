@@ -55,3 +55,8 @@
   .cs-message-input__content-editor-wrapper:first-child {
   margin: 0;
 }
+
+.cs-message-list__scroll-wrapper > .cs-message,
+.cs-message-list__scroll-wrapper > .cs-message-group {
+  max-width: none;
+}
