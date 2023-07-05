@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import icon from "../../../shared/images/profile.png";
 
 // Components
 import {
@@ -18,6 +17,8 @@ import {
   ConversationHeader,
 } from "@chatscope/chat-ui-kit-react";
 import { SidebarCont } from "../../../components/header/SidebarCont";
+import studentIcon from "../../../shared/images/profile.png";
+import professorIcon from "../../../shared/images/professor.jpg";
 
 export const Chat = (props) => {
   const { t, i18n } = useTranslation();
@@ -26,76 +27,76 @@ export const Chat = (props) => {
     {
       message: t("assistant.message"),
       sentTime: "just now",
-      sender: "professor",
-      direction: "outgoing",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
       sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "professor",
-      direction: "outgoing",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "professor",
-      direction: "outgoing",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "user",
-    },
-    {
-      message: t("assistant.message"),
-      sentTime: "just now",
-      sender: "professor",
       direction: "outgoing",
     },
     {
       message: t("assistant.message"),
       sentTime: "just now",
       sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "user",
+      direction: "outgoing",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "user",
+      direction: "outgoing",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "professor",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "user",
+      direction: "outgoing",
+    },
+    {
+      message: t("assistant.message"),
+      sentTime: "just now",
+      sender: "user",
       direction: "outgoing",
     },
   ]);
@@ -121,34 +122,34 @@ export const Chat = (props) => {
           <Search placeholder={t("chat.searchName")} />
           <ConversationList>
             <Conversation name="Lilly">
-              <Avatar src={icon} name="Lilly" status="available" />
+              <Avatar src={professorIcon} name="Lilly" status="available" />
             </Conversation>
             <Conversation name="Joe">
-              <Avatar src={icon} name="Joe" status="dnd" />
+              <Avatar src={professorIcon} name="Joe" status="dnd" />
             </Conversation>
 
             <Conversation name="Emily" unreadCnt={3}>
-              <Avatar src={icon} name="Emily" status="available" />
+              <Avatar src={professorIcon} name="Emily" status="available" />
             </Conversation>
 
             <Conversation name="Kai" unreadDot>
-              <Avatar src={icon} name="Kai" status="unavailable" />
+              <Avatar src={professorIcon} name="Kai" status="unavailable" />
             </Conversation>
 
             <Conversation name="Akane">
-              <Avatar src={icon} name="Akane" status="eager" />
+              <Avatar src={professorIcon} name="Akane" status="eager" />
             </Conversation>
 
             <Conversation name="Eliot">
-              <Avatar src={icon} name="Eliot" status="away" />
+              <Avatar src={professorIcon} name="Eliot" status="away" />
             </Conversation>
 
             <Conversation name="Zoe">
-              <Avatar src={icon} name="Zoe" status="dnd" />
+              <Avatar src={professorIcon} name="Zoe" status="dnd" />
             </Conversation>
 
             <Conversation name="Patrik">
-              <Avatar src={icon} name="Patrik" status="invisible" />
+              <Avatar src={professorIcon} name="Patrik" status="invisible" />
             </Conversation>
           </ConversationList>
         </Sidebar>
@@ -156,7 +157,7 @@ export const Chat = (props) => {
         <ChatContainer>
           <ConversationHeader>
             <ConversationHeader.Back />
-            <Avatar src={icon} name="Zoe" />
+            <Avatar src={studentIcon} name="Zoe" />
             <ConversationHeader.Content>
               <span
                 style={{
@@ -184,15 +185,16 @@ export const Chat = (props) => {
                   key={i}
                   model={message}
                   className={
-                    i18n.language === "ar" && message.sender === "professor"
+                    i18n.language === "ar" && message.sender === "user"
                       ? "message-ar"
                       : ""
                   }
+                  style={{ marginBottom: "18px" }}
                 >
-                  {message.sender === "professor" ? (
-                    <Avatar src={icon} name="Professor" />
+                  {message.sender === "user" ? (
+                    <Avatar src={studentIcon} name="User" />
                   ) : (
-                    <Avatar src={icon} name="User" />
+                    <Avatar src={professorIcon} name="Professor" />
                   )}
                 </Message>
               );

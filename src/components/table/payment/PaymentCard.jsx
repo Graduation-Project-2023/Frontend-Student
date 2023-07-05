@@ -42,7 +42,7 @@ export const PaymentCard = (props) => {
       };
     }
   };
-  
+
   return (
     <div>
       <div ref={printAreaRef}>
@@ -127,7 +127,7 @@ export const PaymentCard = (props) => {
           </button>
         )}
         <button
-          className="button button-save"
+          className={`button button-save ${payment ? "" : "m-0 mt-2"}`}
           onClick={handlePrint}
           style={{ margin: "10px 10px 0px" }}
         >

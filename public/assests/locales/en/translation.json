@@ -80,6 +80,7 @@
     "invalidCred": "Invalid Credentials",
     "from": "From",
     "to": "To",
+    "profile": "Profile",
     "lecturer": "Lecturer",
     "place": "Place",
     "universityName": "Suez Canal University",
@@ -375,7 +376,12 @@
     "courseOcc": "Course already registered",
     "timeReserved": "Time slot already reserved",
     "classes": "Error fetching classes",
-    "tableData": "Error fetching table data"
+    "tableData": "Error fetching table data",
+    "payFirst": "Sorry! you have to pay the college fees first to view this page..",
+    "payNow": "Pay Now",
+    "noRcpts": "No receipts available",
+    "common": "Something went wrong, please try again later",
+    "noGrades": "No grades available"
   },
   "quiz": {
     "remainingTime": "Remaining Time",
@@ -391,5 +397,13 @@
   },
   "chat": {
     "searchName": "Search by name..."
+  },
+  "grades": {
+    "gpa": "GPA",
+    "classWork": "Class Work",
+    "final": "Final Exam",
+    "midterm": "Midterm Exam",
+    "total": "Total",
+    "grade": "Grade"
   }
 }

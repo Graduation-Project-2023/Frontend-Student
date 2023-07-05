@@ -13,7 +13,6 @@ export const VerticalTable = (props) => {
       <table>
         <tbody>
           {props.headings.map((heading) => {
-            console.log(heading);
             return (
               <tr key={heading.id}>
                 <th>{t(heading.cols[0].label)}</th>

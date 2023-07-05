@@ -6,16 +6,18 @@ const AuthContext = createContext({
   role: "",
   id: "",
   student: {},
-  isLoggedIn: false,
+  rcpts: "false",
   login: (token, role, id) => {},
   logout: () => {},
   studentHandler: (student) => {},
+  rcptsHandler: (rcpts) => {},
 });
 
 export const AuthContextProvider = (props) => {
   const storageToken = cookies.get("token");
   const storageRole = cookies.get("role");
   const storageStudId = cookies.get("stud_id");
+  const storageRcpts = cookies.get("rcpts");
   let storageStudent = {};
   if (cookies.get("student") !== undefined) {
     storageStudent = JSON.parse(cookies.get("student"));
@@ -24,7 +26,7 @@ export const AuthContextProvider = (props) => {
   const [role, setRole] = useState(storageRole);
   const [studId, setStudId] = useState(storageStudId);
   const [student, setStudent] = useState(storageStudent);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [rcpts, setRcpts] = useState(storageRcpts);
 
   const loginHandler = (token, role, id) => {
     cookies.set("token", token);
@@ -33,7 +35,6 @@ export const AuthContextProvider = (props) => {
     setRole(role);
     setToken(token);
     setStudId(id);
-    setIsLoggedIn(true);
   };
 
   const logoutHandler = () => {
@@ -41,11 +42,12 @@ export const AuthContextProvider = (props) => {
     cookies.remove("role");
     cookies.remove("stud_id");
     cookies.remove("student");
+    cookies.remove("rcpts");
     setStudId(null);
     setToken(null);
     setRole(null);
+    setRcpts(null);
     setStudent({});
-    setIsLoggedIn(false);
   };
 
   const studentHandler = (student) => {
@@ -53,15 +55,21 @@ export const AuthContextProvider = (props) => {
     setStudent(student);
   };
 
+  const rcptsHandler = (rcpts) => {
+    cookies.set("rcpts", rcpts);
+    setRcpts(rcpts);
+  };
+
   const contextValue = {
     token: token,
     role: role,
     id: studId,
     student: student,
-    isLoggedIn: isLoggedIn,
+    rcpts: rcpts,
     login: loginHandler,
     logout: logoutHandler,
     studentHandler: studentHandler,
+    rcptsHandler: rcptsHandler,
   };
 
   return (

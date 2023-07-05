@@ -41,6 +41,9 @@
     vertical-align: center;
     &-icon {
       @include font(1.4rem, 2rem, 700);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     &-text {
       display: flex;

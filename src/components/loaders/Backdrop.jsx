@@ -5,13 +5,13 @@ export const Backdrop = () => {
         position: "absolute",
         top: "0",
         width: "100vw",
-        minHeight: "1150px",
+        minHeight: "1250px",
         zIndex: "99999999",
         backgroundColor: "rgba(0,0,0,0.5)",
       }}
     >
       <div
-        class="text-center"
+        className="text-center"
         style={{
           position: "relative",
           width: "100vw",
@@ -19,7 +19,7 @@ export const Backdrop = () => {
         }}
       >
         <div
-          class="spinner-border"
+          className="spinner-border"
           role="status"
           style={{
             display: "block",

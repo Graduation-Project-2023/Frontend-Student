@@ -46,14 +46,12 @@
   padding: 0.5rem;
   display: grid;
   grid-template-columns: 150px auto 150px;
-  //color: transparent;
-  // font-family: "Inter" !important;
-  // @include font(1.5rem, 2.2rem, 600);
 
   &-item {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.5rem;
 
     .dropdown {
       .btn-primary {

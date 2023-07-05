@@ -20,11 +20,11 @@ export const Login = () => {
   });
 
   useEffect(() => {
-    if (authContext.isLoggedIn) {
+    if (authContext.token) {
       navigate("/student");
     }
-    //eslint-disable-next-line
-  }, [authContext.isLoggedIn]);
+    // eslint-disable-next-line
+  }, [authContext.token]);
 
   const handleLogin = (e) => {
     e.preventDefault();
