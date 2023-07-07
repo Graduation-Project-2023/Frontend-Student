@@ -15,10 +15,10 @@ import { Schedule } from "./schedule/Schedule";
 import { Assistant } from "./assistant/Assistant";
 import { Receipts } from "./receipts/Receipts";
 import { Quiz } from "./quiz/Quiz";
-import { Chat } from "./chat/Chat";
 import { Grades } from "./grades/Grades";
 import { NotFound } from "../../pages/NotFound";
 import { MustPay } from "../../components/other/MustPay";
+import { ChatContainer } from "./chat/ChatContainer";
 
 export const StudentRoutes = () => {
   const authContext = useAuth();
@@ -66,7 +66,7 @@ export const StudentRoutes = () => {
         <Route path="schedule" element={<Schedule />} />
         <Route path="assistant" element={<Assistant />} />
         <Route path="quiz" element={<Quiz />} />
-        <Route path="chat" element={<Chat />} />
+        <Route path="chat" element={<ChatContainer />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
