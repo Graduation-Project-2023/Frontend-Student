@@ -396,7 +396,9 @@
     "noQuiz": "No Quizzes Available..."
   },
   "chat": {
-    "searchName": "Search by name..."
+    "searchName": "Search by name...",
+    "placeholder": "Type message here...",
+    "selectChat": "Select a chat to start messaging"
   },
   "grades": {
     "gpa": "GPA",

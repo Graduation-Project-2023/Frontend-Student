@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 // Components
@@ -29,9 +29,12 @@ export const Chat = ({
 }) => {
   const { t, i18n } = useTranslation();
   const [messageInputValue, setMessageInputValue] = useState("");
-  const [currChat, setCurrChat] = useState({
-    id: "8dc2a88d-0353-4031-bac6-a01dd070fb75",
-  });
+  const [currChat, setCurrChat] = useState({});
+  const msgListRef = useRef();
+
+  useEffect(() => {
+    msgListRef.current.scrollToBottom("auto");
+  }, [messages]);
 
   return (
     <SidebarCont>
@@ -82,34 +85,36 @@ export const Chat = ({
         </Sidebar>
 
         <ChatContainer>
-          <ConversationHeader>
-            <ConversationHeader.Back />
-            {currChat.id && (
-              <Avatar
-                src={professorIcon}
-                name={
-                  i18n.language === "en"
+          {currChat.id && (
+            <ConversationHeader>
+              <ConversationHeader.Back />
+              {currChat.id && (
+                <Avatar
+                  src={professorIcon}
+                  name={
+                    i18n.language === "en"
+                      ? currChat.englishName
+                      : currChat.arabicName
+                  }
+                />
+              )}
+              <ConversationHeader.Content>
+                <span
+                  style={{
+                    color: "blue",
+                    alignSelf: "flex-center",
+                    fontSize: "20px",
+                    margin: "0 10px",
+                  }}
+                >
+                  {i18n.language === "en"
                     ? currChat.englishName
-                    : currChat.arabicName
-                }
-              />
-            )}
-            <ConversationHeader.Content>
-              <span
-                style={{
-                  color: "blue",
-                  alignSelf: "flex-center",
-                  fontSize: "20px",
-                  margin: "0 10px",
-                }}
-              >
-                {i18n.language === "en"
-                  ? currChat.englishName
-                  : currChat.arabicName}
-              </span>
-            </ConversationHeader.Content>
-          </ConversationHeader>
-          <MessageList scrollBehavior="smooth">
+                    : currChat.arabicName}
+                </span>
+              </ConversationHeader.Content>
+            </ConversationHeader>
+          )}
+          <MessageList scrollBehavior="smooth" ref={msgListRef}>
             {currChat.id &&
               messages
                 ?.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt))

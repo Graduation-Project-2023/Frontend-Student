@@ -12,7 +12,13 @@ import { Chat } from "./Chat";
 
 export const ChatContainer = () => {
   const [messages, setMessages] = useState([]);
-  const [professors, setProfessors] = useState([]);
+  const [professors, setProfessors] = useState([
+    {
+      id: "8dc2a88d-0353-4031-bac6-a01dd070fb75",
+      englishName: "Dr. Salem El Hamood",
+      arabicName: "د/ سالم الحمود",
+    },
+  ]);
   const [userUX, setUserUX] = useState({
     chat: {
       loading: false,
